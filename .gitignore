@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.pyc
+
+# analysis/basin_hydrology_correlation.py's own disk cache of api.meteo.lt
+# responses -- regenerates automatically on the next run, shouldn't be
+# committed (thousands of tiny files, no reason to version them).
+analysis/_cache/
+
+# Scratch/exploration files -- anything prefixed "_" under analysis/ is a
+# throwaway intermediate by convention in this repo (see analysis/_scratch/).
+analysis/_scratch/
+analysis/_*.json
+analysis/_*.geojson
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+*.swp
+
+# Local dashboard-serving artifacts
+*.log

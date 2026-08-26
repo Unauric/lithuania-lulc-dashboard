@@ -1,0 +1,2464 @@
+/* Copyright (c) 2026 Lithuanian Energy Institute (LEI). All rights reserved.
+   See LICENSE in the repository root -- source reuse is restricted to LEI. */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* ── Design tokens ──────────────────────────────────────────────── */
+:root {
+  --card-bg: #ffffff;
+  --card-radius: 12px;
+  --card-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  --text-primary: #0f172a;
+  --text-secondary: #6b7280;
+  --border-subtle: #e5e7eb;
+  --accent: #198754;
+  --accent-hover: #157347;
+}
+
+/* ── Multi-select checkbox dropdown ─────────────────────────── */
+.ms-dropdown { position: relative; width: 100%; }
+
+.ms-toggle {
+  width: 100%;
+  display: flex;
+  flex-direction: row !important;
+  justify-content: space-between;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  background: #fff;
+  cursor: pointer;
+  font-size: 13px;
+  text-align: left;
+  color: #123047;
+  transition: border-color 0.15s;
+}
+.ms-toggle:hover { border-color: #94a3b8; }
+.ms-toggle[aria-expanded="true"] { border-color: #1572a6; }
+.ms-arrow { font-size: 10px; flex-shrink: 0; color: #64748b; }
+
+.ms-panel {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  width: 100%;
+  min-width: 190px;
+  background: #fff;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.13);
+  z-index: 2000;
+  padding: 4px 0;
+  max-height: 260px;
+  overflow-y: auto;
+}
+.ms-panel[hidden] { display: none; }
+
+.ms-search {
+  position: sticky;
+  top: 0;
+  background: #fff;
+  padding: 6px 8px 5px;
+  border-bottom: 1px solid #e2e8f0;
+  z-index: 1;
+}
+.ms-search input {
+  width: 100%;
+  padding: 4px 8px;
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  font-size: 12px;
+  outline: none;
+  box-sizing: border-box;
+}
+.ms-search input:focus { border-color: #1572a6; }
+
+.ms-item,
+.ms-panel label.ms-item {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 7px;
+  padding: 4px 10px;
+  cursor: pointer;
+  font-size: 12.5px;
+  user-select: none;
+  border-radius: 4px;
+  margin: 1px 3px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-height: unset;
+  line-height: 1.4;
+}
+.ms-item:hover,
+.ms-panel label.ms-item:hover { background: #f1f5f9; }
+.ms-item input[type="checkbox"],
+.ms-panel label.ms-item input[type="checkbox"] { flex-shrink: 0; cursor: pointer; accent-color: #1572a6; margin: 0; }
+.ms-master,
+.ms-panel label.ms-master { font-weight: 600; color: #1572a6; }
+.ms-sep { margin: 3px 0; border: none; border-top: 1px solid #e2e8f0; }
+.ms-swatch { width: 10px; height: 10px; border-radius: 2px; flex-shrink: 0; display: inline-block; }
+
+/* ── Base page: map is the full-viewport background ──────────────── */
+html, body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #eef1f4;
+  color: var(--text-primary);
+}
+
+.app-shell {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.map-container {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+  border: none;
+  overflow: hidden;
+}
+
+/* Shared floating-card surface */
+.icon-btn,
+.floating-panel,
+.dashboards-panel,
+.dash-card,
+.timeline-pill,
+.map-legend,
+.map-opacity-control,
+.bottom-left-toolbar,
+.toolbar-icon-btn {
+  background: var(--card-bg);
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+  border: none;
+}
+
+/* ── Icon stack, top-left ──────────────────────────────────────── */
+.icon-stack {
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  /* Above .validation-overlay (2000) — these stay usable in both Home and Validation. */
+  z-index: 2100;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.icon-btn {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  color: #475569;
+  transition: background 0.15s, color 0.15s;
+  padding: 0;
+}
+.icon-btn:hover { background: #f1f5f9; color: #1572a6; }
+.icon-btn[aria-expanded="true"] { background: #eff8ff; color: #1572a6; }
+
+/* ── Top-center segmented control (Home / Validation) ─────────── */
+.segmented-control {
+  position: fixed;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  /* Above .validation-overlay (2000) — must stay clickable to switch back to Home. */
+  z-index: 2100;
+  display: flex;
+  gap: 2px;
+  padding: 4px;
+}
+.segmented-control .tab {
+  border-radius: 8px;
+  padding: 8px 18px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.segmented-control .tab:hover { color: #1572a6; }
+.segmented-control .tab.active {
+  background: #0f172a;
+  color: #fff;
+}
+
+/* ── Floating utility panels (Filters / Map settings / Info) ──── */
+.floating-panel {
+  position: fixed;
+  top: 16px;
+  left: 64px;
+  /* Above .icon-stack/.segmented-control (2100) and .validation-overlay (2000). */
+  z-index: 2200;
+  width: 300px;
+  max-height: calc(100vh - 100px);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+.floating-panel[hidden] { display: none; }
+.floating-panel-wide { width: 380px; }
+
+.floating-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--border-subtle);
+  flex-shrink: 0;
+}
+.floating-panel-header h3 { margin: 0; font-size: 15px; font-weight: 700; color: var(--text-primary); }
+
+.floating-panel-body {
+  padding: 14px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-size: 13px;
+}
+.floating-panel-body label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 13px;
+}
+.floating-panel-body select,
+.floating-panel-body input[type="number"] {
+  padding: 6px 8px;
+  border-radius: 6px;
+  border: 1px solid #cbd5e1;
+  font-size: 13px;
+}
+.floating-panel-body input[type="number"] + input[type="number"] { margin-top: 4px; }
+
+.panel-close-btn {
+  width: 24px;
+  height: 24px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 1;
+  color: #94a3b8;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+.panel-close-btn:hover { background: #f1f5f9; color: #475569; }
+
+.hint { margin-top: 0; font-size: 11px; color: #475569; }
+.hint ul { padding-left: 18px; margin: 4px 0 0 0; }
+.hint code { background: #e2e8f0; border-radius: 3px; padding: 1px 3px; }
+
+#apply-filters,
+.apply-filters-btn {
+  margin-top: 0;
+  padding: 9px 10px;
+  width: 100%;
+  border-radius: 6px;
+  border: none;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 13px;
+}
+#apply-filters:hover,
+.apply-filters-btn:hover { background: var(--accent-hover); }
+
+/* ── Validation overlay (large floating panel, top-center tab) ─── */
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+
+/* Full, opaque page — not a floating card, no map visible behind it. */
+.validation-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: none;
+  background: #f2f4f7;
+  overflow-y: auto;
+}
+.validation-overlay.active { display: block; }
+
+.validation-overlay-inner {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 90px 32px 48px;
+}
+
+#panel-validation { gap: 0; }
+
+.validation-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-bottom: 14px;
+  margin-bottom: 16px;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.validation-title { margin: 0; font-size: 18px; font-weight: 700; color: #0f172a; }
+
+.validation-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 13px;
+}
+
+.validation-toolbar-label { color: #64748b; font-weight: 500; }
+
+.validation-toolbar select {
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: 1px solid #cbd5e1;
+  background: #fff;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.validation-meta-block { margin-bottom: 20px; }
+
+.validation-intro {
+  font-size: 13px;
+  line-height: 1.6;
+  color: #334155;
+  margin: 0 0 6px;
+}
+
+.validation-ml-note {
+  font-size: 11px;
+  color: #64748b;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ── Validation sub-section switcher — shows one section at a time so
+   the page doesn't force a long scroll through all three. ────────── */
+.validation-subtabs {
+  display: flex;
+  gap: 4px;
+  background: #eef1f5;
+  border-radius: 10px;
+  padding: 4px;
+  margin-bottom: 20px;
+  width: fit-content;
+}
+
+.validation-subtab {
+  border: none;
+  background: transparent;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #475569;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+  white-space: nowrap;
+}
+.validation-subtab.active {
+  background: #ffffff;
+  color: #0f172a;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.14);
+}
+.validation-subtab:hover:not(.active) { color: #1e293b; }
+
+.validation-section[data-subtab-panel] {
+  display: none;
+}
+.validation-section[data-subtab-panel].active {
+  display: block;
+}
+
+.validation-section {
+  margin-bottom: 28px;
+}
+.validation-section:last-child { margin-bottom: 0; }
+
+.validation-subheading {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0 0 12px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #e2e8f0;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.validation-section-note {
+  font-size: 12px;
+  color: #64748b;
+  margin: 0 0 14px;
+  line-height: 1.5;
+}
+
+.validation-chart-section {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 16px 20px 20px;
+}
+
+.validation-chart-wrap {
+  position: relative;
+  height: 300px;
+}
+
+.validation-table-scroll { overflow-x: auto; border-radius: 8px; border: 1px solid #e2e8f0; }
+
+.validation-metrics-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+  min-width: 700px;
+}
+
+.validation-metrics-table th,
+.validation-metrics-table td {
+  padding: 9px 12px;
+  text-align: left;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.validation-metrics-table th {
+  background: #f1f5f9;
+  font-weight: 600;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #475569;
+  position: sticky;
+  top: 0;
+  white-space: nowrap;
+}
+
+.validation-metrics-table thead th { border-bottom: 2px solid #cbd5e1; }
+
+.validation-metrics-table tbody tr:hover td { background: #f8fafc; }
+.validation-metrics-table tbody tr:last-child td { border-bottom: none; }
+
+.validation-metrics-table td.num,
+.validation-metrics-table th.num {
+  text-align: right;
+}
+
+.validation-metrics-table td.num {
+  font-variant-numeric: tabular-nums;
+  color: #334155;
+}
+
+.vmt-ds-name-cell {
+  font-weight: 600;
+  color: #1e293b;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.vmt-years-cell {
+  font-size: 11px;
+  color: #64748b;
+  min-width: 7rem;
+  max-width: 16rem;
+  white-space: normal;
+  word-break: break-word;
+}
+
+.vmt-note-row td {
+  color: #94a3b8;
+  font-style: italic;
+  text-align: left;
+}
+
+.vmt-best-row td { background: #f0fdf4 !important; }
+.vmt-best-row .vmt-ds-name-cell { color: #15803d; }
+
+.vmt-best-badge {
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: #dcfce7;
+  color: #15803d;
+  border: 1px solid #86efac;
+  border-radius: 3px;
+  padding: 1px 5px;
+}
+
+.validation-per-dataset-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.validation-details {
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.validation-details summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 16px;
+  background: #f8fafc;
+  user-select: none;
+  font-size: 13px;
+}
+
+.validation-details summary::-webkit-details-marker { display: none; }
+
+.validation-details summary::before {
+  content: "▶";
+  font-size: 9px;
+  color: #94a3b8;
+  transition: transform 0.18s;
+  flex-shrink: 0;
+}
+
+.validation-details[open] summary::before { transform: rotate(90deg); }
+.validation-details[open] summary { border-bottom: 1px solid #e2e8f0; }
+
+.vdet-ds-name {
+  font-weight: 700;
+  color: #1e293b;
+  font-size: 13px;
+}
+
+.vdet-ds-meta {
+  font-size: 11px;
+  color: #64748b;
+  margin-left: auto;
+}
+
+.validation-mini-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+.validation-mini-table th {
+  background: #f8fafc;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #64748b;
+  padding: 8px 14px;
+  border-bottom: 1px solid #e2e8f0;
+  text-align: left;
+}
+
+.validation-mini-table td {
+  padding: 9px 14px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.validation-mini-table tbody tr:last-child td { border-bottom: none; }
+.validation-mini-table tbody tr:hover td { background: #fafafa; }
+
+.validation-mini-table td.num,
+.validation-mini-table th.num {
+  text-align: right;
+}
+
+.validation-mini-table td.num {
+  font-variant-numeric: tabular-nums;
+  color: #334155;
+}
+
+.validation-mini-table td.metric-na { color: #cbd5e1; }
+
+.vmt-class-cell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  color: #1e293b;
+}
+
+.vmt-swatch {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.bias-pos { color: #b91c1c; font-weight: 600; }
+.bias-neg { color: #0369a1; font-weight: 600; }
+
+.validation-mini-footnote {
+  font-size: 11px;
+  color: #64748b;
+  line-height: 1.5;
+  padding: 10px 16px;
+  border-top: 1px solid #f1f5f9;
+  margin: 0;
+}
+
+/* ── Year text input next to timeline slider ──────────────────── */
+.year-input {
+  width: 64px;
+  padding: 2px 5px;
+  border-radius: 4px;
+  border: 1px solid #cbd5e1;
+  font-size: 12px;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+  flex-shrink: 0;
+}
+.year-input:focus {
+  outline: 2px solid #1572a6;
+  border-color: #1572a6;
+}
+
+.basin-label {
+  font-size: 10px !important;
+  font-weight: 600 !important;
+  color: #475569 !important;
+  text-shadow: 0 0 2px #fff, 0 0 4px #fff !important;
+  pointer-events: none !important;
+  white-space: nowrap !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Basin vector paths don't capture drags (pan/zoom stay smooth) */
+.leaflet-pane path.basin-outline-path {
+  pointer-events: none !important;
+}
+
+/* Categorical raster: nearest-neighbour scaling keeps class boundaries sharp at all zoom levels */
+.leaflet-raster-pane canvas {
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+.chart-scope-note {
+  margin: 0 0 6px 0;
+  font-size: 11px;
+  color: #0f766e;
+  font-weight: 500;
+}
+
+.insights-export-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.btn-export {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: none;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 13px;
+}
+.btn-export:hover { background: var(--accent-hover); }
+.btn-export:active { background: #146c43; }
+
+.btn-export-sm {
+  padding: 6px 9px;
+  font-size: 11px;
+}
+
+/* ── On-map legend + opacity cards, bottom-right ──────────────────
+ * Sit immediately to the LEFT of the zoom control, hugging the corner —
+ * not centered in open map space. When the Dashboards panel is open
+ * (body.dashboards-open, toggled in JS), the whole cluster — legend,
+ * opacity, and Leaflet's own zoom/attribution controls below — shifts
+ * further left together, clear of the panel, rather than sitting behind
+ * it (z-index alone doesn't help since the panel is opaque by design). */
+.map-legend {
+  position: fixed;
+  right: 60px;
+  bottom: 66px;
+  z-index: 900;
+  width: 220px;
+  padding: 12px 14px;
+  font-size: 12px;
+  transition: right 0.2s;
+}
+/* 82px = the sidebar's own 16px right offset + a 66px gap clear of it --
+   same arithmetic the old hardcoded 542px baked in for the sidebar's
+   former fixed 460px width, now driven by --dashboards-panel-width so it
+   tracks the sidebar's actual (draggable) width instead of assuming it
+   never changes. */
+body.dashboards-open .map-legend { right: calc(var(--dashboards-panel-width, 460px) + 82px); }
+
+.legend-title {
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: #0f172a;
+  font-size: 13px;
+}
+
+.legend-filter-note {
+  font-size: 10px;
+  color: #64748b;
+  margin-bottom: 5px;
+  font-style: italic;
+}
+
+.legend-items {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px 10px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+/* Station-marker legend rows (see setLegend/stationItemsHtml) run much
+   longer than a single land-cover word ("Reference station (used in
+   analysis)") and don't need to align with the short 2-up class grid --
+   span the full width and allow wrapping instead. Without this, a nowrap
+   item forces its 1fr grid track to its full unwrapped content width,
+   blowing the whole grid out past the legend box's fixed 220px (a real
+   layout bug, not just a narrow box). */
+.legend-item-station {
+  grid-column: 1 / -1;
+  white-space: normal;
+}
+
+.legend-swatch {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  border: 1px solid rgba(15, 23, 42, 0.2);
+}
+
+/* Triangular swatch for the two hydrology-station legend entries (a plain
+   background-color square can't read as "triangle marker" the way the
+   circular/square land-cover swatches do) -- CSS border-trick triangle,
+   colored per item via an inline border-bottom-color. */
+.legend-swatch-triangle {
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 10px solid;
+}
+
+.leaflet-interactive {
+  cursor: pointer;
+}
+
+/* Hydrology station markers are L.marker+divIcon triangles (see
+   hydroStationTriangleIcon in app.js), not circleMarkers -- strip
+   Leaflet's default divIcon chrome (white box + border) so only the SVG
+   triangle itself shows. */
+.hydro-station-triangle-icon {
+  background: transparent;
+  border: none;
+}
+.hydro-station-triangle-icon svg { display: block; }
+
+/* ── Bottom-center timeline pill ───────────────────────────────── */
+.timeline-pill-wrap {
+  position: fixed;
+  /* Centered on the visible map area (left of the Dashboards panel), not the
+     full viewport — shifts further left while the panel is open. */
+  left: 38%;
+  bottom: 16px;
+  transform: translateX(-50%);
+  z-index: 900;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  transition: left 0.2s;
+}
+body.dashboards-open .timeline-pill-wrap { left: 32%; }
+
+.timeline-pill-label {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #ffffff;
+  background: rgba(15, 23, 42, 0.55);
+  padding: 2px 10px;
+  border-radius: 999px;
+}
+
+.timeline-pill {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 18px;
+  border-radius: 999px;
+  min-width: 420px;
+}
+
+.timeline-pill input[type="range"] {
+  flex: 1;
+  accent-color: #1572a6;
+}
+
+.timeline-pill #year-label {
+  min-width: 3.25rem;
+  flex-shrink: 0;
+  text-align: right;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  font-size: 13px;
+}
+
+.year-step-btn {
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  padding: 0;
+  border: 1px solid #cbd5e1;
+  border-radius: 50%;
+  background: #f1f5f9;
+  color: #334155;
+  font-size: 10px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s;
+}
+.year-step-btn:hover { background: #e2e8f0; }
+.year-step-btn:active { background: #cbd5e1; }
+
+/* ── Validation tab: Average / By-year toggle + inline timeline ──── */
+.validation-chart-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 4px;
+}
+
+.validation-view-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.validation-mode-toggle {
+  display: flex;
+  gap: 4px;
+  background: #eef1f5;
+  border-radius: 999px;
+  padding: 3px;
+}
+
+.validation-mode-btn {
+  border: none;
+  background: transparent;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #475569;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+.validation-mode-btn.active {
+  background: #ffffff;
+  color: #0f172a;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.12);
+}
+.validation-mode-btn:hover:not(.active) { color: #1e293b; }
+.validation-mode-btn:disabled {
+  color: #cbd5e1;
+  cursor: not-allowed;
+}
+.validation-mode-btn:disabled:hover { color: #cbd5e1; }
+
+.validation-timeline-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  margin: 14px 0 18px;
+}
+.validation-timeline-wrap[hidden] {
+  display: none;
+}
+.validation-timeline-wrap .timeline-pill {
+  min-width: 320px;
+}
+.timeline-pill #validation-year-label {
+  min-width: 3.25rem;
+  flex-shrink: 0;
+  text-align: right;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  font-size: 13px;
+}
+
+.validation-year-note {
+  font-size: 12px;
+  color: #64748b;
+  margin: 2px 0 0;
+}
+
+.year-branding {
+  padding: 5px 12px;
+  border-radius: 999px;
+  color: #334155;
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* ── Bottom-edge LEI credit — lives in the bottom-left toolbar row,
+ * not bottom-right, since that corner is already the on-map legend/
+ * opacity/zoom cluster (see .map-legend comment above). ──────────── */
+.bottom-attribution .year-branding {
+  background: var(--card-bg);
+  box-shadow: var(--card-shadow);
+  margin: 0;
+}
+
+/* Leaflet's own attribution control — restyle to match the floating aesthetic */
+.leaflet-control-attribution {
+  border-radius: 999px !important;
+  box-shadow: var(--card-shadow);
+  font-size: 10px !important;
+  padding: 3px 10px !important;
+}
+
+/* Leaflet's bottom-right corner (zoom + attribution) — true corner by
+ * default, shifted clear of the Dashboards panel (right:16 to right:476)
+ * only while it's open. */
+.leaflet-bottom.leaflet-right {
+  right: 10px !important;
+  transition: right 0.2s;
+}
+/* 32px = the sidebar's own 16px right offset + a 16px gap clear of it --
+   see the .map-legend rule above for the same reasoning. */
+body.dashboards-open .leaflet-bottom.leaflet-right {
+  right: calc(var(--dashboards-panel-width, 460px) + 32px) !important;
+}
+
+.leaflet-control-zoom {
+  border: none !important;
+  box-shadow: var(--card-shadow) !important;
+  margin-bottom: 6px !important;
+}
+.leaflet-control-zoom a {
+  border-radius: 8px !important;
+}
+
+/* "Recenter on Lithuania" control — same card look, sits above the zoom buttons */
+.leaflet-control-recenter {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  background: var(--card-bg);
+  border-radius: 8px !important;
+  box-shadow: var(--card-shadow);
+  color: #475569;
+  margin-bottom: 6px;
+}
+.leaflet-control-recenter:hover { background: #f1f5f9; color: #1572a6; }
+
+/* Leaflet scale control (bottom-left) restyled to match bottom-left toolbar row */
+.leaflet-control-scale {
+  margin-bottom: 60px !important;
+  margin-left: 8px !important;
+}
+.leaflet-control-scale-line {
+  background: rgba(255,255,255,0.9) !important;
+  border-color: #64748b !important;
+  border-radius: 4px;
+  padding: 1px 6px !important;
+}
+
+/* ── Map options controls (inside the Map settings floating panel) ── */
+.map-opts { display: flex; flex-direction: column; gap: 4px; }
+
+.map-opts-section-label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #64748b;
+  margin: 6px 0 2px 0;
+}
+.map-opts-section-label:first-child { margin-top: 0; }
+
+.map-opts-radios { display: flex; flex-direction: column; gap: 1px; }
+
+.map-opt-row {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 8px;
+  padding: 4px 6px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+  color: #123047;
+  user-select: none;
+  min-height: unset;
+}
+.map-opt-row:hover { background: #f1f5f9; }
+.map-opt-row input { cursor: pointer; accent-color: #1572a6; flex-shrink: 0; margin: 0; }
+
+.map-opts-sep { border: none; border-top: 1px solid #e2e8f0; margin: 6px 0 2px 0; }
+
+/* ── Find-location search (place search + coordinate jump) ───── */
+.location-search { position: relative; }
+
+.location-search-row {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+
+.location-coord-row input {
+  min-width: 0;
+  flex: 1 1 0;
+}
+
+.location-search-row input,
+.location-search-row select {
+  flex: 1 1 auto;
+  min-width: 0;
+  padding: 5px 8px;
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  font-size: 12px;
+  outline: none;
+}
+.location-search-row input:focus,
+.location-search-row select:focus { border-color: #1572a6; }
+
+.location-search-btn {
+  flex: 0 0 auto;
+  padding: 5px 12px;
+  border: none;
+  border-radius: 4px;
+  background: #1572a6;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.location-search-btn:hover { background: #115a82; }
+.location-search-btn:disabled { background: #94a3b8; cursor: default; }
+
+.place-search-results {
+  position: absolute;
+  z-index: 5;
+  left: 0;
+  right: 0;
+  background: #fff;
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  max-height: 180px;
+  overflow-y: auto;
+  margin-top: -3px;
+}
+
+.place-search-result-item {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 6px 8px;
+  border: none;
+  background: none;
+  border-bottom: 1px solid #eef2f6;
+  font-size: 12px;
+  color: #123047;
+  cursor: pointer;
+}
+.place-search-result-item:last-child { border-bottom: none; }
+.place-search-result-item:hover { background: #f1f5f9; }
+
+.location-search-status {
+  font-size: 11px;
+  color: #64748b;
+  margin: 2px 0 6px 0;
+}
+.location-search-status.is-error { color: #b91c1c; }
+
+.location-clear-btn {
+  padding: 4px 8px;
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  background: #fff;
+  color: #475569;
+  font-size: 11px;
+  cursor: pointer;
+  margin-bottom: 4px;
+}
+.location-clear-btn:hover { background: #f1f5f9; }
+
+/* ── Basin label visibility toggle ───────────────────────────── */
+.hide-basin-labels .basin-label { display: none !important; }
+
+/* ── Basin labels on satellite base map ──────────────────────── */
+.satellite-basemap .basin-label {
+  color: #ffffff !important;
+  background: rgba(0, 0, 0, 0.55) !important;
+  border-color: rgba(255, 255, 255, 0.3) !important;
+  text-shadow: none !important;
+}
+
+/* ── Dashboards panel (right side) + cards ────────────────────── */
+.dashboards-toggle-btn {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 1000;
+}
+.dashboards-toggle-btn[aria-expanded="true"] { display: none; }
+
+.dashboards-panel {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  bottom: 16px;
+  z-index: 950;
+  width: var(--dashboards-panel-width, min(460px, calc(100vw - 32px)));
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+/* Thin drag strip along the panel's left edge (sits just inside the
+   border, not protruding past it -- overflow:hidden above would clip
+   anything that did). Widening the panel means dragging LEFT, since it's
+   anchored to the right edge of the screen. */
+.dashboards-panel-resize-handle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 100%;
+  z-index: 10;
+  cursor: ew-resize;
+  touch-action: none;
+  background: transparent;
+}
+.dashboards-panel-resize-handle:hover,
+.dashboards-panel-resize-handle.is-dragging { background: rgba(15, 23, 42, 0.12); }
+@media (max-width: 1100px) {
+  .dashboards-panel-resize-handle { display: none; }
+}
+/* A fixed+z-index element creates its own stacking context — a child's z-index
+   (however high) never escapes above siblings of THIS element (like the expand
+   backdrop, which lives at <body> level) unless this ancestor's own z-index
+   is raised too. Without this, the expanded card's canvas visually renders
+   fine but the backdrop actually receives all pointer events (verified via
+   elementFromPoint) — the graph "looks expanded" but every interaction is dead. */
+.dashboards-panel.panel-has-expanded { z-index: 5001; }
+.dashboards-panel[hidden] { display: none; }
+
+.dashboards-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 18px;
+  border-bottom: 1px solid var(--border-subtle);
+  flex-shrink: 0;
+}
+.dashboards-panel-header h3 { margin: 0; font-size: 16px; font-weight: 700; }
+
+.dashboards-panel-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+/* Two [data-dashtab-panel] siblings share this class for consistent
+   padding/scroll behavior; the inactive one is toggled via [hidden]. Without
+   this, the unconditional `display: flex` above (equal specificity, but
+   author-origin) would beat the UA stylesheet's `[hidden]{display:none}`. */
+.dashboards-panel-body[hidden] { display: none; }
+/* Now that the hydrology modal's side tooltip panel is gone, its charts and
+   this sidebar's cards run full-width -- on very narrow viewports give
+   sections a touch more breathing room than the default 14px. */
+@media (max-width: 420px) {
+  .dashboards-panel-body { padding: 16px; }
+}
+
+.dash-card {
+  padding: 14px 14px 16px;
+  border: 1px solid var(--border-subtle);
+}
+
+.dash-card-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+.dash-card-header h4,
+.dash-card-header h3 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-primary);
+  flex: 1 1 auto;
+  min-width: 120px;
+}
+
+.dash-card-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.dash-card-expand-btn {
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border-subtle);
+  border-radius: 6px;
+  background: #fff;
+  color: #64748b;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.dash-card-expand-btn:hover { background: #f1f5f9; color: #1572a6; }
+
+/* Expanded card = full-viewport modal-style overlay (CSS-only, no DOM move —
+   keeps Chart.js canvases stable, since moving canvases between containers
+   frequently breaks their rendering context).
+   Must be a flex column so the chart area can actually flex-grow to fill the
+   available space — .dash-card itself is not a flex container, so these flex
+   rules only take effect once .is-expanded turns it into one. Canvas size is
+   left to Chart.js's own responsive/maintainAspectRatio:false sizing (driven
+   by its immediate container's measured box) rather than a hardcoded CSS
+   width/height: forcing a fixed canvas size with !important fights Chart.js's
+   internal size bookkeeping and desyncs mouse-hit coordinates from the
+   visually rendered pixels, which is what broke tooltips when expanded. */
+.dash-card.is-expanded {
+  position: fixed;
+  inset: 6vh 6vw;
+  z-index: 5000;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.35);
+}
+.dash-card.is-expanded > .dash-card-header,
+.dash-card.is-expanded > p,
+.dash-card.is-expanded > .trend-y-note,
+.dash-card.is-expanded > .chart-scope-note {
+  flex: 0 0 auto;
+}
+.dash-card-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 4999;
+  background: rgba(15, 23, 42, 0.45);
+}
+.dash-card-backdrop[hidden] { display: none; }
+
+.dash-card.is-expanded .trend-chart-wrap {
+  flex: 1 1 auto;
+  width: 100%;
+  height: auto;
+  min-height: 0;
+  max-height: none;
+}
+.dash-card.is-expanded .distribution-chart-wrapper {
+  flex: 1 1 auto;
+  height: auto;
+  min-height: 0;
+}
+.dash-card.is-expanded .distribution-chart-inner {
+  flex: 1 1 auto;
+  width: auto;
+  height: 100%;
+  max-width: 60%;
+}
+.dash-card.is-expanded .distribution-chart-inner canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.chart-block-trend {
+  display: flex;
+  flex-direction: column;
+  overflow: visible;
+}
+
+.trend-chart-wrap {
+  position: relative;
+  flex: 0 0 280px;
+  width: 100%;
+  height: 280px;
+  min-height: 280px;
+  max-height: 280px;
+  overflow: visible;
+}
+
+.trend-chart-wrap canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.distribution-chart-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  height: 200px;
+}
+
+.distribution-chart-inner {
+  flex: 0 0 200px;
+  height: 200px;
+  position: relative;
+}
+
+.distribution-chart-inner canvas {
+  width: 200px !important;
+  height: 200px !important;
+}
+
+.distribution-legend {
+  flex: 1;
+  align-self: center;
+  font-size: 12px;
+  line-height: 1.8;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-height: 200px;
+  gap: 2px 24px;
+}
+
+.distribution-legend .legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.distribution-legend .legend-swatch {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.basin-key-metrics {
+  margin-top: 0;
+  padding: 0;
+  border-radius: 0;
+  border: none;
+  background: transparent;
+}
+
+.basin-metrics-title {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.basin-metrics-grid-inner {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px 10px;
+}
+
+.metric-tile {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 8px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.metric-tile-wide {
+  grid-column: 1 / -1;
+}
+
+.metric-k {
+  font-size: 11px;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.metric-v {
+  font-size: 14px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.metric-small {
+  font-size: 12px;
+  font-weight: 400;
+  color: #475569;
+  line-height: 1.35;
+}
+
+.basin-metrics-placeholder {
+  margin: 0;
+  font-size: 12px;
+  color: #64748b;
+}
+
+.trend-y-note {
+  margin: 0 0 8px 0;
+  font-size: 11px;
+  color: #475569;
+  line-height: 1.45;
+}
+
+.insights-subh {
+  margin: 14px 0 6px 0;
+  font-size: 13px;
+  color: #0f172a;
+}
+
+.insights-note {
+  margin: 0 0 8px 0;
+  font-size: 12px;
+  color: #475569;
+}
+
+.change-detect-output {
+  font-size: 12px;
+}
+
+.change-detect-meta {
+  margin: 0 0 8px 0;
+  color: #475569;
+}
+
+.change-detect-table {
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 520px;
+}
+
+.change-detect-table th,
+.change-detect-table td {
+  border: 1px solid #e2e8f0;
+  padding: 6px 8px;
+  text-align: left;
+}
+
+.change-detect-table th {
+  background: #f1f5f9;
+  font-size: 11px;
+}
+
+.change-detect-table td.num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.leaflet-overlay-pane canvas {
+  image-rendering: auto;
+}
+
+/* Map loading spinner */
+.map-loading {
+  display: none;
+  position: absolute;
+  inset: 0;
+  z-index: 1300;
+  background: rgba(255, 255, 255, 0.45);
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+.map-loading.active {
+  display: flex;
+}
+.map-spinner {
+  width: 36px;
+  height: 36px;
+  border: 4px solid #e2e8f0;
+  border-top-color: #1572a6;
+  border-radius: 50%;
+  animation: spin 0.75s linear infinite;
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── Opacity card, bottom-right near legend (see .map-legend comment
+ * above re: clearing the Dashboards panel) ───────────────────────── */
+.map-opacity-control {
+  position: fixed;
+  right: 60px;
+  bottom: 16px;
+  z-index: 900;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 14px;
+  font-size: 11px;
+  color: #475569;
+  transition: right 0.2s;
+}
+body.dashboards-open .map-opacity-control { right: calc(var(--dashboards-panel-width, 460px) + 82px); }
+.map-opacity-control input[type="range"] {
+  width: 90px;
+  accent-color: #1572a6;
+}
+
+/* ── Bottom-left toolbar: exports + LEI credit ────────────────── */
+.bottom-left-toolbar {
+  position: fixed;
+  left: 16px;
+  bottom: 16px;
+  z-index: 900;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px;
+}
+
+.toolbar-icon-btn {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: #475569;
+  cursor: pointer;
+  position: relative;
+}
+.toolbar-icon-btn:hover { background: #f1f5f9; color: #1572a6; }
+
+.toolbar-icon-btn[data-tooltip]::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: #0f172a;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 500;
+  white-space: nowrap;
+  padding: 5px 9px;
+  border-radius: 6px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s;
+}
+.toolbar-icon-btn:hover[data-tooltip]::after { opacity: 1; }
+
+/* ── Dataset description (below dataset select) ───────────────────── */
+.dataset-description {
+  font-size: 11px;
+  color: #64748b;
+  line-height: 1.5;
+  margin: -6px 0 0;
+  padding: 6px 0 0;
+  border-top: 1px solid #f1f5f9;
+}
+
+/* ── About panel ─────────────────────────────────────────────────── */
+.about-panel {
+  gap: 18px;
+}
+
+.about-block { display: flex; flex-direction: column; gap: 6px; }
+
+.about-section-heading {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: #94a3b8;
+  margin: 0;
+}
+
+.about-dataset-card {
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 9px 11px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.about-dataset-card + .about-dataset-card { margin-top: 6px; }
+
+.about-dataset-card-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: #1572a6;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.about-dataset-badge {
+  font-size: 9px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: #fef3c7;
+  color: #92400e;
+  border: 1px solid #fde68a;
+  border-radius: 3px;
+  padding: 1px 5px;
+}
+
+.about-dataset-card-meta {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 2px 10px;
+  font-size: 10px;
+  color: #64748b;
+}
+.about-dataset-card-meta span:nth-child(odd) { font-weight: 600; color: #475569; }
+
+.about-dataset-card-desc {
+  font-size: 11px;
+  color: #334155;
+  line-height: 1.5;
+  margin: 2px 0 0;
+}
+
+.about-dataset-card-notes {
+  margin: 2px 0 0;
+  padding: 0 0 0 14px;
+  font-size: 10px;
+  color: #64748b;
+  line-height: 1.55;
+  list-style: disc;
+}
+.about-dataset-card-notes li + li { margin-top: 1px; }
+
+.about-limitations {
+  margin: 0;
+  padding: 0 0 0 14px;
+  font-size: 11px;
+  color: #334155;
+  line-height: 1.55;
+  list-style: disc;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.about-developer { font-size: 11px; color: #475569; line-height: 1.55; }
+.about-developer p { margin: 0; }
+.about-developer p + p { margin-top: 2px; }
+.about-developer strong { color: #1e293b; }
+.about-developer-note { margin-top: 6px !important; color: #64748b; }
+.about-attribution { font-size: 10px; color: #94a3b8; margin-top: 8px !important; }
+
+/* ── Toast notifications — top-center, clear of the timeline pill ─── */
+#toast-container {
+  position: fixed;
+  top: 76px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  pointer-events: none;
+}
+
+.toast {
+  padding: 9px 20px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #fff;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.22s, transform 0.22s;
+  max-width: 440px;
+  text-align: center;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+  white-space: pre-line;
+}
+.toast.toast-visible   { opacity: 1; transform: translateY(0); }
+.toast.toast-info      { background: #1572a6; }
+.toast.toast-warning   { background: #b45309; }
+.toast.toast-error     { background: #b91c1c; }
+
+/* ── Responsive: Dashboards panel becomes a slide-over drawer ─────── */
+@media (max-width: 1100px) {
+  .dashboards-panel {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: min(420px, 100vw);
+    border-radius: 0;
+  }
+  .floating-panel {
+    max-height: calc(100vh - 90px);
+  }
+  .timeline-pill { min-width: min(420px, 92vw); }
+
+  /* Dashboards is now a full-overlay drawer rather than a docked full-height
+     panel, so the on-map cluster no longer needs to dodge it — always the
+     natural corner position (left of zoom), regardless of .dashboards-open. */
+  .map-legend,
+  body.dashboards-open .map-legend { right: 60px; bottom: 66px; }
+  .map-opacity-control,
+  body.dashboards-open .map-opacity-control { right: 60px; bottom: 16px; }
+  .leaflet-bottom.leaflet-right,
+  body.dashboards-open .leaflet-bottom.leaflet-right { right: 10px !important; }
+  .timeline-pill-wrap,
+  body.dashboards-open .timeline-pill-wrap { left: 50%; }
+}
+
+@media (max-width: 640px) {
+  .floating-panel { left: 8px; right: 8px; width: auto; }
+  .floating-panel-wide { width: auto; }
+  .timeline-pill { min-width: min(340px, 94vw); padding: 8px 12px; gap: 6px; }
+  .bottom-attribution { display: none; }
+  .map-legend { width: 180px; }
+}
+
+/* ── Dashboards panel tabs (Charts / Hydrology) ───────────────────────
+   Small pill switcher at the top of the right-hand sidebar, same visual
+   language as the Validation page's sub-tabs. ────────────────────────── */
+.dashboards-tabs {
+  display: flex;
+  gap: 4px;
+  background: #eef1f5;
+  border-radius: 10px;
+  padding: 4px;
+  margin: 10px 16px 0;
+}
+.dashboards-tab {
+  flex: 1 1 auto;
+  border: none;
+  background: transparent;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #475569;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+.dashboards-tab.active { background: #fff; color: #0f172a; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.14); }
+.dashboards-tab:hover:not(.active) { color: #1e293b; }
+
+/* ── Hydrology sidebar tab: basin correlation + pinned station cards ─── */
+.hydro-pins-panel { padding-top: 12px; }
+
+.hydro-section-heading {
+  margin: 0 0 8px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #475569;
+}
+.hydro-section-sep { border: none; border-top: 1px solid #e2e8f0; margin: 18px 0; }
+
+.hydro-about-toggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border: none;
+  background: transparent;
+  padding: 4px 0 8px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #1572a6;
+  cursor: pointer;
+}
+.hydro-about-arrow { flex: 0 0 auto; transition: transform 0.15s; }
+.hydro-about-toggle.hydro-about-open .hydro-about-arrow { transform: rotate(90deg); }
+.hydro-about-content { font-size: 11.5px; color: #64748b; line-height: 1.55; margin: 0 0 12px; }
+.hydro-about-content p { margin: 0 0 8px; }
+.hydro-about-content p:last-child { margin-bottom: 0; }
+.hydro-about-content .hydro-chart-wrap { height: 150px; margin: 4px 0 6px; }
+.hydro-about-example-heading { font-weight: 600; color: #475569; }
+.hydro-about-example-caption { font-size: 10.5px; font-style: italic; }
+
+.hydro-basin-list { display: flex; flex-direction: column; gap: 10px; margin-bottom: 4px; }
+
+.hydro-focused-header { margin-bottom: 10px; }
+.hydro-focused-hint { font-size: 11px; color: #94a3b8; margin: 3px 0 0; line-height: 1.4; }
+.hydro-multi-basin-count { font-size: 12px; color: #64748b; }
+
+.hydro-multi-basin-group { margin-bottom: 4px; }
+.hydro-multi-basin-group .hydro-basin-list,
+.hydro-multi-basin-group .hydro-basin-card { margin-bottom: 8px; }
+.hydro-multi-basin-label {
+  margin: 4px 0 8px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #0f172a;
+}
+.hydro-pooled-card { border-color: #7dd3fc; background: #f0f9ff; }
+
+.hydro-table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 8px 0; border-radius: 6px; border: 1px solid #e2e8f0; }
+.hydro-stats-table { width: 100%; border-collapse: collapse; font-size: 10.5px; min-width: 340px; }
+.hydro-stats-table th, .hydro-stats-table td { padding: 4px 6px; text-align: left; border-bottom: 1px solid #e2e8f0; }
+.hydro-stats-table th { background: #f8fafc; font-weight: 600; color: #475569; white-space: nowrap; }
+/* Group-header row (Spearman/Pearson) sits a shade darker than the ρ/p/q
+   sub-header row directly below it, so the two-row grouping reads at a
+   glance instead of looking like one flat 8-column header. */
+.hydro-stats-table th.hydro-stats-group-head { background: #f1f5f9; text-align: center; border-bottom: 1px solid #e2e8f0; }
+.hydro-stats-table td.num, .hydro-stats-table th.num { text-align: right; font-variant-numeric: tabular-nums; }
+.hydro-stats-table tbody tr:last-child td { border-bottom: none; }
+.hydro-stats-table th:focus-visible, .hydro-stats-details summary:focus-visible { outline: 2px solid #1572a6; outline-offset: 2px; }
+
+.visually-hidden {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+.hydro-stats-na { color: #94a3b8; font-style: italic; }
+
+.hydro-period-avg-note { font-size: 10.5px; color: #94a3b8; line-height: 1.5; margin: 6px 0 0; }
+
+/* Plain-language per-class verdict list -- no numbers, just "correlates
+   with"/"likely correlates with"/"unlikely correlates with", one line per
+   land-cover class, sitting right under the r/p/q table (and again under
+   the selected-year chart). */
+.hydro-verdict-list { list-style: none; margin: 8px 0 0; padding: 0; display: flex; flex-direction: column; gap: 4px; }
+.hydro-verdict-list li { font-size: 11px; color: #334155; line-height: 1.45; padding-left: 12px; position: relative; }
+.hydro-verdict-list li::before { content: "•"; position: absolute; left: 0; color: #94a3b8; }
+.hydro-verdict-list li strong { color: #1e293b; }
+/* Classes that actually correlate are sorted first and set apart as a
+   filled callout, not just another bullet, since they're the results worth
+   a reader's attention; non-correlating classes stay a plain muted line
+   with no bullet dot of their own (the callout box already reads as
+   visually "louder" without one). */
+.hydro-verdict-list li.hydro-verdict-yes {
+  padding: 4px 8px 4px 10px;
+  background: #ecfdf5;
+  border-left: 3px solid #16a34a;
+  border-radius: 4px;
+  color: #14532d;
+}
+.hydro-verdict-list li.hydro-verdict-yes::before { display: none; }
+.hydro-verdict-list li.hydro-verdict-yes strong { color: #14532d; }
+.hydro-verdict-list li.hydro-verdict-no { color: #94a3b8; }
+
+/* One-sentence takeaway callout at the top of each basin card -- plain
+   language, no ρ/q/σ, reusing the existing "info" blue already used
+   elsewhere in this panel (about-toggle text, popup hover states). */
+.hydro-takeaway {
+  background: #f0f7fb;
+  border-left: 3px solid #1572a6;
+  border-radius: 4px;
+  padding: 6px 10px;
+  font-size: 12px;
+  color: #1e293b;
+  line-height: 1.5;
+  margin: 4px 0 10px;
+}
+
+/* Per-class verdict cards -- replaces the old bullet list. CLEAR uses the
+   same green already used for "yes" verdicts elsewhere; POSSIBLE reuses the
+   existing amber caution color (same as the transboundary-catchment
+   badge); Water/Wetland's non-causal override card and the "no link" line
+   both stay neutral slate/gray -- no new hues introduced anywhere here. */
+.hydro-verdict-cards { display: flex; flex-direction: column; gap: 6px; margin: 8px 0 0; }
+/* Codified 3-tier verdict-card system, shared by every card that renders a
+   CLEAR/POSSIBLE/neutral verdict (per-basin AND pooled/combined) -- one set
+   of classes instead of ad-hoc per-caller styling. */
+.hydro-verdict-card { border-radius: 6px; padding: 10px 14px; font-size: 13.5px; color: #1e293b; line-height: 1.45; margin: 8px 0; }
+.hydro-verdict-card-head { color: #1e293b; }
+.hydro-verdict-card-sub { color: #64748b; font-size: 10.5px; margin-top: 2px; }
+.hydro-verdict-card-effect { color: #334155; font-size: 10.5px; margin-top: 4px; }
+.verdict-clear { background: #f0fdf4; border-left: 3px solid #16a34a; }
+.verdict-clear .hydro-verdict-card-head { color: #14532d; }
+.verdict-possible { background: #fffbeb; border-left: 3px solid #f59e0b; }
+.verdict-possible .hydro-verdict-card-head { color: #7c4a03; }
+.verdict-info { background: #f8fafc; border-left: 3px solid #94a3b8; }
+.verdict-info .hydro-verdict-card-head { color: #475569; }
+.hydro-verdict-none { background: transparent; padding: 4px 2px; color: #94a3b8; font-style: italic; }
+
+/* Same three tiers, applied to a <li> inside .hydro-verdict-list (the
+   selected-year trailing class line, Section D) -- override the list's own
+   bullet+padding so it reads as a small card, not a bulleted line. */
+.hydro-verdict-list li.verdict-info,
+.hydro-verdict-list li.verdict-clear,
+.hydro-verdict-list li.verdict-possible {
+  padding: 4px 8px 4px 10px;
+  border-radius: 4px;
+  color: #1e293b;
+}
+.hydro-verdict-list li.verdict-info::before,
+.hydro-verdict-list li.verdict-clear::before,
+.hydro-verdict-list li.verdict-possible::before { display: none; }
+
+/* Small confidence pill used inside CLEAR/POSSIBLE verdict cards. */
+.hydro-chip {
+  display: inline-block;
+  font-size: 10.5px;
+  color: #475569;
+  background: #f1f5f9;
+  padding: 2px 8px;
+  border-radius: 999px;
+  margin-top: 4px;
+}
+
+/* Caption line under a chart explaining how to read/interact with it. */
+.hydro-chart-caption { font-size: 10.5px; color: #94a3b8; margin: 4px 0 0; line-height: 1.4; }
+
+/* Data-source footnote at the bottom of a card/modal. */
+.hydro-source-footnote { font-size: 10.5px; color: #94a3b8; margin: 8px 0 0; font-style: italic; }
+
+/* <details> wrapper for the r/p/q stats table -- collapsed by default,
+   summary styled as a subtle link-button. */
+.hydro-stats-details { margin: 10px 0 0; }
+.hydro-stats-details summary {
+  cursor: pointer;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #1572a6;
+  padding: 6px 0;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  list-style: none;
+}
+.hydro-stats-details summary::-webkit-details-marker { display: none; }
+.hydro-stats-details summary::before {
+  content: "▸";
+  display: inline-block;
+  font-size: 10px;
+  color: #94a3b8;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .hydro-stats-details summary::before { transition: transform 120ms; }
+}
+.hydro-stats-details[open] summary::before { transform: rotate(90deg); }
+.hydro-stats-details[open] summary { margin-bottom: 2px; }
+.hydro-pooled-method-detail { font-size: 11px; color: #64748b; line-height: 1.5; margin: 10px 0 0; }
+.hydro-pooled-method-detail strong { color: #334155; }
+
+/* "How to read this" -- three short bullets, readable body text (the old
+   always-visible paragraph this replaces was 10.5px/#94a3b8, too faint for
+   comfortable reading). */
+.hydro-reading-guide-list { list-style: disc; margin: 4px 0 6px 18px; padding: 0; font-size: 13px; color: #334155; line-height: 1.55; }
+.hydro-reading-guide-list li { margin-bottom: 4px; }
+.hydro-reading-guide-list li:last-child { margin-bottom: 0; }
+
+/* Year ◀ ▶ stepper buttons next to the modal's year <select>. */
+.hydro-year-stepper-btn {
+  border: 1px solid #cbd5e1;
+  background: #fff;
+  color: #1572a6;
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 5px;
+  cursor: pointer;
+  min-width: 44px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.hydro-year-stepper-btn:hover:not(:disabled) { background: #f0f7fb; }
+.hydro-year-stepper-btn:disabled { opacity: 0.35; cursor: default; }
+
+/* Modal-only year picker for the selected-year chart. */
+.hydro-modal-year-header { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; flex-wrap: wrap; margin-top: 12px; }
+.hydro-modal-year-header .hydro-chart-label { margin-top: 0; }
+.hydro-modal-year-picker { display: flex; align-items: center; gap: 5px; font-size: 11px; font-weight: 600; color: #475569; }
+.hydro-modal-year-picker select {
+  font-size: 11.5px;
+  padding: 3px 6px;
+  border: 1px solid #cbd5e1;
+  border-radius: 5px;
+  background: #fff;
+  color: #1e293b;
+  cursor: pointer;
+}
+
+.hydro-chart-label {
+  margin: 10px 0 4px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #64748b;
+}
+.hydro-basin-card > .hydro-chart-label:first-of-type { margin-top: 8px; }
+
+.hydro-basin-card {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .hydro-basin-card { transition: background 0.3s, box-shadow 0.3s; }
+}
+.hydro-basin-card-flash { background: #fef3c7; box-shadow: 0 0 0 2px #f59e0b; }
+@media (prefers-reduced-motion: reduce) {
+  /* No animated highlight -- an instant, static outline instead so the
+     "which card did I just click" cue still exists without relying on
+     motion. */
+  .hydro-basin-card-flash { background: #f8fafc; box-shadow: none; outline: 2px solid #f59e0b; outline-offset: 1px; }
+}
+.hydro-basin-card-title { font-size: 13px; font-weight: 700; color: #1e293b; }
+.hydro-basin-card-sub { font-size: 11px; color: #64748b; margin-top: 2px; }
+.hydro-basin-card-takeaway { font-size: 11.5px; color: #334155; line-height: 1.5; margin: 6px 0 0; }
+
+/* Compact/collapsed card (F2/F3, overview + multi-basin per-basin groups):
+   scannable header + a 2-line-clamped takeaway, no charts. The whole card
+   is the click/keyboard target that opens the full modal -- not just a
+   title button -- so cursor/hover/focus styling applies to the card
+   itself. */
+.hydro-basin-card-compact { cursor: pointer; }
+.hydro-basin-card-compact:hover { background: #f8fafc; }
+.hydro-basin-card-compact:focus-visible { outline: 2px solid #1572a6; outline-offset: 2px; }
+.hydro-basin-card-title-row { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+@media (prefers-reduced-motion: no-preference) {
+  .hydro-basin-card-compact .hydro-card-arrow { transition: transform 0.15s; }
+}
+.hydro-basin-card-compact:hover .hydro-card-arrow,
+.hydro-basin-card-compact:focus-visible .hydro-card-arrow { transform: rotate(90deg); }
+.hydro-card-takeaway {
+  font-size: 12.5px;
+  color: #475569;
+  margin-top: 6px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Per-card collapse/expand -- the title itself IS the toggle button, same
+   arrow-rotate language as "About this analysis". Collapsed, only the
+   button (title) plus whatever sits outside .hydro-card-body (station line,
+   caveat badge) remains visible. */
+.hydro-card-toggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+  border: none;
+  background: transparent;
+  padding: 2px 0;
+  margin: 0;
+  text-align: left;
+  cursor: pointer;
+  font: inherit;
+}
+.hydro-card-arrow { flex: 0 0 auto; color: #94a3b8; transition: transform 0.15s; }
+.hydro-card-toggle.hydro-card-open .hydro-card-arrow { transform: rotate(90deg); }
+.hydro-card-body { margin-top: 2px; }
+
+/* Shared chart-canvas wrapper for every hydrology line/bar chart (historical,
+   selected-year, pooled) -- gives Chart.js's responsive:true/maintainAspectRatio:false
+   pair a sized parent to fill, since the canvases themselves no longer carry
+   fixed width/height attributes. */
+.hydro-chart-wrap { position: relative; height: 170px; width: 100%; margin-top: 6px; }
+.hydro-pin-card .hydro-chart-wrap { height: 130px; margin-top: 0; }
+
+/* Small "expand into the big modal" button floated over the top-right
+   corner of any hydrology chart (historical, selected-year, pooled). */
+.hydro-chart-expand-btn {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  z-index: 2;
+  border: 1px solid #cbd5e1;
+  background: rgba(255, 255, 255, 0.9);
+  color: #1572a6;
+  font-size: 12px;
+  line-height: 1;
+  padding: 4px 6px;
+  border-radius: 6px;
+  cursor: pointer;
+  min-width: 28px;
+  min-height: 28px;
+}
+.hydro-chart-expand-btn:hover { background: #fff; }
+/* Padded (not scaled) hit area: the visible button stays its usual small
+   size, but an invisible ::before extends the actually-clickable region to
+   at least 40x40px (F4). A pseudo-element's painted area still hit-tests
+   to its host element, so this needs no extra JS. */
+.hydro-chart-expand-btn::before {
+  content: "";
+  position: absolute;
+  inset: -6px;
+}
+
+/* Loading skeleton -- 3 placeholder cards shown while the basin analysis
+   JSON is still being fetched. */
+.hydro-skeleton-card { display: flex; flex-direction: column; gap: 8px; }
+.hydro-skeleton-line { height: 10px; border-radius: 4px; background: #e2e8f0; }
+.hydro-skeleton-line-title { width: 55%; height: 13px; }
+.hydro-skeleton-line-sub { width: 35%; }
+.hydro-skeleton-block { height: 90px; border-radius: 8px; background: #e2e8f0; margin-top: 4px; }
+@media (prefers-reduced-motion: no-preference) {
+  .hydro-skeleton-line, .hydro-skeleton-block { animation: hydro-skeleton-pulse 1.4s ease-in-out infinite; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hydro-skeleton-line, .hydro-skeleton-block { opacity: 0.75; }
+}
+@keyframes hydro-skeleton-pulse {
+  0%, 100% { opacity: 0.55; }
+  50% { opacity: 0.9; }
+}
+
+/* Error state (basin data failed to load) + Retry. */
+.hydro-error-card {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 10px;
+  padding: 14px 16px;
+  color: #7f1d1d; /* ~8:1 contrast on #fef2f2 */
+  font-size: 12px;
+  text-align: center;
+}
+.hydro-error-card p { margin: 0 0 10px; }
+.hydro-error-retry-btn {
+  border: 1px solid #dc2626;
+  background: #fff;
+  color: #b91c1c;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  min-width: 44px;
+  min-height: 44px;
+}
+.hydro-error-retry-btn:hover { background: #fef2f2; }
+
+/* Small dismissible inline notices (date-range clipped, pin storage
+   unavailable, pin cap hit). */
+.hydro-notice-area:empty { display: none; }
+.hydro-notice {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+  color: #7c4a03; /* ~6.7:1 contrast on #fffbeb */
+  font-size: 11.5px;
+  line-height: 1.4;
+  padding: 6px 8px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+}
+.hydro-notice-close {
+  flex: 0 0 auto;
+  border: none;
+  background: transparent;
+  color: inherit;
+  font-size: 14px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 6px 8px;
+  min-width: 28px;
+  min-height: 28px;
+}
+.hydro-popup-notice-area:empty { display: none; }
+.hydro-popup-notice-area .hydro-notice { font-size: 10.5px; margin-bottom: 4px; }
+
+/* Transboundary-catchment caveat badge on a river-unit card. */
+.hydro-caveat-badge { display: flex; flex-direction: column; gap: 3px; margin: 4px 0; }
+.hydro-caveat-pill {
+  display: inline-flex;
+  align-self: flex-start;
+  background: #fffbeb;
+  border: 1px solid #f59e0b;
+  color: #7c4a03; /* ~6.7:1 contrast on #fffbeb, matches .hydro-notice */
+  font-size: 10.5px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 999px;
+}
+.hydro-caveat-badge-text { font-size: 10.5px; color: #92400e; line-height: 1.4; }
+
+.hydro-pins-intro { font-size: 12px; color: #64748b; line-height: 1.5; margin: 0 0 12px; }
+.hydro-pins-empty { font-size: 12px; color: #94a3b8; font-style: italic; margin: 0; }
+
+.hydro-pins-list { display: flex; flex-direction: column; gap: 10px; }
+
+.hydro-pin-card {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+.hydro-pin-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+.hydro-pin-card-title { font-size: 13px; font-weight: 700; color: #1e293b; }
+.hydro-pin-card-sub { font-size: 11px; color: #64748b; margin-top: 2px; }
+.hydro-pin-card-actions { flex: 0 0 auto; display: flex; align-items: center; gap: 2px; }
+.hydro-pin-expand-btn,
+.hydro-pin-remove-btn {
+  border: none;
+  background: transparent;
+  line-height: 1;
+  cursor: pointer;
+  padding: 3px 5px;
+  border-radius: 4px;
+  min-width: 44px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.hydro-pin-expand-btn { color: #1572a6; font-size: 13px; }
+.hydro-pin-expand-btn:hover { background: #f0f7fb; }
+.hydro-pin-remove-btn { color: #94a3b8; font-size: 16px; }
+.hydro-pin-remove-btn:hover { color: #dc2626; background: #fef2f2; }
+.hydro-pin-kpis {
+  display: flex;
+  gap: 12px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #334155;
+  margin-bottom: 6px;
+}
+
+/* Hydrological station map popup — a date-range hourly readout, with
+   Expand (bigger modal view) and + Sidebar (pin into the Hydrology tab
+   above) actions once a range has loaded. */
+.hydro-popup { font-size: 12px; }
+.hydro-popup-title { font-weight: 700; font-size: 13px; color: #1e293b; }
+.hydro-popup-subtitle { color: #64748b; margin-bottom: 6px; }
+.hydro-popup-controls { margin: 6px 0; display: flex; flex-direction: column; gap: 5px; }
+.hydro-popup-daterow, .hydro-popup-actionrow {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+.hydro-popup-date-label { color: #64748b; font-size: 10.5px; font-weight: 600; flex: 0 0 auto; }
+.hydro-popup-date-sep { color: #94a3b8; font-size: 11px; }
+.hydro-popup-from, .hydro-popup-to {
+  flex: 1 1 auto;
+  min-width: 0;
+  padding: 4px 6px;
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  font-size: 11px;
+}
+.hydro-popup-load-btn,
+.hydro-popup-expand-btn,
+.hydro-popup-pin-btn {
+  flex: 1 1 0;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  min-width: 44px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.hydro-popup-load-btn { flex: 0 0 auto; border: none; background: #1572a6; color: #fff; }
+.hydro-popup-load-btn:hover { background: #115a82; }
+.hydro-popup-expand-btn, .hydro-popup-pin-btn { border: 1px solid #cbd5e1; background: #fff; color: #1572a6; }
+.hydro-popup-expand-btn:hover:not(:disabled), .hydro-popup-pin-btn:hover:not(:disabled) { background: #f0f7fb; }
+.hydro-popup-expand-btn:disabled, .hydro-popup-pin-btn:disabled { opacity: 0.4; cursor: default; }
+.hydro-popup-result { min-height: 20px; }
+.hydro-popup-status { margin: 4px 0 0; color: #475569; }
+.hydro-popup-chart-wrap { position: relative; height: 180px; width: 300px; margin-top: 4px; }
+
+/* Expand-graph modal — opened from a popup's Expand button, reusing the
+   same already-fetched observations at a much larger, responsive size. */
+.hydro-expand-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 3000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(15, 23, 42, 0.5);
+}
+.hydro-expand-modal[hidden] { display: none; }
+.hydro-expand-modal-inner {
+  background: #fff;
+  border-radius: 12px;
+  padding: 0 22px 22px;
+  /* calc(), not a bare vw/vh percentage: on a browser window close to the
+     modal's own size, "95vw"/"90vh" leave almost no visible backdrop --
+     the modal reads as a broken full-bleed page instead of a floating
+     dialog. calc() guarantees a real minimum margin (24px) at any window
+     size, small or large, while still capping the modal at a sane size
+     (1000px / two side-by-side charts want more room than the old 920px)
+     on big screens. */
+  width: min(1000px, calc(100vw - 48px));
+  max-height: calc(100vh - 48px);
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 20px 60px rgba(15, 23, 42, 0.35);
+}
+/* Sticky so the title/subtitle/caveat badge stay visible while a long card's
+   body scrolls underneath -- own background + bottom border since it now
+   sits flush with the rounded top corners instead of sharing the inner
+   box's uniform padding. */
+.hydro-expand-modal-header {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  background: #fff;
+  padding: 14px 20px 10px;
+  margin: 0 -22px 12px;
+  border-bottom: 1px solid #eef2f6;
+  border-radius: 12px 12px 0 0;
+  flex: 0 0 auto;
+}
+.hydro-modal-header-text { min-width: 0; }
+.hydro-expand-modal-header h3 { margin: 0; font-size: 18px; font-weight: 700; color: #0f172a; }
+.hydro-modal-sub { font-size: 13px; color: #64748b; margin-top: 2px; }
+.hydro-modal-sub[hidden] { display: none; }
+#hydro-expand-modal-badge:empty { display: none; }
+#hydro-expand-modal-badge .hydro-caveat-badge { margin: 6px 0 0; }
+.hydro-modal-close {
+  flex: 0 0 auto;
+  min-width: 44px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #64748b;
+}
+.hydro-modal-close:hover { color: #0f172a; }
+
+/* The modal now shows a WHOLE card's content (every chart, table, and
+   paragraph), not one isolated chart -- this can run long, so the body
+   scrolls independently while the header stays put. */
+.hydro-expand-modal-body { flex: 1 1 auto; min-height: 0; overflow-y: auto; padding-right: 4px; }
+.hydro-expand-modal-body .hydro-chart-label:first-child { margin-top: 0; }
+
+/* Each chart sits next to its OWN plain-text tooltip panel instead of
+   Chart.js drawing a floating box on top of the (now much bigger, but
+   still not infinite) chart area. Stacks to a column on narrow modals. */
+.hydro-modal-chart-row {
+  display: flex;
+  gap: 12px;
+  margin-top: 6px;
+  align-items: stretch;
+}
+@media (max-width: 640px) {
+  .hydro-modal-chart-row { flex-direction: column; }
+}
+/* Two equal-width chart columns (land cover / discharge) for the simple
+   side-by-side view used while SHOW_HYDRO_CORRELATION is off (app.js,
+   buildRawCompareHtml) -- scoped to its own class rather than a bare
+   ".hydro-modal-chart-row > div" selector so it doesn't touch the other
+   .hydro-modal-chart-row usage (chart + tooltip panel, which needs its own
+   60%/220px split via .hydro-modal-chart-wrap/.hydro-modal-tooltip-panel). */
+.hydro-raw-compare-col { flex: 1 1 0; min-width: 0; }
+/* Per-chart expand toggle (app.js, wireRawCompareExpandToggle): hide the
+   sibling column so the focused one fills the row. */
+.hydro-raw-compare-row--focus-lc [data-raw-compare-col="hy"],
+.hydro-raw-compare-row--focus-hy [data-raw-compare-col="lc"] { display: none; }
+/* flex:1 1 60% only matters inside a .hydro-modal-chart-row (the separate
+   station-popup expand modal, which still uses that side-by-side layout);
+   width:100% makes it fill its parent when used standalone (the hydrology
+   basin-card modal, which dropped the side tooltip panel -- see
+   openHydroUnitModal/openHydroPooledModal). */
+.hydro-modal-chart-wrap { position: relative; flex: 1 1 60%; width: 100%; min-width: 0; height: min(42vh, 360px); margin-top: 6px; }
+.hydro-modal-tooltip-panel {
+  flex: 1 1 220px;
+  min-width: 180px;
+  max-width: 280px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 11.5px;
+  line-height: 1.5;
+  color: #334155;
+  overflow-y: auto;
+}
+@media (max-width: 640px) {
+  .hydro-modal-tooltip-panel { max-width: none; }
+}
+.hydro-modal-tooltip-hint { margin: 0; color: #94a3b8; font-style: italic; }
+.hydro-modal-tooltip-title { font-weight: 700; color: #0f172a; margin-bottom: 4px; }
+.hydro-modal-tooltip-line { display: flex; align-items: center; gap: 6px; margin: 2px 0; }
+.hydro-modal-tooltip-swatch { flex: 0 0 auto; width: 9px; height: 9px; border-radius: 2px; }

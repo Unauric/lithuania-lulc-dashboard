@@ -1,0 +1,81 @@
+basin,river,station_code,station_name,hydro_metric,class,n_years,years_used,pearson_r,pearson_p,pearson_q,spearman_r,spearman_p,spearman_q
+Merkys,Merkys,puvociu-vms,Puvočių VMS,discharge,Water,8,2017;2018;2019;2020;2021;2022;2023;2024,0.343,0.4133,0.5786,0.19,0.6646,0.752
+Merkys,Merkys,puvociu-vms,Puvočių VMS,discharge,Wetland,8,2017;2018;2019;2020;2021;2022;2023;2024,0.533,0.1714,0.4311,0.595,0.1323,0.6615
+Merkys,Merkys,puvociu-vms,Puvočių VMS,discharge,Urban,8,2017;2018;2019;2020;2021;2022;2023;2024,-0.561,0.1724,0.4311,0.143,0.752,0.752
+Merkys,Merkys,puvociu-vms,Puvočių VMS,discharge,Agriculture,8,2017;2018;2019;2020;2021;2022;2023;2024,-0.24,0.5786,0.5786,-0.31,0.4618,0.752
+Merkys,Merkys,puvociu-vms,Puvočių VMS,discharge,Forest,8,2017;2018;2019;2020;2021;2022;2023;2024,0.303,0.4749,0.5786,0.31,0.4618,0.752
+Šešupė,Šešupė,kudirkos-naumiescio-vms,Kudirkos Naumiesčio VMS,discharge,Water,7,2017;2018;2019;2020;2021;2022;2023,-0.079,0.8556,0.8556,0.071,0.9063,1.0
+Šešupė,Šešupė,kudirkos-naumiescio-vms,Kudirkos Naumiesčio VMS,discharge,Wetland,7,2017;2018;2019;2020;2021;2022;2023,0.735,0.0573,0.2867,0.821,0.0341,0.1706
+Šešupė,Šešupė,kudirkos-naumiescio-vms,Kudirkos Naumiesčio VMS,discharge,Urban,7,2017;2018;2019;2020;2021;2022;2023,-0.589,0.1617,0.4043,-0.25,0.5948,1.0
+Šešupė,Šešupė,kudirkos-naumiescio-vms,Kudirkos Naumiesčio VMS,discharge,Agriculture,7,2017;2018;2019;2020;2021;2022;2023,-0.347,0.4724,0.5905,-0.143,0.7825,1.0
+Šešupė,Šešupė,kudirkos-naumiescio-vms,Kudirkos Naumiesčio VMS,discharge,Forest,7,2017;2018;2019;2020;2021;2022;2023,0.388,0.4067,0.5905,0.0,1.0,1.0
+Neris,Neris,jonavos-vms,Jonavos VMS,discharge,Water,8,2017;2018;2019;2020;2021;2022;2023;2024,0.635,0.0943,0.19,0.095,0.8401,0.9349
+Neris,Neris,jonavos-vms,Jonavos VMS,discharge,Wetland,8,2017;2018;2019;2020;2021;2022;2023;2024,-0.0,0.9992,0.9992,0.048,0.9349,0.9349
+Neris,Neris,jonavos-vms,Jonavos VMS,discharge,Urban,8,2017;2018;2019;2020;2021;2022;2023;2024,-0.351,0.3937,0.4922,0.143,0.752,0.9349
+Neris,Neris,jonavos-vms,Jonavos VMS,discharge,Agriculture,8,2017;2018;2019;2020;2021;2022;2023;2024,-0.599,0.114,0.19,-0.833,0.0154,0.0698
+Neris,Neris,jonavos-vms,Jonavos VMS,discharge,Forest,8,2017;2018;2019;2020;2021;2022;2023;2024,0.806,0.0152,0.076,0.786,0.0279,0.0698
+Minija,Minija,lankupiu-minija-vms,Lankupių VMS,discharge,Water,8,2017;2018;2019;2020;2021;2022;2023;2024,-0.535,0.1603,0.2672,-0.119,0.793,0.882
+Minija,Minija,lankupiu-minija-vms,Lankupių VMS,discharge,Wetland,8,2017;2018;2019;2020;2021;2022;2023;2024,0.687,0.0399,0.1994,0.714,0.0576,0.2875
+Minija,Minija,lankupiu-minija-vms,Lankupių VMS,discharge,Urban,8,2017;2018;2019;2020;2021;2022;2023;2024,-0.713,0.1148,0.2672,0.071,0.882,0.882
+Minija,Minija,lankupiu-minija-vms,Lankupių VMS,discharge,Agriculture,8,2017;2018;2019;2020;2021;2022;2023;2024,0.358,0.3882,0.4853,0.619,0.115,0.2875
+Minija,Minija,lankupiu-minija-vms,Lankupių VMS,discharge,Forest,8,2017;2018;2019;2020;2021;2022;2023;2024,-0.108,0.8469,0.8469,-0.524,0.1966,0.3277
+Šventoji,Šventoji,ukmerges-vms,Ukmergės VMS,discharge,Water,7,2017;2018;2019;2020;2021;2022;2023,0.555,0.2056,0.2569,0.536,0.2357,0.3929
+Šventoji,Šventoji,ukmerges-vms,Ukmergės VMS,discharge,Wetland,7,2017;2018;2019;2020;2021;2022;2023,0.801,0.0442,0.0737,0.214,0.6615,0.8269
+Šventoji,Šventoji,ukmerges-vms,Ukmergės VMS,discharge,Urban,7,2017;2018;2019;2020;2021;2022;2023,-0.353,0.4319,0.4319,-0.107,0.8397,0.8397
+Šventoji,Šventoji,ukmerges-vms,Ukmergės VMS,discharge,Agriculture,7,2017;2018;2019;2020;2021;2022;2023,-0.803,0.0272,0.0737,-0.786,0.048,0.2202
+Šventoji,Šventoji,ukmerges-vms,Ukmergės VMS,discharge,Forest,7,2017;2018;2019;2020;2021;2022;2023,0.781,0.0349,0.0737,0.714,0.0881,0.2202
+Dubysa,Dubysa,padubysio-vms,Padubysio VMS,discharge,Water,8,2017;2018;2019;2020;2021;2022;2023;2024,0.115,0.7694,0.986,0.0,1.0,1.0
+Dubysa,Dubysa,padubysio-vms,Padubysio VMS,discharge,Wetland,8,2017;2018;2019;2020;2021;2022;2023;2024,0.585,0.146,0.7302,0.381,0.3599,0.9913
+Dubysa,Dubysa,padubysio-vms,Padubysio VMS,discharge,Urban,8,2017;2018;2019;2020;2021;2022;2023;2024,-0.008,0.986,0.986,-0.119,0.793,0.9913
+Dubysa,Dubysa,padubysio-vms,Padubysio VMS,discharge,Agriculture,8,2017;2018;2019;2020;2021;2022;2023;2024,0.053,0.9359,0.986,-0.214,0.6191,0.9913
+Dubysa,Dubysa,padubysio-vms,Padubysio VMS,discharge,Forest,8,2017;2018;2019;2020;2021;2022;2023;2024,-0.087,0.8613,0.986,0.286,0.5008,0.9913
+Jūra,Jūra,taurages-vms,Tauragės VMS,discharge,Water,8,2017;2018;2019;2020;2021;2022;2023;2024,-0.349,0.415,0.6916,-0.238,0.5821,0.793
+Jūra,Jūra,taurages-vms,Tauragės VMS,discharge,Wetland,8,2017;2018;2019;2020;2021;2022;2023;2024,0.724,0.0563,0.254,0.476,0.2431,0.793
+Jūra,Jūra,taurages-vms,Tauragės VMS,discharge,Urban,8,2017;2018;2019;2020;2021;2022;2023;2024,-0.626,0.1016,0.254,-0.119,0.793,0.793
+Jūra,Jūra,taurages-vms,Tauragės VMS,discharge,Agriculture,8,2017;2018;2019;2020;2021;2022;2023;2024,0.077,0.8606,0.8606,0.31,0.4618,0.793
+Jūra,Jūra,taurages-vms,Tauragės VMS,discharge,Forest,8,2017;2018;2019;2020;2021;2022;2023;2024,0.109,0.8104,0.8606,-0.143,0.752,0.793
+Nevėžis,Nevėžis,babtu-vms,Babtų VMS,discharge,Water,8,2017;2018;2019;2020;2021;2022;2023;2024,0.673,0.0606,0.1515,0.69,0.0694,0.2405
+Nevėžis,Nevėžis,babtu-vms,Babtų VMS,discharge,Wetland,8,2017;2018;2019;2020;2021;2022;2023;2024,0.832,0.0159,0.0794,0.643,0.0962,0.2405
+Nevėžis,Nevėžis,babtu-vms,Babtų VMS,discharge,Urban,8,2017;2018;2019;2020;2021;2022;2023;2024,-0.498,0.209,0.3483,-0.119,0.793,0.793
+Nevėžis,Nevėžis,babtu-vms,Babtų VMS,discharge,Agriculture,8,2017;2018;2019;2020;2021;2022;2023;2024,-0.228,0.5928,0.5928,-0.286,0.5008,0.626
+Nevėžis,Nevėžis,babtu-vms,Babtų VMS,discharge,Forest,8,2017;2018;2019;2020;2021;2022;2023;2024,0.226,0.5919,0.5928,0.286,0.5008,0.626
+Lielupės mažieji intakai,Švėtė,zagares-vms,Žagarės VMS,discharge,Water,7,2017;2018;2019;2020;2021;2022;2023,0.487,0.2702,0.4504,0.464,0.3024,0.504
+Lielupės mažieji intakai,Švėtė,zagares-vms,Žagarės VMS,discharge,Wetland,7,2017;2018;2019;2020;2021;2022;2023,0.258,0.6435,0.6435,0.321,0.4976,0.622
+Lielupės mažieji intakai,Švėtė,zagares-vms,Žagarės VMS,discharge,Urban,7,2017;2018;2019;2020;2021;2022;2023,-0.216,0.6177,0.6435,-0.143,0.7825,0.7825
+Lielupės mažieji intakai,Švėtė,zagares-vms,Žagarės VMS,discharge,Agriculture,7,2017;2018;2019;2020;2021;2022;2023,-0.846,0.0202,0.0947,-0.821,0.0341,0.1706
+Lielupės mažieji intakai,Švėtė,zagares-vms,Žagarės VMS,discharge,Forest,7,2017;2018;2019;2020;2021;2022;2023,0.767,0.0379,0.0947,0.679,0.1095,0.2738
+Lielupės mažieji intakai,Platonis,vaineikiu-vms,Vaineikių VMS,discharge,Water,7,2017;2018;2020;2021;2022;2023;2024,0.292,0.5192,0.5482,0.393,0.3956,0.6594
+Lielupės mažieji intakai,Platonis,vaineikiu-vms,Vaineikių VMS,discharge,Wetland,7,2017;2018;2020;2021;2022;2023;2024,0.53,0.2363,0.3938,0.286,0.556,0.6949
+Lielupės mažieji intakai,Platonis,vaineikiu-vms,Vaineikių VMS,discharge,Urban,7,2017;2018;2020;2021;2022;2023;2024,0.622,0.1325,0.3715,0.536,0.2357,0.5893
+Lielupės mažieji intakai,Platonis,vaineikiu-vms,Vaineikių VMS,discharge,Agriculture,7,2017;2018;2020;2021;2022;2023;2024,-0.611,0.1486,0.3715,-0.607,0.1667,0.5893
+Lielupės mažieji intakai,Platonis,vaineikiu-vms,Vaineikių VMS,discharge,Forest,7,2017;2018;2020;2021;2022;2023;2024,0.276,0.5482,0.5482,0.179,0.7131,0.7131
+Mūša,Mūša,zilpamusio-vms,Žilpamūšio VMS,discharge,Water,8,2017;2018;2019;2020;2021;2022;2023;2024,0.295,0.4771,0.5964,0.381,0.3599,0.4867
+Mūša,Mūša,zilpamusio-vms,Žilpamūšio VMS,discharge,Wetland,8,2017;2018;2019;2020;2021;2022;2023;2024,0.81,0.0156,0.078,0.69,0.0694,0.347
+Mūša,Mūša,zilpamusio-vms,Žilpamūšio VMS,discharge,Urban,8,2017;2018;2019;2020;2021;2022;2023;2024,-0.212,0.6182,0.6182,0.048,0.9349,0.9349
+Mūša,Mūša,zilpamusio-vms,Žilpamūšio VMS,discharge,Agriculture,8,2017;2018;2019;2020;2021;2022;2023;2024,-0.551,0.1561,0.3902,-0.357,0.3894,0.4867
+Mūša,Mūša,zilpamusio-vms,Žilpamūšio VMS,discharge,Forest,8,2017;2018;2019;2020;2021;2022;2023;2024,0.475,0.2411,0.4018,0.381,0.3599,0.4867
+Mūša,Lėvuo,bernatoniu-levuo-vms,Bernatonių VMS,discharge,Water,8,2017;2018;2019;2020;2021;2022;2023;2024,0.198,0.6452,0.6452,0.262,0.5364,0.6705
+Mūša,Lėvuo,bernatoniu-levuo-vms,Bernatonių VMS,discharge,Wetland,8,2017;2018;2019;2020;2021;2022;2023;2024,0.9,0.0017,0.0086,0.81,0.0218,0.1089
+Mūša,Lėvuo,bernatoniu-levuo-vms,Bernatonių VMS,discharge,Urban,8,2017;2018;2019;2020;2021;2022;2023;2024,-0.447,0.2697,0.5302,0.071,0.882,0.882
+Mūša,Lėvuo,bernatoniu-levuo-vms,Bernatonių VMS,discharge,Agriculture,8,2017;2018;2019;2020;2021;2022;2023;2024,-0.333,0.4022,0.5302,-0.381,0.3599,0.5998
+Mūša,Lėvuo,bernatoniu-levuo-vms,Bernatonių VMS,discharge,Forest,8,2017;2018;2019;2020;2021;2022;2023;2024,0.337,0.4242,0.5302,0.452,0.2675,0.5998
+Nemunėlis,Nemunėlis,tabokines-vms,Tabokinės VMS,discharge,Water,8,2017;2018;2019;2020;2021;2022;2023;2024,0.379,0.3579,0.3579,-0.071,0.882,0.882
+Nemunėlis,Nemunėlis,tabokines-vms,Tabokinės VMS,discharge,Wetland,8,2017;2018;2019;2020;2021;2022;2023;2024,0.545,0.1683,0.2805,0.524,0.1966,0.3277
+Nemunėlis,Nemunėlis,tabokines-vms,Tabokinės VMS,discharge,Urban,8,2017;2018;2019;2020;2021;2022;2023;2024,-0.378,0.3467,0.3579,-0.31,0.4618,0.5773
+Nemunėlis,Nemunėlis,tabokines-vms,Tabokinės VMS,discharge,Agriculture,8,2017;2018;2019;2020;2021;2022;2023;2024,-0.683,0.062,0.1549,-0.667,0.0831,0.2077
+Nemunėlis,Nemunėlis,tabokines-vms,Tabokinės VMS,discharge,Forest,8,2017;2018;2019;2020;2021;2022;2023;2024,0.701,0.0499,0.1549,0.69,0.0694,0.2077
+Bartuvos,Bartuva,skuodo-vms,Skuodo VMS,discharge,Water,8,2017;2018;2019;2020;2021;2022;2023;2024,0.039,0.9137,0.9137,0.048,0.9349,1.0
+Bartuvos,Bartuva,skuodo-vms,Skuodo VMS,discharge,Wetland,8,2017;2018;2019;2020;2021;2022;2023;2024,0.373,0.3572,0.9137,0.333,0.4279,1.0
+Bartuvos,Bartuva,skuodo-vms,Skuodo VMS,discharge,Urban,8,2017;2018;2019;2020;2021;2022;2023;2024,-0.25,0.5666,0.9137,-0.286,0.5008,1.0
+Bartuvos,Bartuva,skuodo-vms,Skuodo VMS,discharge,Agriculture,8,2017;2018;2019;2020;2021;2022;2023;2024,-0.123,0.7568,0.9137,0.0,1.0,1.0
+Bartuvos,Bartuva,skuodo-vms,Skuodo VMS,discharge,Forest,8,2017;2018;2019;2020;2021;2022;2023;2024,0.166,0.6867,0.9137,0.071,0.882,1.0
+Ventos,Venta,leckavos-vms,Leckavos VMS,discharge,Water,7,2017;2018;2019;2020;2021;2022;2023,-0.368,0.3992,0.9038,-0.536,0.2357,0.5556
+Ventos,Venta,leckavos-vms,Leckavos VMS,discharge,Wetland,7,2017;2018;2019;2020;2021;2022;2023,0.059,0.9038,0.9038,0.214,0.6615,0.6615
+Ventos,Venta,leckavos-vms,Leckavos VMS,discharge,Urban,7,2017;2018;2019;2020;2021;2022;2023,-0.412,0.3746,0.9038,-0.464,0.3024,0.5556
+Ventos,Venta,leckavos-vms,Leckavos VMS,discharge,Agriculture,7,2017;2018;2019;2020;2021;2022;2023,-0.128,0.77,0.9038,-0.357,0.4444,0.5556
+Ventos,Venta,leckavos-vms,Leckavos VMS,discharge,Forest,7,2017;2018;2019;2020;2021;2022;2023,0.235,0.6089,0.9038,0.429,0.3536,0.5556
+Lietuvos pajūrio upių,Danė,klaipedos-vms,Klaipėdos VMS,level,Water,8,2017;2018;2019;2020;2021;2022;2023;2024,-0.469,0.2451,0.4643,-0.381,0.3599,0.6705
+Lietuvos pajūrio upių,Danė,klaipedos-vms,Klaipėdos VMS,level,Wetland,8,2017;2018;2019;2020;2021;2022;2023;2024,0.459,0.2566,0.4643,0.619,0.115,0.5749
+Lietuvos pajūrio upių,Danė,klaipedos-vms,Klaipėdos VMS,level,Urban,8,2017;2018;2019;2020;2021;2022;2023;2024,0.191,0.6498,0.6498,0.286,0.5008,0.6705
+Lietuvos pajūrio upių,Danė,klaipedos-vms,Klaipėdos VMS,level,Agriculture,8,2017;2018;2019;2020;2021;2022;2023;2024,-0.439,0.2786,0.4643,-0.262,0.5364,0.6705
+Lietuvos pajūrio upių,Danė,klaipedos-vms,Klaipėdos VMS,level,Forest,8,2017;2018;2019;2020;2021;2022;2023;2024,0.258,0.5327,0.6498,0.167,0.7033,0.7033

@@ -1,0 +1,28 @@
+{
+  "reference": "grpk",
+  "source": "GRPK PLOTAI (PLOTAI_1 + PLOTAI_2 + PLOTAI_3)",
+  "grpk_dir": "C:\\Users\\gusta\\OneDrive\\Desktop\\LEI\\Matas_Internship_Final_V2\\Plots",
+  "mapping_file": "C:\\Users\\gusta\\OneDrive\\Desktop\\LEI\\Matas_Internship_Final_V2\\LEI\\Data\\analysis\\grpk_gkodas_mapping.json",
+  "class_order": [
+    "Water",
+    "Wetland",
+    "Urban",
+    "Agriculture",
+    "Forest"
+  ],
+  "area_totals_m2": {
+    "Water": 2713230045.169216,
+    "Wetland": 1172751448.095119,
+    "Urban": 3680466030.6592884,
+    "Agriculture": 36523363235.58339,
+    "Forest": 21502809541.64719
+  },
+  "shares": [
+    0.04136486746088222,
+    0.017879320001406965,
+    0.056110977328870715,
+    0.5568212257399435,
+    0.32782360946889655
+  ],
+  "notes": "Pixel-count-weighted shares from the national raster (grpk_2026.tif), after excluding Kursiu marios + Lithuanian Baltic Sea coastal waters (analysis/reference_geo/grpk_water_exclusion.geojson) so GRPK's Water share is comparable to the other datasets. Previously an exact area-weighted sum over the raw PLOTAI polygons with no such exclusion \u2014 switched to this pixel-based method so the exclusion could be applied without re-streaming the ~1.95M-feature source shapefiles. Also includes Lithuania's river network (repo-root River_System_LTU.shp, fclass=='river') burned in as Water wherever GRPK's own cadastral parcels left it unclassified (analysis/apply_grpk_river_inclusion.py)."
+}

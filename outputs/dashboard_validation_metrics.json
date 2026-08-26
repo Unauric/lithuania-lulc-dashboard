@@ -1,0 +1,1184 @@
+{
+  "generated_at": "2026-08-21T15:44:34Z",
+  "class_order": [
+    "Water",
+    "Wetland",
+    "Urban",
+    "Agriculture",
+    "Forest"
+  ],
+  "corine_years": [
+    1990,
+    2000,
+    2006,
+    2012,
+    2018
+  ],
+  "references": {
+    "corine": {
+      "key": "corine",
+      "label": "CORINE CLC",
+      "description": "National class shares (0\u20131) at CORINE snapshot years where both series exist. RMSE/MAE in share units; bias in percentage points. ML columns: LOYO RMSE predicting each CORINE class from the product\u2019s five shares.",
+      "national": [
+        {
+          "dataset": "hildaknn",
+          "n_common_years": 5,
+          "years_used": [
+            1990,
+            2000,
+            2006,
+            2012,
+            2018
+          ],
+          "classes_present_in_dataset": [
+            "Water",
+            "Urban",
+            "Agriculture",
+            "Forest"
+          ],
+          "rmse_share_all": 0.08168500819461692,
+          "mae_share_all": 0.054597695540904455,
+          "mean_abs_bias_pp": 5.459769554090445,
+          "mean_signed_bias_pp": 8.881784197001252e-16,
+          "r2_flat": 0.8800768190478134,
+          "pearson_r_by_class": {
+            "Water": -0.6852975057890418,
+            "Wetland": null,
+            "Urban": 0.6742332211676381,
+            "Agriculture": 0.7994629897853112,
+            "Forest": 0.7925846263441401
+          },
+          "mean_pearson_r": 0.39524583287701187,
+          "cosine_similarity_mean": 0.9649972134198244,
+          "per_class": {
+            "Water": {
+              "rmse_share": 0.00789620102368343,
+              "mae_share": 0.007888239568119824,
+              "bias_pp": -0.7888239568119824
+            },
+            "Wetland": {
+              "rmse_share": 0.00888637672923965,
+              "mae_share": 0.008883797852103848,
+              "bias_pp": -0.8883797852103849
+            },
+            "Urban": {
+              "rmse_share": 0.01924731247995982,
+              "mae_share": 0.01902266820223846,
+              "bias_pp": -1.9022668202238462
+            },
+            "Agriculture": {
+              "rmse_share": 0.11074146473844859,
+              "mae_share": 0.100699533229799,
+              "bias_pp": -10.069953322979899
+            },
+            "Forest": {
+              "rmse_share": 0.14348084919833204,
+              "mae_share": 0.13649423885226114,
+              "bias_pp": 13.649423885226113
+            }
+          },
+          "ml_loyo_mean_rmse_rf": 0.003485966617401364,
+          "ml_loyo_mean_rmse_ridge": 0.00620445213716989,
+          "ml_note": "LOYO: each CORINE class share predicted from this dataset\u2019s five shares (same years)."
+        },
+        {
+          "dataset": "lucas",
+          "n_common_years": 4,
+          "years_used": [
+            1990,
+            2000,
+            2006,
+            2012
+          ],
+          "classes_present_in_dataset": [
+            "Urban",
+            "Agriculture",
+            "Forest"
+          ],
+          "rmse_share_all": 0.06536563365719507,
+          "mae_share_all": 0.04643913885894889,
+          "mean_abs_bias_pp": 4.6439138858948885,
+          "mean_signed_bias_pp": 9.020562075079397e-16,
+          "r2_flat": 0.9237657215993244,
+          "pearson_r_by_class": {
+            "Water": null,
+            "Wetland": null,
+            "Urban": -0.730621946867158,
+            "Agriculture": 0.6683457558033488,
+            "Forest": 0.689110397705154
+          },
+          "mean_pearson_r": 0.20894473554711493,
+          "cosine_similarity_mean": 0.987288942243535,
+          "per_class": {
+            "Water": {
+              "rmse_share": 0.019442926817615915,
+              "mae_share": 0.019440745008828808,
+              "bias_pp": -1.9440745008828808
+            },
+            "Wetland": {
+              "rmse_share": 0.008932662195417282,
+              "mae_share": 0.008930054214941426,
+              "bias_pp": -0.8930054214941425
+            },
+            "Urban": {
+              "rmse_share": 0.029337336952303915,
+              "mae_share": 0.02932260579974815,
+              "bias_pp": -2.932260579974815
+            },
+            "Agriculture": {
+              "rmse_share": 0.1215243092601388,
+              "mae_share": 0.11082383497622803,
+              "bias_pp": 11.082383497622802
+            },
+            "Forest": {
+              "rmse_share": 0.0726407143363395,
+              "mae_share": 0.06367845429499806,
+              "bias_pp": -5.31304299527096
+            }
+          },
+          "ml_loyo_mean_rmse_rf": 0.005037843655815302,
+          "ml_loyo_mean_rmse_ridge": 0.006107135129375463,
+          "ml_note": "LOYO: each CORINE class share predicted from this dataset\u2019s five shares (same years)."
+        },
+        {
+          "dataset": "hyde",
+          "n_common_years": 5,
+          "years_used": [
+            1990,
+            2000,
+            2006,
+            2012,
+            2018
+          ],
+          "classes_present_in_dataset": [
+            "Urban",
+            "Agriculture",
+            "Forest"
+          ],
+          "rmse_share_all": 0.18884756405282385,
+          "mae_share_all": 0.12920387348394324,
+          "mean_abs_bias_pp": 12.920387348394325,
+          "mean_signed_bias_pp": 4.440892098500626e-16,
+          "r2_flat": 0.35902483890875925,
+          "pearson_r_by_class": {
+            "Water": null,
+            "Wetland": null,
+            "Urban": 0.3124895399331049,
+            "Agriculture": 0.523335389722008,
+            "Forest": 0.31777319620783573
+          },
+          "mean_pearson_r": 0.3845327086209829,
+          "cosine_similarity_mean": 0.9049390042056498,
+          "per_class": {
+            "Water": {
+              "rmse_share": 0.019543039242367867,
+              "mae_share": 0.019540288578979693,
+              "bias_pp": -1.9540288578979694
+            },
+            "Wetland": {
+              "rmse_share": 0.00888637672923965,
+              "mae_share": 0.008883797852103848,
+              "bias_pp": -0.8883797852103849
+            },
+            "Urban": {
+              "rmse_share": 0.025094996689589755,
+              "mae_share": 0.025033657152981892,
+              "bias_pp": -2.503365715298189
+            },
+            "Agriculture": {
+              "rmse_share": 0.32318296118049356,
+              "mae_share": 0.3230096837098581,
+              "bias_pp": 32.300968370985814
+            },
+            "Forest": {
+              "rmse_share": 0.2697760717947042,
+              "mae_share": 0.26955194012579275,
+              "bias_pp": -26.955194012579277
+            }
+          },
+          "ml_loyo_mean_rmse_rf": 0.005072157847421842,
+          "ml_loyo_mean_rmse_ridge": 0.006271933442401696,
+          "ml_note": "LOYO: each CORINE class share predicted from this dataset\u2019s five shares (same years)."
+        },
+        {
+          "dataset": "luh2",
+          "n_common_years": 4,
+          "years_used": [
+            1990,
+            2000,
+            2006,
+            2012
+          ],
+          "classes_present_in_dataset": [
+            "Agriculture",
+            "Forest"
+          ],
+          "rmse_share_all": 0.10878594882047281,
+          "mae_share_all": 0.06551664406941352,
+          "mean_abs_bias_pp": 6.551664406941351,
+          "mean_signed_bias_pp": 0.0,
+          "r2_flat": 0.788847148578237,
+          "pearson_r_by_class": {
+            "Water": null,
+            "Wetland": null,
+            "Urban": null,
+            "Agriculture": 0.8429091850037316,
+            "Forest": 0.8552293055830713
+          },
+          "mean_pearson_r": 0.8490692452934014,
+          "cosine_similarity_mean": 0.9422746342915256,
+          "per_class": {
+            "Water": {
+              "rmse_share": 0.019442926817615915,
+              "mae_share": 0.019440745008828808,
+              "bias_pp": -1.9440745008828808
+            },
+            "Wetland": {
+              "rmse_share": 0.008932662195417282,
+              "mae_share": 0.008930054214941426,
+              "bias_pp": -0.8930054214941425
+            },
+            "Urban": {
+              "rmse_share": 0.032909983410751055,
+              "mae_share": 0.03290584725509545,
+              "bias_pp": -3.290584725509545
+            },
+            "Agriculture": {
+              "rmse_share": 0.1474825017463873,
+              "mae_share": 0.11877060289747852,
+              "bias_pp": -8.403966798198436
+            },
+            "Forest": {
+              "rmse_share": 0.18942000453291885,
+              "mae_share": 0.14753597097072335,
+              "bias_pp": 14.531631446085003
+            }
+          },
+          "ml_loyo_mean_rmse_rf": 0.004711111473395669,
+          "ml_loyo_mean_rmse_ridge": 0.005866517051670936,
+          "ml_note": "LOYO: each CORINE class share predicted from this dataset\u2019s five shares (same years)."
+        },
+        {
+          "dataset": "esri",
+          "n_common_years": 1,
+          "years_used": [
+            2018
+          ],
+          "error": "Need at least 2 overlapping CORINE years with model data."
+        }
+      ],
+      "subbasin_zonal": {
+        "hildaknn": {
+          "year": 2018,
+          "mean_rmse_share_vs_corine": 0.09047523603599195
+        },
+        "hyde": {
+          "year": 2018,
+          "mean_rmse_share_vs_corine": 0.2023155580984659
+        },
+        "esri": {
+          "year": 2018,
+          "mean_rmse_share_vs_corine": 0.05015999833512622
+        }
+      },
+      "subbasin_note": "Sub-basins: mean RMSE of five-class vectors vs CORINE (2018) when zonal CSVs exist."
+    },
+    "grpk": {
+      "key": "grpk",
+      "label": "GRPK (cadastre) PLOTAI",
+      "description": "National class shares (0\u20131) from each product year vs a **fixed** GRPK PLOTAI snapshot (area-weighted GKODAS\u21925-class mapping). Not aligned in time; interpret as agreement with cadastre land use, not pixel-level accuracy.",
+      "national": [
+        {
+          "dataset": "hildaknn",
+          "n_common_years": 1,
+          "years_used": [
+            2020
+          ],
+          "classes_present_in_dataset": [
+            "Water",
+            "Urban",
+            "Agriculture",
+            "Forest"
+          ],
+          "rmse_share_all": 0.08709798340339991,
+          "mae_share_all": 0.06684750818085754,
+          "mean_abs_bias_pp": 6.684750818085754,
+          "mean_signed_bias_pp": 0.0,
+          "r2_flat": 0.8332000083276354,
+          "pearson_r_by_class": {
+            "Water": null,
+            "Wetland": null,
+            "Urban": null,
+            "Agriculture": null,
+            "Forest": null
+          },
+          "mean_pearson_r": null,
+          "cosine_similarity_mean": 0.958877656338957,
+          "per_class": {
+            "Water": {
+              "rmse_share": 0.023862505392658113,
+              "mae_share": 0.023862505392658113,
+              "bias_pp": -2.3862505392658115
+            },
+            "Wetland": {
+              "rmse_share": 0.017988392477977285,
+              "mae_share": 0.017988392477977285,
+              "bias_pp": -1.7988392477977284
+            },
+            "Urban": {
+              "rmse_share": 0.03750836416638869,
+              "mae_share": 0.03750836416638869,
+              "bias_pp": -3.750836416638869
+            },
+            "Agriculture": {
+              "rmse_share": 0.08775950841511976,
+              "mae_share": 0.08775950841511976,
+              "bias_pp": -8.775950841511976
+            },
+            "Forest": {
+              "rmse_share": 0.16711877045214385,
+              "mae_share": 0.16711877045214385,
+              "bias_pp": 16.711877045214386
+            }
+          },
+          "ml_loyo_mean_rmse_rf": null,
+          "ml_loyo_mean_rmse_ridge": null,
+          "ml_note": "GRPK PLOTAI is a single present-day cadastre snapshot (no year of its own); compared against HILDAKNN's closest available year (2020) instead of averaging across every year that product has."
+        },
+        {
+          "dataset": "lucas",
+          "n_common_years": 1,
+          "years_used": [
+            2015
+          ],
+          "classes_present_in_dataset": [
+            "Urban",
+            "Agriculture",
+            "Forest"
+          ],
+          "rmse_share_all": 0.07976843023974041,
+          "mae_share_all": 0.06301308923500301,
+          "mean_abs_bias_pp": 6.301308923500301,
+          "mean_signed_bias_pp": 0.0,
+          "r2_flat": 0.8600922036083434,
+          "pearson_r_by_class": {
+            "Water": null,
+            "Wetland": null,
+            "Urban": null,
+            "Agriculture": null,
+            "Forest": null
+          },
+          "mean_pearson_r": null,
+          "cosine_similarity_mean": 0.9818346755061862,
+          "per_class": {
+            "Water": {
+              "rmse_share": 0.03551673072944455,
+              "mae_share": 0.03551673072944455,
+              "bias_pp": -3.551673072944455
+            },
+            "Wetland": {
+              "rmse_share": 0.017988392477977285,
+              "mae_share": 0.017988392477977285,
+              "bias_pp": -1.7988392477977284
+            },
+            "Urban": {
+              "rmse_share": 0.053145673859943524,
+              "mae_share": 0.053145673859943524,
+              "bias_pp": -5.314567385994352
+            },
+            "Agriculture": {
+              "rmse_share": 0.15753272308750754,
+              "mae_share": 0.15753272308750754,
+              "bias_pp": 15.753272308750754
+            },
+            "Forest": {
+              "rmse_share": 0.05088192602014219,
+              "mae_share": 0.05088192602014219,
+              "bias_pp": -5.088192602014219
+            }
+          },
+          "ml_loyo_mean_rmse_rf": null,
+          "ml_loyo_mean_rmse_ridge": null,
+          "ml_note": "GRPK PLOTAI is a single present-day cadastre snapshot (no year of its own); compared against LUCAS's closest available year (2015) instead of averaging across every year that product has."
+        },
+        {
+          "dataset": "hyde",
+          "n_common_years": 1,
+          "years_used": [
+            2020
+          ],
+          "classes_present_in_dataset": [
+            "Urban",
+            "Agriculture",
+            "Forest"
+          ],
+          "rmse_share_all": 0.20399925045452585,
+          "mae_share_all": 0.14659978137501667,
+          "mean_abs_bias_pp": 14.659978137501668,
+          "mean_signed_bias_pp": 0.0,
+          "r2_flat": 0.08496655426271438,
+          "pearson_r_by_class": {
+            "Water": null,
+            "Wetland": null,
+            "Urban": null,
+            "Agriculture": null,
+            "Forest": null
+          },
+          "mean_pearson_r": null,
+          "cosine_similarity_mean": 0.8911065146514103,
+          "per_class": {
+            "Water": {
+              "rmse_share": 0.03551673072944455,
+              "mae_share": 0.03551673072944455,
+              "bias_pp": -3.551673072944455
+            },
+            "Wetland": {
+              "rmse_share": 0.017988392477977285,
+              "mae_share": 0.017988392477977285,
+              "bias_pp": -1.7988392477977284
+            },
+            "Urban": {
+              "rmse_share": 0.04881969357092764,
+              "mae_share": 0.04881969357092764,
+              "bias_pp": -4.881969357092764
+            },
+            "Agriculture": {
+              "rmse_share": 0.36649945343754164,
+              "mae_share": 0.36649945343754164,
+              "bias_pp": 36.64994534375416
+            },
+            "Forest": {
+              "rmse_share": 0.26417463665919216,
+              "mae_share": 0.26417463665919216,
+              "bias_pp": -26.417463665919215
+            }
+          },
+          "ml_loyo_mean_rmse_rf": null,
+          "ml_loyo_mean_rmse_ridge": null,
+          "ml_note": "GRPK PLOTAI is a single present-day cadastre snapshot (no year of its own); compared against HYDE's closest available year (2020) instead of averaging across every year that product has."
+        },
+        {
+          "dataset": "luh2",
+          "n_common_years": 1,
+          "years_used": [
+            2015
+          ],
+          "classes_present_in_dataset": [
+            "Agriculture",
+            "Forest"
+          ],
+          "rmse_share_all": 0.10588946770587143,
+          "mae_share_all": 0.08215511039384382,
+          "mean_abs_bias_pp": 8.215511039384381,
+          "mean_signed_bias_pp": -5.551115123125783e-16,
+          "r2_flat": 0.7534611559855123,
+          "pearson_r_by_class": {
+            "Water": null,
+            "Wetland": null,
+            "Urban": null,
+            "Agriculture": null,
+            "Forest": null
+          },
+          "mean_pearson_r": null,
+          "cosine_similarity_mean": 0.9427876309608719,
+          "per_class": {
+            "Water": {
+              "rmse_share": 0.03551673072944455,
+              "mae_share": 0.03551673072944455,
+              "bias_pp": -3.551673072944455
+            },
+            "Wetland": {
+              "rmse_share": 0.017988392477977285,
+              "mae_share": 0.017988392477977285,
+              "bias_pp": -1.7988392477977284
+            },
+            "Urban": {
+              "rmse_share": 0.056453281357187184,
+              "mae_share": 0.056453281357187184,
+              "bias_pp": -5.645328135718718
+            },
+            "Agriculture": {
+              "rmse_share": 0.09542937142000057,
+              "mae_share": 0.09542937142000057,
+              "bias_pp": -9.542937142000058
+            },
+            "Forest": {
+              "rmse_share": 0.20538777598460956,
+              "mae_share": 0.20538777598460956,
+              "bias_pp": 20.538777598460957
+            }
+          },
+          "ml_loyo_mean_rmse_rf": null,
+          "ml_loyo_mean_rmse_ridge": null,
+          "ml_note": "GRPK PLOTAI is a single present-day cadastre snapshot (no year of its own); compared against LUH2's closest available year (2015) instead of averaging across every year that product has."
+        },
+        {
+          "dataset": "esri",
+          "n_common_years": 1,
+          "years_used": [
+            2025
+          ],
+          "classes_present_in_dataset": [
+            "Water",
+            "Wetland",
+            "Urban",
+            "Agriculture",
+            "Forest"
+          ],
+          "rmse_share_all": 0.05703332918373904,
+          "mae_share_all": 0.042639773604910114,
+          "mean_abs_bias_pp": 4.263977360491012,
+          "mean_signed_bias_pp": 2.7755575615628914e-16,
+          "r2_flat": 0.9284783917677467,
+          "pearson_r_by_class": {
+            "Water": null,
+            "Wetland": null,
+            "Urban": null,
+            "Agriculture": null,
+            "Forest": null
+          },
+          "mean_pearson_r": null,
+          "cosine_similarity_mean": 0.9812564621302823,
+          "per_class": {
+            "Water": {
+              "rmse_share": 0.011193253446309222,
+              "mae_share": 0.011193253446309222,
+              "bias_pp": -1.1193253446309221
+            },
+            "Wetland": {
+              "rmse_share": 0.016171752819667148,
+              "mae_share": 0.016171752819667148,
+              "bias_pp": -1.6171752819667147
+            },
+            "Urban": {
+              "rmse_share": 0.013399833425717149,
+              "mae_share": 0.013399833425717149,
+              "bias_pp": -1.339983342571715
+            },
+            "Agriculture": {
+              "rmse_share": 0.06583459432058175,
+              "mae_share": 0.06583459432058175,
+              "bias_pp": -6.583459432058175
+            },
+            "Forest": {
+              "rmse_share": 0.10659943401227528,
+              "mae_share": 0.10659943401227528,
+              "bias_pp": 10.659943401227528
+            }
+          },
+          "ml_loyo_mean_rmse_rf": null,
+          "ml_loyo_mean_rmse_ridge": null,
+          "ml_note": "GRPK PLOTAI is a single present-day cadastre snapshot (no year of its own); compared against ESRI's closest available year (2025) instead of averaging across every year that product has."
+        }
+      ],
+      "subbasin_zonal": {},
+      "subbasin_note": "Sub-basin: not computed for GRPK in this release.",
+      "error": null
+    },
+    "esri": {
+      "key": "esri",
+      "label": "Esri 10m Annual LULC",
+      "description": "National class shares (0\u20131) at overlapping years between each product and our Esri-derived Lithuania mosaic (10m native resolution, nearest-neighbor filled). RMSE/MAE in share units; bias in percentage points. ML columns: LOYO RMSE predicting each Esri class from the product\u2019s five shares.",
+      "national": [
+        {
+          "dataset": "hildaknn",
+          "n_common_years": 4,
+          "years_used": [
+            2017,
+            2018,
+            2019,
+            2020
+          ],
+          "classes_present_in_dataset": [
+            "Water",
+            "Urban",
+            "Agriculture",
+            "Forest"
+          ],
+          "rmse_share_all": 0.03742506988614849,
+          "mae_share_all": 0.02860948896581077,
+          "mean_abs_bias_pp": 2.860948896581077,
+          "mean_signed_bias_pp": -2.7755575615628914e-16,
+          "r2_flat": 0.9709089593285316,
+          "pearson_r_by_class": {
+            "Water": -0.135198738680246,
+            "Wetland": null,
+            "Urban": 0.216014198735194,
+            "Agriculture": 0.8491412791606237,
+            "Forest": 0.8657938567090968
+          },
+          "mean_pearson_r": 0.4489376489811671,
+          "cosine_similarity_mean": 0.9928572571256575,
+          "per_class": {
+            "Water": {
+              "rmse_share": 0.012582241382679549,
+              "mae_share": 0.012579726826071003,
+              "bias_pp": -1.2579726826071003
+            },
+            "Wetland": {
+              "rmse_share": 0.0019957787074843677,
+              "mae_share": 0.0019525248751948092,
+              "bias_pp": -0.1952524875194809
+            },
+            "Urban": {
+              "rmse_share": 0.022539574732089274,
+              "mae_share": 0.02248368180574922,
+              "bias_pp": -2.248368180574922
+            },
+            "Agriculture": {
+              "rmse_share": 0.03465258567475534,
+              "mae_share": 0.03450778890751191,
+              "bias_pp": -3.450778890751191
+            },
+            "Forest": {
+              "rmse_share": 0.0716383223282381,
+              "mae_share": 0.07152372241452692,
+              "bias_pp": 7.152372241452692
+            }
+          },
+          "ml_loyo_mean_rmse_rf": 0.00322752495067852,
+          "ml_loyo_mean_rmse_ridge": 0.003502028219360097,
+          "ml_note": "LOYO: each CORINE class share predicted from this dataset\u2019s five shares (same years)."
+        },
+        {
+          "dataset": "lucas",
+          "n_common_years": 9,
+          "years_used": [
+            2017,
+            2018,
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025
+          ],
+          "classes_present_in_dataset": [
+            "Water",
+            "Wetland",
+            "Urban",
+            "Agriculture",
+            "Forest"
+          ],
+          "rmse_share_all": 0.11858711898384962,
+          "mae_share_all": 0.08565185785183177,
+          "mean_abs_bias_pp": 8.565185785183177,
+          "mean_signed_bias_pp": 4.934324553889585e-16,
+          "r2_flat": 0.8210760742753651,
+          "pearson_r_by_class": {
+            "Water": null,
+            "Wetland": null,
+            "Urban": null,
+            "Agriculture": null,
+            "Forest": null
+          },
+          "mean_pearson_r": null,
+          "cosine_similarity_mean": 0.9423707356757356,
+          "per_class": {
+            "Water": {
+              "rmse_share": 0.02397500470982202,
+              "mae_share": 0.023972267625880745,
+              "bias_pp": 2.3972267625880743
+            },
+            "Wetland": {
+              "rmse_share": 0.0019116277344232834,
+              "mae_share": 0.0018823129171326516,
+              "bias_pp": 0.18823129171326516
+            },
+            "Urban": {
+              "rmse_share": 0.03905540261788848,
+              "mae_share": 0.039025621695870864,
+              "bias_pp": 3.9025621695870862
+            },
+            "Agriculture": {
+              "rmse_share": 0.2142257842429087,
+              "mae_share": 0.21412964462957942,
+              "bias_pp": -21.41296446295794
+            },
+            "Forest": {
+              "rmse_share": 0.1493922945298147,
+              "mae_share": 0.1492494423906952,
+              "bias_pp": 14.924944239069522
+            }
+          },
+          "ml_loyo_mean_rmse_rf": null,
+          "ml_loyo_mean_rmse_ridge": null,
+          "ml_note": "No years overlap between Esri (2017\u20132025) and LUCAS; compared against LUCAS's closest available year (2015) as a fixed snapshot instead. Not time-aligned \u2014 interpret as rough agreement, not year-matched accuracy."
+        },
+        {
+          "dataset": "hyde",
+          "n_common_years": 4,
+          "years_used": [
+            2017,
+            2018,
+            2019,
+            2020
+          ],
+          "classes_present_in_dataset": [
+            "Urban",
+            "Agriculture",
+            "Forest"
+          ],
+          "rmse_share_all": 0.24702996612744363,
+          "mae_share_all": 0.1672135094073615,
+          "mean_abs_bias_pp": 16.721350940736148,
+          "mean_signed_bias_pp": -2.7755575615628914e-16,
+          "r2_flat": -0.26745717761419674,
+          "pearson_r_by_class": {
+            "Water": null,
+            "Wetland": null,
+            "Urban": -0.5725800620102314,
+            "Agriculture": 0.8083957263854631,
+            "Forest": null
+          },
+          "mean_pearson_r": 0.11790783218761586,
+          "cosine_similarity_mean": 0.8094244949167484,
+          "per_class": {
+            "Water": {
+              "rmse_share": 0.024224354293281153,
+              "mae_share": 0.024223070533224585,
+              "bias_pp": -2.4223070533224584
+            },
+            "Wetland": {
+              "rmse_share": 0.0019957787074843677,
+              "mae_share": 0.0019525248751948092,
+              "bias_pp": -0.1952524875194809
+            },
+            "Urban": {
+              "rmse_share": 0.03328528432226754,
+              "mae_share": 0.033233784932033106,
+              "bias_pp": -3.3233784932033106
+            },
+            "Agriculture": {
+              "rmse_share": 0.41805941334641356,
+              "mae_share": 0.41803377351840365,
+              "bias_pp": 41.80337735184037
+            },
+            "Forest": {
+              "rmse_share": 0.35867343797818707,
+              "mae_share": 0.35862439317795125,
+              "bias_pp": -35.86243931779512
+            }
+          },
+          "ml_loyo_mean_rmse_rf": 0.0031701997974786745,
+          "ml_loyo_mean_rmse_ridge": 0.003502053829963219,
+          "ml_note": "LOYO: each CORINE class share predicted from this dataset\u2019s five shares (same years)."
+        },
+        {
+          "dataset": "luh2",
+          "n_common_years": 9,
+          "years_used": [
+            2017,
+            2018,
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025
+          ],
+          "classes_present_in_dataset": [
+            "Water",
+            "Wetland",
+            "Urban",
+            "Agriculture",
+            "Forest"
+          ],
+          "rmse_share_all": 0.05553021062066045,
+          "mae_share_all": 0.042808103845622635,
+          "mean_abs_bias_pp": 4.280810384562264,
+          "mean_signed_bias_pp": 1.2335811384723961e-15,
+          "r2_flat": 0.9490279078114208,
+          "pearson_r_by_class": {
+            "Water": null,
+            "Wetland": null,
+            "Urban": null,
+            "Agriculture": null,
+            "Forest": null
+          },
+          "mean_pearson_r": null,
+          "cosine_similarity_mean": 0.9858448037817111,
+          "per_class": {
+            "Water": {
+              "rmse_share": 0.02397500470982202,
+              "mae_share": 0.023972267625880745,
+              "bias_pp": 2.3972267625880743
+            },
+            "Wetland": {
+              "rmse_share": 0.0019116277344232834,
+              "mae_share": 0.0018823129171326516,
+              "bias_pp": 0.18823129171326516
+            },
+            "Urban": {
+              "rmse_share": 0.04236068482464498,
+              "mae_share": 0.042333229193114524,
+              "bias_pp": 4.233322919311452
+            },
+            "Agriculture": {
+              "rmse_share": 0.039359129675605495,
+              "mae_share": 0.03883244987792868,
+              "bias_pp": 3.883244987792868
+            },
+            "Forest": {
+              "rmse_share": 0.10721938993861845,
+              "mae_share": 0.10702025961405653,
+              "bias_pp": -10.702025961405653
+            }
+          },
+          "ml_loyo_mean_rmse_rf": null,
+          "ml_loyo_mean_rmse_ridge": null,
+          "ml_note": "No years overlap between Esri (2017\u20132025) and LUH2; compared against LUH2's closest available year (2015) as a fixed snapshot instead. Not time-aligned \u2014 interpret as rough agreement, not year-matched accuracy."
+        },
+        {
+          "dataset": "corine",
+          "n_common_years": 9,
+          "years_used": [
+            2017,
+            2018,
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025
+          ],
+          "classes_present_in_dataset": [
+            "Water",
+            "Wetland",
+            "Urban",
+            "Agriculture",
+            "Forest"
+          ],
+          "rmse_share_all": 0.05288091506311465,
+          "mae_share_all": 0.03699998386469606,
+          "mean_abs_bias_pp": 3.699998386469606,
+          "mean_signed_bias_pp": 7.093091546216277e-16,
+          "r2_flat": 0.9482249150303769,
+          "pearson_r_by_class": {
+            "Water": null,
+            "Wetland": null,
+            "Urban": null,
+            "Agriculture": null,
+            "Forest": null
+          },
+          "mean_pearson_r": null,
+          "cosine_similarity_mean": 0.9851836568565542,
+          "per_class": {
+            "Water": {
+              "rmse_share": 0.004050039086446273,
+              "mae_share": 0.004033804766297521,
+              "bias_pp": 0.4033804766297521
+            },
+            "Wetland": {
+              "rmse_share": 0.006824612704678335,
+              "mae_share": 0.006816459483620884,
+              "bias_pp": -0.6816459483620885
+            },
+            "Urban": {
+              "rmse_share": 0.008468737169086022,
+              "mae_share": 0.008330317181411275,
+              "bias_pp": 0.8330317181411275
+            },
+            "Agriculture": {
+              "rmse_share": 0.08592347832852816,
+              "mae_share": 0.08568350017811925,
+              "bias_pp": -8.568350017811925
+            },
+            "Forest": {
+              "rmse_share": 0.08040158019018673,
+              "mae_share": 0.08013583771403138,
+              "bias_pp": 8.013583771403137
+            }
+          },
+          "ml_loyo_mean_rmse_rf": null,
+          "ml_loyo_mean_rmse_ridge": null,
+          "ml_note": "No years overlap between Esri (2017\u20132025) and CORINE; compared against CORINE's closest available year (2018) as a fixed snapshot instead. Not time-aligned \u2014 interpret as rough agreement, not year-matched accuracy."
+        }
+      ],
+      "subbasin_zonal": {
+        "hildaknn": {
+          "year": 2018,
+          "mean_rmse_share_vs_esri": 0.04547930558709678
+        },
+        "hyde": {
+          "year": 2018,
+          "mean_rmse_share_vs_esri": 0.25184833066001505
+        },
+        "corine": {
+          "year": 2018,
+          "mean_rmse_share_vs_esri": 0.05015999833512622
+        }
+      },
+      "subbasin_note": "Sub-basins: mean RMSE of five-class vectors vs Esri (2018) when zonal CSVs exist.",
+      "error": null
+    }
+  },
+  "reference": "corine",
+  "description": "National class shares (0\u20131) at CORINE snapshot years where both series exist. RMSE/MAE in share units; bias in percentage points. ML columns: LOYO RMSE predicting each CORINE class from the product\u2019s five shares.",
+  "national": [
+    {
+      "dataset": "hildaknn",
+      "n_common_years": 5,
+      "years_used": [
+        1990,
+        2000,
+        2006,
+        2012,
+        2018
+      ],
+      "classes_present_in_dataset": [
+        "Water",
+        "Urban",
+        "Agriculture",
+        "Forest"
+      ],
+      "rmse_share_all": 0.08168500819461692,
+      "mae_share_all": 0.054597695540904455,
+      "mean_abs_bias_pp": 5.459769554090445,
+      "mean_signed_bias_pp": 8.881784197001252e-16,
+      "r2_flat": 0.8800768190478134,
+      "pearson_r_by_class": {
+        "Water": -0.6852975057890418,
+        "Wetland": null,
+        "Urban": 0.6742332211676381,
+        "Agriculture": 0.7994629897853112,
+        "Forest": 0.7925846263441401
+      },
+      "mean_pearson_r": 0.39524583287701187,
+      "cosine_similarity_mean": 0.9649972134198244,
+      "per_class": {
+        "Water": {
+          "rmse_share": 0.00789620102368343,
+          "mae_share": 0.007888239568119824,
+          "bias_pp": -0.7888239568119824
+        },
+        "Wetland": {
+          "rmse_share": 0.00888637672923965,
+          "mae_share": 0.008883797852103848,
+          "bias_pp": -0.8883797852103849
+        },
+        "Urban": {
+          "rmse_share": 0.01924731247995982,
+          "mae_share": 0.01902266820223846,
+          "bias_pp": -1.9022668202238462
+        },
+        "Agriculture": {
+          "rmse_share": 0.11074146473844859,
+          "mae_share": 0.100699533229799,
+          "bias_pp": -10.069953322979899
+        },
+        "Forest": {
+          "rmse_share": 0.14348084919833204,
+          "mae_share": 0.13649423885226114,
+          "bias_pp": 13.649423885226113
+        }
+      },
+      "ml_loyo_mean_rmse_rf": 0.003485966617401364,
+      "ml_loyo_mean_rmse_ridge": 0.00620445213716989,
+      "ml_note": "LOYO: each CORINE class share predicted from this dataset\u2019s five shares (same years)."
+    },
+    {
+      "dataset": "lucas",
+      "n_common_years": 4,
+      "years_used": [
+        1990,
+        2000,
+        2006,
+        2012
+      ],
+      "classes_present_in_dataset": [
+        "Urban",
+        "Agriculture",
+        "Forest"
+      ],
+      "rmse_share_all": 0.06536563365719507,
+      "mae_share_all": 0.04643913885894889,
+      "mean_abs_bias_pp": 4.6439138858948885,
+      "mean_signed_bias_pp": 9.020562075079397e-16,
+      "r2_flat": 0.9237657215993244,
+      "pearson_r_by_class": {
+        "Water": null,
+        "Wetland": null,
+        "Urban": -0.730621946867158,
+        "Agriculture": 0.6683457558033488,
+        "Forest": 0.689110397705154
+      },
+      "mean_pearson_r": 0.20894473554711493,
+      "cosine_similarity_mean": 0.987288942243535,
+      "per_class": {
+        "Water": {
+          "rmse_share": 0.019442926817615915,
+          "mae_share": 0.019440745008828808,
+          "bias_pp": -1.9440745008828808
+        },
+        "Wetland": {
+          "rmse_share": 0.008932662195417282,
+          "mae_share": 0.008930054214941426,
+          "bias_pp": -0.8930054214941425
+        },
+        "Urban": {
+          "rmse_share": 0.029337336952303915,
+          "mae_share": 0.02932260579974815,
+          "bias_pp": -2.932260579974815
+        },
+        "Agriculture": {
+          "rmse_share": 0.1215243092601388,
+          "mae_share": 0.11082383497622803,
+          "bias_pp": 11.082383497622802
+        },
+        "Forest": {
+          "rmse_share": 0.0726407143363395,
+          "mae_share": 0.06367845429499806,
+          "bias_pp": -5.31304299527096
+        }
+      },
+      "ml_loyo_mean_rmse_rf": 0.005037843655815302,
+      "ml_loyo_mean_rmse_ridge": 0.006107135129375463,
+      "ml_note": "LOYO: each CORINE class share predicted from this dataset\u2019s five shares (same years)."
+    },
+    {
+      "dataset": "hyde",
+      "n_common_years": 5,
+      "years_used": [
+        1990,
+        2000,
+        2006,
+        2012,
+        2018
+      ],
+      "classes_present_in_dataset": [
+        "Urban",
+        "Agriculture",
+        "Forest"
+      ],
+      "rmse_share_all": 0.18884756405282385,
+      "mae_share_all": 0.12920387348394324,
+      "mean_abs_bias_pp": 12.920387348394325,
+      "mean_signed_bias_pp": 4.440892098500626e-16,
+      "r2_flat": 0.35902483890875925,
+      "pearson_r_by_class": {
+        "Water": null,
+        "Wetland": null,
+        "Urban": 0.3124895399331049,
+        "Agriculture": 0.523335389722008,
+        "Forest": 0.31777319620783573
+      },
+      "mean_pearson_r": 0.3845327086209829,
+      "cosine_similarity_mean": 0.9049390042056498,
+      "per_class": {
+        "Water": {
+          "rmse_share": 0.019543039242367867,
+          "mae_share": 0.019540288578979693,
+          "bias_pp": -1.9540288578979694
+        },
+        "Wetland": {
+          "rmse_share": 0.00888637672923965,
+          "mae_share": 0.008883797852103848,
+          "bias_pp": -0.8883797852103849
+        },
+        "Urban": {
+          "rmse_share": 0.025094996689589755,
+          "mae_share": 0.025033657152981892,
+          "bias_pp": -2.503365715298189
+        },
+        "Agriculture": {
+          "rmse_share": 0.32318296118049356,
+          "mae_share": 0.3230096837098581,
+          "bias_pp": 32.300968370985814
+        },
+        "Forest": {
+          "rmse_share": 0.2697760717947042,
+          "mae_share": 0.26955194012579275,
+          "bias_pp": -26.955194012579277
+        }
+      },
+      "ml_loyo_mean_rmse_rf": 0.005072157847421842,
+      "ml_loyo_mean_rmse_ridge": 0.006271933442401696,
+      "ml_note": "LOYO: each CORINE class share predicted from this dataset\u2019s five shares (same years)."
+    },
+    {
+      "dataset": "luh2",
+      "n_common_years": 4,
+      "years_used": [
+        1990,
+        2000,
+        2006,
+        2012
+      ],
+      "classes_present_in_dataset": [
+        "Agriculture",
+        "Forest"
+      ],
+      "rmse_share_all": 0.10878594882047281,
+      "mae_share_all": 0.06551664406941352,
+      "mean_abs_bias_pp": 6.551664406941351,
+      "mean_signed_bias_pp": 0.0,
+      "r2_flat": 0.788847148578237,
+      "pearson_r_by_class": {
+        "Water": null,
+        "Wetland": null,
+        "Urban": null,
+        "Agriculture": 0.8429091850037316,
+        "Forest": 0.8552293055830713
+      },
+      "mean_pearson_r": 0.8490692452934014,
+      "cosine_similarity_mean": 0.9422746342915256,
+      "per_class": {
+        "Water": {
+          "rmse_share": 0.019442926817615915,
+          "mae_share": 0.019440745008828808,
+          "bias_pp": -1.9440745008828808
+        },
+        "Wetland": {
+          "rmse_share": 0.008932662195417282,
+          "mae_share": 0.008930054214941426,
+          "bias_pp": -0.8930054214941425
+        },
+        "Urban": {
+          "rmse_share": 0.032909983410751055,
+          "mae_share": 0.03290584725509545,
+          "bias_pp": -3.290584725509545
+        },
+        "Agriculture": {
+          "rmse_share": 0.1474825017463873,
+          "mae_share": 0.11877060289747852,
+          "bias_pp": -8.403966798198436
+        },
+        "Forest": {
+          "rmse_share": 0.18942000453291885,
+          "mae_share": 0.14753597097072335,
+          "bias_pp": 14.531631446085003
+        }
+      },
+      "ml_loyo_mean_rmse_rf": 0.004711111473395669,
+      "ml_loyo_mean_rmse_ridge": 0.005866517051670936,
+      "ml_note": "LOYO: each CORINE class share predicted from this dataset\u2019s five shares (same years)."
+    },
+    {
+      "dataset": "esri",
+      "n_common_years": 1,
+      "years_used": [
+        2018
+      ],
+      "error": "Need at least 2 overlapping CORINE years with model data."
+    }
+  ],
+  "subbasin_zonal": {
+    "hildaknn": {
+      "year": 2018,
+      "mean_rmse_share_vs_corine": 0.09047523603599195
+    },
+    "hyde": {
+      "year": 2018,
+      "mean_rmse_share_vs_corine": 0.2023155580984659
+    },
+    "esri": {
+      "year": 2018,
+      "mean_rmse_share_vs_corine": 0.05015999833512622
+    }
+  },
+  "subbasin_note": "Sub-basins: mean RMSE of five-class vectors vs CORINE (2018) when zonal CSVs exist."
+}

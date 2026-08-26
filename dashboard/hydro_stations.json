@@ -1,0 +1,145 @@
+{
+  "source": "api.meteo.lt/v1/hydro-stations (Lithuanian Hydrometeorological Service official API)",
+  "stations": [
+    {
+      "code": "babtu-vms",
+      "name": "Babtų VMS",
+      "waterBody": "Nevėžis",
+      "lat": 55.105762,
+      "lon": 23.782552
+    },
+    {
+      "code": "bernatoniu-levuo-vms",
+      "name": "Bernatonių VMS",
+      "waterBody": "Lėvuo",
+      "lat": 55.793849,
+      "lon": 24.281908
+    },
+    {
+      "code": "jonavos-vms",
+      "name": "Jonavos VMS",
+      "waterBody": "Neris",
+      "lat": 55.075005,
+      "lon": 24.29199
+    },
+    {
+      "code": "klaipedos-vms",
+      "name": "Klaipėdos VMS",
+      "waterBody": "Akmena-Danė",
+      "lat": 55.755884,
+      "lon": 21.135223
+    },
+    {
+      "code": "kudirkos-naumiescio-vms",
+      "name": "Kudirkos Naumiesčio VMS",
+      "waterBody": "Šešupė",
+      "lat": 54.77723,
+      "lon": 22.86552
+    },
+    {
+      "code": "lankupiu-minija-vms",
+      "name": "Lankupių VMS",
+      "waterBody": "Minija",
+      "lat": 55.483301,
+      "lon": 21.36597
+    },
+    {
+      "code": "lazdenu-vms",
+      "name": "Lazdėnų VMS",
+      "waterBody": "Nemunas",
+      "lat": 55.124307,
+      "lon": 21.759532
+    },
+    {
+      "code": "leckavos-vms",
+      "name": "Leckavos VMS",
+      "waterBody": "Venta",
+      "lat": 56.390768,
+      "lon": 22.231794
+    },
+    {
+      "code": "pabrades-vms",
+      "name": "Pabradės VMS",
+      "waterBody": "Žeimena",
+      "lat": 54.983728,
+      "lon": 25.772459
+    },
+    {
+      "code": "padubysio-vms",
+      "name": "Padubysio VMS",
+      "waterBody": "Dubysa",
+      "lat": 55.202228,
+      "lon": 23.503463
+    },
+    {
+      "code": "puvociu-vms",
+      "name": "Puvočių VMS",
+      "waterBody": "Merkys",
+      "lat": 54.116079,
+      "lon": 24.302952
+    },
+    {
+      "code": "skuodo-vms",
+      "name": "Skuodo VMS",
+      "waterBody": "Bartuva",
+      "lat": 56.280435,
+      "lon": 21.508347
+    },
+    {
+      "code": "tabokines-vms",
+      "name": "Tabokinės VMS",
+      "waterBody": "Nemunėlis",
+      "lat": 56.41415,
+      "lon": 24.855184
+    },
+    {
+      "code": "taurages-vms",
+      "name": "Tauragės VMS",
+      "waterBody": "Jūra",
+      "lat": 55.250397,
+      "lon": 22.280468
+    },
+    {
+      "code": "ukmerges-vms",
+      "name": "Ukmergės VMS",
+      "waterBody": "Šventoji",
+      "lat": 55.247456,
+      "lon": 24.768688
+    },
+    {
+      "code": "vaineikiu-vms",
+      "name": "Vaineikių VMS",
+      "waterBody": "Platonis",
+      "lat": 56.316568,
+      "lon": 23.571321
+    },
+    {
+      "code": "siaulenu-vms",
+      "name": "Šiaulėnų VMS",
+      "waterBody": "Šušvė",
+      "lat": 55.675663,
+      "lon": 23.446673
+    },
+    {
+      "code": "sventosios-vms",
+      "name": "Šventosios VMS",
+      "waterBody": "Šventoji",
+      "lat": 56.035485,
+      "lon": 21.119474
+    },
+    {
+      "code": "zagares-vms",
+      "name": "Žagarės VMS",
+      "waterBody": "Švėtė",
+      "lat": 56.360208,
+      "lon": 23.251806
+    },
+    {
+      "code": "zilpamusio-vms",
+      "name": "Žilpamūšio VMS",
+      "waterBody": "Mūša",
+      "lat": 56.194006,
+      "lon": 24.423412
+    }
+  ]
+}

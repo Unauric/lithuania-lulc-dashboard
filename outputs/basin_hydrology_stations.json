@@ -1,0 +1,116 @@
+{
+  "Nemuno mažieji intakai": [
+    {
+      "code": "lazdenu-vms",
+      "name": "Lazdėnų VMS"
+    }
+  ],
+  "Merkys": [
+    {
+      "code": "puvociu-vms",
+      "name": "Puvočių VMS"
+    }
+  ],
+  "Šešupė": [
+    {
+      "code": "kudirkos-naumiescio-vms",
+      "name": "Kudirkos Naumiesčio VMS"
+    }
+  ],
+  "Neris": [
+    {
+      "code": "jonavos-vms",
+      "name": "Jonavos VMS"
+    }
+  ],
+  "Žeimena": [
+    {
+      "code": "pabrades-vms",
+      "name": "Pabradės VMS"
+    }
+  ],
+  "Minija": [
+    {
+      "code": "lankupiu-minija-vms",
+      "name": "Lankupių VMS"
+    }
+  ],
+  "Šventoji": [
+    {
+      "code": "ukmerges-vms",
+      "name": "Ukmergės VMS"
+    }
+  ],
+  "Dubysa": [
+    {
+      "code": "padubysio-vms",
+      "name": "Padubysio VMS"
+    }
+  ],
+  "Jūra": [
+    {
+      "code": "taurages-vms",
+      "name": "Tauragės VMS"
+    }
+  ],
+  "Nevėžis": [
+    {
+      "code": "babtu-vms",
+      "name": "Babtų VMS"
+    },
+    {
+      "code": "siaulenu-vms",
+      "name": "Šiaulėnų VMS"
+    }
+  ],
+  "Lielupės mažieji intakai": [
+    {
+      "code": "vaineikiu-vms",
+      "name": "Vaineikių VMS"
+    },
+    {
+      "code": "zagares-vms",
+      "name": "Žagarės VMS"
+    }
+  ],
+  "Mūša": [
+    {
+      "code": "bernatoniu-levuo-vms",
+      "name": "Bernatonių VMS"
+    },
+    {
+      "code": "zilpamusio-vms",
+      "name": "Žilpamūšio VMS"
+    }
+  ],
+  "Nemunėlis": [
+    {
+      "code": "tabokines-vms",
+      "name": "Tabokinės VMS"
+    }
+  ],
+  "Bartuvos": [
+    {
+      "code": "skuodo-vms",
+      "name": "Skuodo VMS"
+    }
+  ],
+  "Ventos": [
+    {
+      "code": "leckavos-vms",
+      "name": "Leckavos VMS"
+    }
+  ],
+  "Lietuvos pajūrio upių": [
+    {
+      "code": "klaipedos-vms",
+      "name": "Klaipėdos VMS"
+    }
+  ],
+  "Šventosios (pajūrio)": [
+    {
+      "code": "sventosios-vms",
+      "name": "Šventosios VMS"
+    }
+  ]
+}

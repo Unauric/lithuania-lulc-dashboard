@@ -1,0 +1,20 @@
+{
+  "notes_lt": "GRPK PLOTAI sluoksnio GKODAS reikšmių priskyrimas prie dashboard 5 klasių. Ilgiausias atitinkantis prefiksas laimi. Kodų reikšmės patikrintos pagal oficialias GRPK specifikacijas (GDR50LT ir GDR10LT, geoportal.lt/download/Specifikacijos/): hd*=hidrografija (upės, ežerai, tvenkiniai) => Water, hd6=pelkės hidrografijoje => Wetland, pu*=užstatytos/gamybinės teritorijos => Urban, vg*=inžinerinė infrastruktūra (pastotės, vandens valymas, sąvartynai) => Urban, va*=oro uostų infrastruktūra => Urban, vk*=stadionai/sporto kompleksai => Urban, vp*=kapinės => Urban, mj0=medžių juosta => Forest, ms4=sodai => Agriculture, ek0=karjerai => Urban, ed0=durpynai (pelkių kilmės) => Wetland, gt*=kelių/geležinkelių buferiai (GDR10LT) => Urban. sd* (PLOTAI_2) neturi atskiros taisyklės ir patenka į default_class (pievos/ganyklos/dirbama žemė — tinka Agriculture).",
+  "default_class": "Agriculture",
+  "prefix_rules": [
+    ["ms0hd6", "Forest"],
+    ["ms4", "Agriculture"],
+    ["hd6", "Wetland"],
+    ["hd", "Water"],
+    ["ms", "Forest"],
+    ["pu", "Urban"],
+    ["vp", "Urban"],
+    ["vk", "Urban"],
+    ["mj", "Forest"],
+    ["vg", "Urban"],
+    ["va", "Urban"],
+    ["ek", "Urban"],
+    ["ed", "Wetland"],
+    ["gt", "Urban"]
+  ]
+}

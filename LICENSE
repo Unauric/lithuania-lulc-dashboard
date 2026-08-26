@@ -1,0 +1,44 @@
+Copyright (c) 2026 Lithuanian Energy Institute (LEI). All rights reserved.
+
+This repository (the "Software") — including its source code, data-
+processing scripts, configuration, and documentation — is the proprietary
+property of the Lithuanian Energy Institute (LEI). It is NOT open-source
+software, and no rights are granted under this notice except as stated
+below.
+
+## Public use of the hosted dashboard
+
+The dashboard built from this Software is made available for public
+viewing and use at its hosted URL. Visiting and using the live dashboard —
+including the map, charts, and hydrology tools — is permitted for anyone.
+
+## No license to the source code
+
+Viewing this repository's source code (as a public GitHub repository) does
+not grant any right to copy, modify, merge, publish, distribute,
+sublicense, and/or sell copies of the Software, in whole or in part.
+Reusing, redistributing, or building derivative works from this source
+code requires prior written permission from LEI.
+
+## Authorized development use
+
+Modifying, extending, or redistributing the source code is authorized only
+for LEI employees and contractors acting within the scope of their work
+for LEI.
+
+## Third-party data and services
+
+This project displays data from third-party sources (Esri, CORINE Land
+Cover / Copernicus, HILDA+, HYDE, LUH2, LUCAS, GRPK, and the Lithuanian
+Hydrometeorological Service's api.meteo.lt) — each remains subject to its
+own original license/terms of use; this LICENSE covers only the code and
+original work in this repository, not the underlying third-party datasets.
+
+## No warranty
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT. IN NO EVENT SHALL
+LEI BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY, WHETHER IN AN
+ACTION OF CONTRACT, TORT, OR OTHERWISE, ARISING FROM, OUT OF, OR IN
+CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.

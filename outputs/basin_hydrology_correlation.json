@@ -1,0 +1,3068 @@
+[
+  {
+    "basin": "Nemuno mažieji intakai",
+    "river": "Nemunas",
+    "geometry_note": "fragmented river line; using longest component",
+    "catchment_caveat": "Mainstem gauge drains a mostly Belarusian catchment — basin land cover explains little of this flow.",
+    "station_code": "lazdenu-vms",
+    "station_name": "Lazdėnų VMS",
+    "station_water_body": "Nemunas",
+    "station_lat": 55.124307,
+    "station_lon": 21.759532,
+    "dist_from_outlet_km": 0.0,
+    "river_length_in_basin_km": 348.0,
+    "other_candidates": [],
+    "name_matched_but_excluded": [],
+    "basin_index": 0,
+    "error": "no observations returned"
+  },
+  {
+    "basin": "Merkys",
+    "river": "Merkys",
+    "geometry_note": null,
+    "catchment_caveat": "Part of the catchment lies upstream in Belarus.",
+    "station_code": "puvociu-vms",
+    "station_name": "Puvočių VMS",
+    "station_water_body": "Merkys",
+    "station_lat": 54.116079,
+    "station_lon": 24.302952,
+    "dist_from_outlet_km": 31.7,
+    "river_length_in_basin_km": 196.9,
+    "other_candidates": [],
+    "name_matched_but_excluded": [],
+    "basin_index": 1,
+    "hydro_metric": "discharge",
+    "hydro_annual": {
+      "2017": {
+        "mean": 42.13056259600615,
+        "n_days": 365,
+        "n_months": 12
+      },
+      "2018": {
+        "mean": 33.4062980030722,
+        "n_days": 365,
+        "n_months": 12
+      },
+      "2019": {
+        "mean": 26.123323092677932,
+        "n_days": 365,
+        "n_months": 12
+      },
+      "2020": {
+        "mean": 20.863174514893092,
+        "n_days": 366,
+        "n_months": 12
+      },
+      "2021": {
+        "mean": 26.604477406554015,
+        "n_days": 365,
+        "n_months": 12
+      },
+      "2022": {
+        "mean": 33.09389208173691,
+        "n_days": 353,
+        "n_months": 12
+      },
+      "2023": {
+        "mean": 30.173487583205326,
+        "n_days": 365,
+        "n_months": 12
+      },
+      "2024": {
+        "mean": 27.282001915708815,
+        "n_days": 366,
+        "n_months": 12
+      }
+    },
+    "land_cover_annual_pct": {
+      "2017": {
+        "Water": 1.5693768535814216,
+        "Wetland": 0.1258446089478241,
+        "Urban": 1.8889714952868029,
+        "Agriculture": 28.6312089865455,
+        "Forest": 67.78459805563845
+      },
+      "2018": {
+        "Water": 1.5792822095201429,
+        "Wetland": 0.13726673905888317,
+        "Urban": 2.1522734327183066,
+        "Agriculture": 28.921452856832243,
+        "Forest": 67.20972476187043
+      },
+      "2019": {
+        "Water": 1.5778422005327926,
+        "Wetland": 0.10547536417271405,
+        "Urban": 2.1488507642980057,
+        "Agriculture": 29.636533790366776,
+        "Forest": 66.53129788062971
+      },
+      "2020": {
+        "Water": 1.545704058776508,
+        "Wetland": 0.0999323884015535,
+        "Urban": 2.1153282021366024,
+        "Agriculture": 29.311668821650706,
+        "Forest": 66.92736652903463
+      },
+      "2021": {
+        "Water": 1.5147173947950348,
+        "Wetland": 0.11979074763519552,
+        "Urban": 2.1308294753533725,
+        "Agriculture": 28.161683997333654,
+        "Forest": 68.07297838488275
+      },
+      "2022": {
+        "Water": 1.5313145572043834,
+        "Wetland": 0.14507825840018918,
+        "Urban": 2.2173570742109163,
+        "Agriculture": 28.721347196172797,
+        "Forest": 67.38490291401172
+      },
+      "2023": {
+        "Water": 1.5451375846528077,
+        "Wetland": 0.08466141073974585,
+        "Urban": 2.218942672342208,
+        "Agriculture": 28.673959253357456,
+        "Forest": 67.47729907890778
+      },
+      "2024": {
+        "Water": 1.539822257361265,
+        "Wetland": 0.10074504053228236,
+        "Urban": 2.175776814701179,
+        "Agriculture": 28.0681257663614,
+        "Forest": 68.11553012104388
+      },
+      "2025": {
+        "Water": 1.5571288359629116,
+        "Wetland": 0.08122815401806713,
+        "Urban": 2.16893941908661,
+        "Agriculture": 28.64266817571138,
+        "Forest": 67.55003541522103
+      }
+    },
+    "correlation": {
+      "years_used": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024
+      ],
+      "n": 8,
+      "per_class": {
+        "Water": {
+          "pearson_r": 0.3431397140150817,
+          "pearson_p": 0.4132688492063492,
+          "spearman_r": 0.19047619047619052,
+          "spearman_p": 0.6645833333333333,
+          "pearson_q": 0.5785714285714286,
+          "spearman_q": 0.7520337301587302
+        },
+        "Wetland": {
+          "pearson_r": 0.5331814183695107,
+          "pearson_p": 0.17137896825396826,
+          "spearman_r": 0.5952380952380953,
+          "spearman_p": 0.13229166666666667,
+          "pearson_q": 0.4311135912698413,
+          "spearman_q": 0.6614583333333334
+        },
+        "Urban": {
+          "pearson_r": -0.5610336149579297,
+          "pearson_p": 0.1724454365079365,
+          "spearman_r": 0.14285714285714288,
+          "spearman_p": 0.7520337301587302,
+          "pearson_q": 0.4311135912698413,
+          "spearman_q": 0.7520337301587302
+        },
+        "Agriculture": {
+          "pearson_r": -0.2396016103586267,
+          "pearson_p": 0.5785714285714286,
+          "spearman_r": -0.30952380952380953,
+          "spearman_p": 0.4618055555555556,
+          "pearson_q": 0.5785714285714286,
+          "spearman_q": 0.7520337301587302
+        },
+        "Forest": {
+          "pearson_r": 0.30265079252266935,
+          "pearson_p": 0.47492559523809524,
+          "spearman_r": 0.30952380952380953,
+          "spearman_p": 0.4618055555555556,
+          "pearson_q": 0.5785714285714286,
+          "spearman_q": 0.7520337301587302
+        }
+      }
+    }
+  },
+  {
+    "basin": "Šešupė",
+    "river": "Šešupė",
+    "geometry_note": "fragmented river line; using longest component",
+    "catchment_caveat": "Part of the catchment lies upstream in Poland.",
+    "station_code": "kudirkos-naumiescio-vms",
+    "station_name": "Kudirkos Naumiesčio VMS",
+    "station_water_body": "Šešupė",
+    "station_lat": 54.77723,
+    "station_lon": 22.86552,
+    "dist_from_outlet_km": 67.0,
+    "river_length_in_basin_km": 156.5,
+    "other_candidates": [],
+    "name_matched_but_excluded": [],
+    "basin_index": 2,
+    "hydro_metric": "discharge",
+    "hydro_annual": {
+      "2017": {
+        "mean": 28.22493804403482,
+        "n_days": 365,
+        "n_months": 12
+      },
+      "2018": {
+        "mean": 14.821980670762931,
+        "n_days": 365,
+        "n_months": 12
+      },
+      "2019": {
+        "mean": 11.240131464413722,
+        "n_days": 365,
+        "n_months": 12
+      },
+      "2020": {
+        "mean": 6.783687863057719,
+        "n_days": 366,
+        "n_months": 12
+      },
+      "2021": {
+        "mean": 10.514481566820274,
+        "n_days": 365,
+        "n_months": 12
+      },
+      "2022": {
+        "mean": 18.802587941628268,
+        "n_days": 365,
+        "n_months": 12
+      },
+      "2023": {
+        "mean": 14.074892729134666,
+        "n_days": 365,
+        "n_months": 12
+      }
+    },
+    "land_cover_annual_pct": {
+      "2017": {
+        "Water": 1.4548652933814343,
+        "Wetland": 0.31700517073104634,
+        "Urban": 3.583330693241755,
+        "Agriculture": 68.19217243838528,
+        "Forest": 26.45262640426049
+      },
+      "2018": {
+        "Water": 1.4734412661869363,
+        "Wetland": 0.2702201448014071,
+        "Urban": 3.7938886379189576,
+        "Agriculture": 68.82193400888299,
+        "Forest": 25.640515942209706
+      },
+      "2019": {
+        "Water": 1.4707691628382524,
+        "Wetland": 0.25483972055033427,
+        "Urban": 4.00219028047946,
+        "Agriculture": 68.77845639681385,
+        "Forest": 25.493744439318107
+      },
+      "2020": {
+        "Water": 1.4866012696458957,
+        "Wetland": 0.25605124292169634,
+        "Urban": 3.829725638517141,
+        "Agriculture": 68.58049068640067,
+        "Forest": 25.847131162514604
+      },
+      "2021": {
+        "Water": 1.4539260469437059,
+        "Wetland": 0.24417874581557797,
+        "Urban": 3.751529678910479,
+        "Agriculture": 68.38732252015143,
+        "Forest": 26.16304300817881
+      },
+      "2022": {
+        "Water": 1.5129170552315108,
+        "Wetland": 0.35582243193613494,
+        "Urban": 3.9019758515730594,
+        "Agriculture": 68.77408520721264,
+        "Forest": 25.45519945404665
+      },
+      "2023": {
+        "Water": 1.4422688377851116,
+        "Wetland": 0.27535961688201127,
+        "Urban": 3.9233864490209642,
+        "Agriculture": 68.19871128212479,
+        "Forest": 26.160273814187125
+      },
+      "2024": {
+        "Water": 1.4150285804248337,
+        "Wetland": 0.288785564276148,
+        "Urban": 3.930199679360262,
+        "Agriculture": 67.69759692426975,
+        "Forest": 26.668389251669016
+      },
+      "2025": {
+        "Water": 1.4535841190270495,
+        "Wetland": 0.24859003807367352,
+        "Urban": 3.9043271336666088,
+        "Agriculture": 68.24639334116911,
+        "Forest": 26.147105368063556
+      }
+    },
+    "correlation": {
+      "years_used": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023
+      ],
+      "n": 7,
+      "per_class": {
+        "Water": {
+          "pearson_r": -0.07923010854554165,
+          "pearson_p": 0.8555555555555555,
+          "spearman_r": 0.07142857142857144,
+          "spearman_p": 0.9063492063492063,
+          "pearson_q": 0.8555555555555555,
+          "spearman_q": 1.0
+        },
+        "Wetland": {
+          "pearson_r": 0.7349676056849683,
+          "pearson_p": 0.05734126984126984,
+          "spearman_r": 0.8214285714285715,
+          "spearman_p": 0.034126984126984124,
+          "pearson_q": 0.2867063492063492,
+          "spearman_q": 0.1706349206349206
+        },
+        "Urban": {
+          "pearson_r": -0.5887684854202829,
+          "pearson_p": 0.16170634920634921,
+          "spearman_r": -0.25,
+          "spearman_p": 0.5948412698412698,
+          "pearson_q": 0.404265873015873,
+          "spearman_q": 1.0
+        },
+        "Agriculture": {
+          "pearson_r": -0.34705075763499493,
+          "pearson_p": 0.4724206349206349,
+          "spearman_r": -0.14285714285714288,
+          "spearman_p": 0.7825396825396825,
+          "pearson_q": 0.5905257936507936,
+          "spearman_q": 1.0
+        },
+        "Forest": {
+          "pearson_r": 0.3879222145871278,
+          "pearson_p": 0.40674603174603174,
+          "spearman_r": 0.0,
+          "spearman_p": 1.0,
+          "pearson_q": 0.5905257936507936,
+          "spearman_q": 1.0
+        }
+      }
+    }
+  },
+  {
+    "basin": "Neris",
+    "river": "Neris",
+    "geometry_note": null,
+    "catchment_caveat": "Roughly 70% of the catchment lies in Belarus.",
+    "station_code": "jonavos-vms",
+    "station_name": "Jonavos VMS",
+    "station_water_body": "Neris",
+    "station_lat": 55.075005,
+    "station_lon": 24.29199,
+    "dist_from_outlet_km": 28.1,
+    "river_length_in_basin_km": 231.1,
+    "other_candidates": [],
+    "name_matched_but_excluded": [],
+    "basin_index": 4,
+    "hydro_metric": "discharge",
+    "hydro_annual": {
+      "2017": {
+        "mean": 270.551113671275,
+        "n_days": 365,
+        "n_months": 12
+      },
+      "2018": {
+        "mean": 169.4627470558116,
+        "n_days": 365,
+        "n_months": 12
+      },
+      "2019": {
+        "mean": 125.02721198156682,
+        "n_days": 365,
+        "n_months": 12
+      },
+      "2020": {
+        "mean": 126.15733222098629,
+        "n_days": 366,
+        "n_months": 12
+      },
+      "2021": {
+        "mean": 135.66358806963646,
+        "n_days": 365,
+        "n_months": 12
+      },
+      "2022": {
+        "mean": 177.84398233486942,
+        "n_days": 365,
+        "n_months": 12
+      },
+      "2023": {
+        "mean": 180.19617127496159,
+        "n_days": 365,
+        "n_months": 12
+      },
+      "2024": {
+        "mean": 186.54872543566924,
+        "n_days": 366,
+        "n_months": 12
+      }
+    },
+    "land_cover_annual_pct": {
+      "2017": {
+        "Water": 2.270012412625906,
+        "Wetland": 0.2821556710153821,
+        "Urban": 10.498467591093261,
+        "Agriculture": 30.19014780569032,
+        "Forest": 56.759216519575126
+      },
+      "2018": {
+        "Water": 2.2225587882758893,
+        "Wetland": 0.2326942219190052,
+        "Urban": 11.580349710060489,
+        "Agriculture": 31.07614035004595,
+        "Forest": 54.88825692969866
+      },
+      "2019": {
+        "Water": 2.1870582888177554,
+        "Wetland": 0.2577146267898286,
+        "Urban": 11.817242537465459,
+        "Agriculture": 33.04030194494184,
+        "Forest": 52.69768260198513
+      },
+      "2020": {
+        "Water": 2.1624624356748425,
+        "Wetland": 0.28612206312530636,
+        "Urban": 11.619471799948974,
+        "Agriculture": 32.61468062814797,
+        "Forest": 53.31726307310291
+      },
+      "2021": {
+        "Water": 2.110570955693852,
+        "Wetland": 0.31752481745272576,
+        "Urban": 12.102940048862855,
+        "Agriculture": 30.272208259839168,
+        "Forest": 55.196755918151396
+      },
+      "2022": {
+        "Water": 2.165919834829206,
+        "Wetland": 0.3478744020241688,
+        "Urban": 12.756132819764915,
+        "Agriculture": 30.68567942220996,
+        "Forest": 54.04439352117175
+      },
+      "2023": {
+        "Water": 2.1448353294027664,
+        "Wetland": 0.2809828761869006,
+        "Urban": 12.983732420948996,
+        "Agriculture": 30.415218861224197,
+        "Forest": 54.175230512237135
+      },
+      "2024": {
+        "Water": 2.1360886255719516,
+        "Wetland": 0.26874358935686815,
+        "Urban": 12.932931640158493,
+        "Agriculture": 29.14453319399905,
+        "Forest": 55.51770295091364
+      },
+      "2025": {
+        "Water": 2.191625151879862,
+        "Wetland": 0.2427192721128647,
+        "Urban": 13.103282434585081,
+        "Agriculture": 29.125484660394857,
+        "Forest": 55.33688848102734
+      }
+    },
+    "correlation": {
+      "years_used": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024
+      ],
+      "n": 8,
+      "per_class": {
+        "Water": {
+          "pearson_r": 0.6345131039713848,
+          "pearson_p": 0.09427083333333333,
+          "spearman_r": 0.09523809523809526,
+          "spearman_p": 0.8401289682539682,
+          "pearson_q": 0.19002149470899468,
+          "spearman_q": 0.9348710317460316
+        },
+        "Wetland": {
+          "pearson_r": -0.00040256597384276394,
+          "pearson_p": 0.9992063492063492,
+          "spearman_r": 0.04761904761904763,
+          "spearman_p": 0.9348710317460317,
+          "pearson_q": 0.9992063492063492,
+          "spearman_q": 0.9348710317460316
+        },
+        "Urban": {
+          "pearson_r": -0.3510388494045177,
+          "pearson_p": 0.39372519841269843,
+          "spearman_r": 0.14285714285714288,
+          "spearman_p": 0.7520337301587302,
+          "pearson_q": 0.492156498015873,
+          "spearman_q": 0.9348710317460316
+        },
+        "Agriculture": {
+          "pearson_r": -0.5986079413847913,
+          "pearson_p": 0.11401289682539682,
+          "spearman_r": -0.8333333333333335,
+          "spearman_p": 0.015376984126984126,
+          "pearson_q": 0.19002149470899468,
+          "spearman_q": 0.06981646825396826
+        },
+        "Forest": {
+          "pearson_r": 0.8064471812952018,
+          "pearson_p": 0.015203373015873016,
+          "spearman_r": 0.7857142857142858,
+          "spearman_p": 0.027926587301587303,
+          "pearson_q": 0.07601686507936507,
+          "spearman_q": 0.06981646825396826
+        }
+      }
+    }
+  },
+  {
+    "basin": "Žeimena",
+    "river": "Žeimena",
+    "geometry_note": "fragmented river line; using longest component",
+    "catchment_caveat": null,
+    "station_code": "pabrades-vms",
+    "station_name": "Pabradės VMS",
+    "station_water_body": "Žeimena",
+    "station_lat": 54.983728,
+    "station_lon": 25.772459,
+    "dist_from_outlet_km": 2.6,
+    "river_length_in_basin_km": 84.8,
+    "other_candidates": [],
+    "name_matched_but_excluded": [],
+    "basin_index": 6,
+    "hydro_metric": "discharge",
+    "hydro_annual": {
+      "2017": {
+        "mean": 28.3734434203789,
+        "n_days": 365,
+        "n_months": 12
+      }
+    },
+    "land_cover_annual_pct": {
+      "2017": {
+        "Water": 7.413388030647296,
+        "Wetland": 0.2133358148568196,
+        "Urban": 2.012769514282143,
+        "Agriculture": 15.535495132412871,
+        "Forest": 74.82501150780087
+      },
+      "2018": {
+        "Water": 7.266738354055064,
+        "Wetland": 0.1241422489609101,
+        "Urban": 2.3933883160897724,
+        "Agriculture": 16.895949297342977,
+        "Forest": 73.31978178355128
+      },
+      "2019": {
+        "Water": 7.147803988669375,
+        "Wetland": 0.12936454882284532,
+        "Urban": 2.2267756864711368,
+        "Agriculture": 18.015438833930002,
+        "Forest": 72.48061694210665
+      },
+      "2020": {
+        "Water": 7.34030466515363,
+        "Wetland": 0.16220845402768705,
+        "Urban": 2.1886373999707924,
+        "Agriculture": 17.877392076434,
+        "Forest": 72.43145740441389
+      },
+      "2021": {
+        "Water": 7.0843218701268444,
+        "Wetland": 0.12266818364446323,
+        "Urban": 2.26509057248372,
+        "Agriculture": 15.992156242562098,
+        "Forest": 74.53576313118288
+      },
+      "2022": {
+        "Water": 7.09928957980705,
+        "Wetland": 0.14310327006073148,
+        "Urban": 2.2155634194797766,
+        "Agriculture": 16.873470702285083,
+        "Forest": 73.66857302836736
+      },
+      "2023": {
+        "Water": 7.144264790281231,
+        "Wetland": 0.1168331915972078,
+        "Urban": 2.4872275303790805,
+        "Agriculture": 16.141844151579182,
+        "Forest": 74.1098303361633
+      },
+      "2024": {
+        "Water": 7.073124019422199,
+        "Wetland": 0.14898511503980552,
+        "Urban": 2.3588721216261743,
+        "Agriculture": 14.94435169165754,
+        "Forest": 75.47466705225429
+      },
+      "2025": {
+        "Water": 7.308098680635856,
+        "Wetland": 0.1700473099281074,
+        "Urban": 2.2162337768119507,
+        "Agriculture": 14.508590593171093,
+        "Forest": 75.797029639453
+      }
+    },
+    "correlation": {
+      "years_used": [
+        2017
+      ],
+      "n": 1,
+      "per_class": {},
+      "note": "Fewer than 3 overlapping years -- correlation not computed."
+    }
+  },
+  {
+    "basin": "Minija",
+    "river": "Minija",
+    "geometry_note": null,
+    "catchment_caveat": null,
+    "station_code": "lankupiu-minija-vms",
+    "station_name": "Lankupių VMS",
+    "station_water_body": "Minija",
+    "station_lat": 55.483301,
+    "station_lon": 21.36597,
+    "dist_from_outlet_km": 17.3,
+    "river_length_in_basin_km": 197.0,
+    "other_candidates": [],
+    "name_matched_but_excluded": [],
+    "basin_index": 7,
+    "hydro_metric": "discharge",
+    "hydro_annual": {
+      "2017": {
+        "mean": 64.4783032514081,
+        "n_days": 365,
+        "n_months": 12
+      },
+      "2018": {
+        "mean": 29.111363543266766,
+        "n_days": 365,
+        "n_months": 12
+      },
+      "2019": {
+        "mean": 36.58621031746033,
+        "n_days": 365,
+        "n_months": 12
+      },
+      "2020": {
+        "mean": 35.80279415399827,
+        "n_days": 366,
+        "n_months": 12
+      },
+      "2021": {
+        "mean": 19.78856656426012,
+        "n_days": 365,
+        "n_months": 12
+      },
+      "2022": {
+        "mean": 37.07628136200717,
+        "n_days": 365,
+        "n_months": 12
+      },
+      "2023": {
+        "mean": 28.80450204813108,
+        "n_days": 365,
+        "n_months": 12
+      },
+      "2024": {
+        "mean": 27.598868526758128,
+        "n_days": 366,
+        "n_months": 12
+      }
+    },
+    "land_cover_annual_pct": {
+      "2017": {
+        "Water": 1.2977313239554777,
+        "Wetland": 0.1990366268074132,
+        "Urban": 3.2034162081175626,
+        "Agriculture": 48.23014002836908,
+        "Forest": 47.06967581275047
+      },
+      "2018": {
+        "Water": 1.3403713395692882,
+        "Wetland": 0.1473488733559563,
+        "Urban": 3.7717161864778226,
+        "Agriculture": 48.63982567934395,
+        "Forest": 46.100737921252986
+      },
+      "2019": {
+        "Water": 1.374035046854697,
+        "Wetland": 0.19296511852162412,
+        "Urban": 3.9426776147469145,
+        "Agriculture": 48.81763413628492,
+        "Forest": 45.672688083591844
+      },
+      "2020": {
+        "Water": 1.380582751868783,
+        "Wetland": 0.15413127532898901,
+        "Urban": 3.68894979369457,
+        "Agriculture": 48.09178787177274,
+        "Forest": 46.68454830733492
+      },
+      "2021": {
+        "Water": 1.345160518093877,
+        "Wetland": 0.1663287143838011,
+        "Urban": 3.731470760126306,
+        "Agriculture": 46.963279858028066,
+        "Forest": 47.79376014936795
+      },
+      "2022": {
+        "Water": 1.402229294575092,
+        "Wetland": 0.17290022923430218,
+        "Urban": 3.9509362265776686,
+        "Agriculture": 48.707802762308376,
+        "Forest": 45.76613148730456
+      },
+      "2023": {
+        "Water": 1.3809330966046018,
+        "Wetland": 0.1354745677953459,
+        "Urban": 3.772607354640779,
+        "Agriculture": 48.637798441843486,
+        "Forest": 46.07318653911578
+      },
+      "2024": {
+        "Water": 1.3807970403965169,
+        "Wetland": 0.14274677211748427,
+        "Urban": 3.742777031018162,
+        "Agriculture": 47.20861301104157,
+        "Forest": 47.525066145426266
+      },
+      "2025": {
+        "Water": 1.4562572148056092,
+        "Wetland": 0.16632191157339685,
+        "Urban": 3.5707135474635825,
+        "Agriculture": 46.684459870799664,
+        "Forest": 48.122247455357744
+      }
+    },
+    "correlation": {
+      "years_used": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024
+      ],
+      "n": 8,
+      "per_class": {
+        "Water": {
+          "pearson_r": -0.5347957876843813,
+          "pearson_p": 0.16029265873015874,
+          "spearman_r": -0.11904761904761905,
+          "spearman_p": 0.7930059523809524,
+          "pearson_q": 0.2671544312169312,
+          "spearman_q": 0.8819940476190476
+        },
+        "Wetland": {
+          "pearson_r": 0.6865353866473536,
+          "pearson_p": 0.03988095238095238,
+          "spearman_r": 0.7142857142857144,
+          "spearman_p": 0.05758928571428571,
+          "pearson_q": 0.1994047619047619,
+          "spearman_q": 0.2874503968253968
+        },
+        "Urban": {
+          "pearson_r": -0.7134398754746023,
+          "pearson_p": 0.11478174603174603,
+          "spearman_r": 0.07142857142857144,
+          "spearman_p": 0.8819940476190476,
+          "pearson_q": 0.2671544312169312,
+          "spearman_q": 0.8819940476190476
+        },
+        "Agriculture": {
+          "pearson_r": 0.3577675965172997,
+          "pearson_p": 0.388219246031746,
+          "spearman_r": 0.6190476190476191,
+          "spearman_p": 0.11498015873015872,
+          "pearson_q": 0.4852740575396825,
+          "spearman_q": 0.2874503968253968
+        },
+        "Forest": {
+          "pearson_r": -0.10758795476350162,
+          "pearson_p": 0.846875,
+          "spearman_r": -0.523809523809524,
+          "spearman_p": 0.19662698412698412,
+          "pearson_q": 0.846875,
+          "spearman_q": 0.3277116402116402
+        }
+      }
+    }
+  },
+  {
+    "basin": "Šventoji",
+    "river": "Šventoji",
+    "geometry_note": "fragmented river line; using longest component",
+    "catchment_caveat": null,
+    "station_code": "ukmerges-vms",
+    "station_name": "Ukmergės VMS",
+    "station_water_body": "Šventoji",
+    "station_lat": 55.247456,
+    "station_lon": 24.768688,
+    "dist_from_outlet_km": 16.6,
+    "river_length_in_basin_km": 204.1,
+    "other_candidates": [],
+    "name_matched_but_excluded": [
+      "sventosios-vms"
+    ],
+    "basin_index": 9,
+    "hydro_metric": "discharge",
+    "hydro_annual": {
+      "2017": {
+        "mean": 72.85077188940092,
+        "n_days": 365,
+        "n_months": 12
+      },
+      "2018": {
+        "mean": 36.0945906298003,
+        "n_days": 365,
+        "n_months": 12
+      },
+      "2019": {
+        "mean": 28.615832693292372,
+        "n_days": 365,
+        "n_months": 12
+      },
+      "2020": {
+        "mean": 29.912706093189964,
+        "n_days": 366,
+        "n_months": 12
+      },
+      "2021": {
+        "mean": 33.642245903737845,
+        "n_days": 365,
+        "n_months": 12
+      },
+      "2022": {
+        "mean": 50.32553507424475,
+        "n_days": 365,
+        "n_months": 12
+      },
+      "2023": {
+        "mean": 54.85286226318484,
+        "n_days": 365,
+        "n_months": 12
+      }
+    },
+    "land_cover_annual_pct": {
+      "2017": {
+        "Water": 4.140389947165514,
+        "Wetland": 0.2493850549438118,
+        "Urban": 2.949391265081679,
+        "Agriculture": 40.78035802917799,
+        "Forest": 51.880475703631014
+      },
+      "2018": {
+        "Water": 3.9861720144555983,
+        "Wetland": 0.10442782829946863,
+        "Urban": 3.277674236200178,
+        "Agriculture": 43.98856003046856,
+        "Forest": 48.64316589057619
+      },
+      "2019": {
+        "Water": 3.7436879310271682,
+        "Wetland": 0.11608214775084597,
+        "Urban": 3.156660508378148,
+        "Agriculture": 45.183719917361564,
+        "Forest": 47.79984949548227
+      },
+      "2020": {
+        "Water": 3.8798941071330093,
+        "Wetland": 0.12585103635063546,
+        "Urban": 2.9866329433790977,
+        "Agriculture": 43.99130421615333,
+        "Forest": 49.016317696983926
+      },
+      "2021": {
+        "Water": 3.7659168661688183,
+        "Wetland": 0.11448542349840753,
+        "Urban": 3.1708174426864377,
+        "Agriculture": 42.33849576084441,
+        "Forest": 50.610284506801925
+      },
+      "2022": {
+        "Water": 3.7462627225338685,
+        "Wetland": 0.15679567020232088,
+        "Urban": 3.1251959080494225,
+        "Agriculture": 43.46684511091283,
+        "Forest": 49.50490058830156
+      },
+      "2023": {
+        "Water": 3.7923055331267843,
+        "Wetland": 0.10876284626526787,
+        "Urban": 3.2283407595741,
+        "Agriculture": 42.84452036053209,
+        "Forest": 50.02607050050176
+      },
+      "2024": {
+        "Water": 3.7843012899646524,
+        "Wetland": 0.14406753896125016,
+        "Urban": 3.246881320612331,
+        "Agriculture": 40.98626033510705,
+        "Forest": 51.838489515354716
+      },
+      "2025": {
+        "Water": 4.030073093440539,
+        "Wetland": 0.1525976405718323,
+        "Urban": 3.1519439852634723,
+        "Agriculture": 40.55851499459588,
+        "Forest": 52.10687028612827
+      }
+    },
+    "correlation": {
+      "years_used": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023
+      ],
+      "n": 7,
+      "per_class": {
+        "Water": {
+          "pearson_r": 0.5547954336190994,
+          "pearson_p": 0.20555555555555555,
+          "spearman_r": 0.5357142857142858,
+          "spearman_p": 0.2357142857142857,
+          "pearson_q": 0.2569444444444444,
+          "spearman_q": 0.39285714285714285
+        },
+        "Wetland": {
+          "pearson_r": 0.8010657125957173,
+          "pearson_p": 0.04424603174603175,
+          "spearman_r": 0.21428571428571433,
+          "spearman_p": 0.6615079365079365,
+          "pearson_q": 0.07374338624338625,
+          "spearman_q": 0.8268849206349206
+        },
+        "Urban": {
+          "pearson_r": -0.3529958261391053,
+          "pearson_p": 0.43194444444444446,
+          "spearman_r": -0.10714285714285716,
+          "spearman_p": 0.8396825396825397,
+          "pearson_q": 0.43194444444444446,
+          "spearman_q": 0.8396825396825397
+        },
+        "Agriculture": {
+          "pearson_r": -0.8026753856013557,
+          "pearson_p": 0.027182539682539683,
+          "spearman_r": -0.7857142857142859,
+          "spearman_p": 0.04801587301587302,
+          "pearson_q": 0.07374338624338625,
+          "spearman_q": 0.22023809523809526
+        },
+        "Forest": {
+          "pearson_r": 0.780595468143084,
+          "pearson_p": 0.03492063492063492,
+          "spearman_r": 0.7142857142857144,
+          "spearman_p": 0.0880952380952381,
+          "pearson_q": 0.07374338624338625,
+          "spearman_q": 0.22023809523809526
+        }
+      }
+    }
+  },
+  {
+    "basin": "Dubysa",
+    "river": "Dubysa",
+    "geometry_note": "fragmented river line; using longest component",
+    "catchment_caveat": null,
+    "station_code": "padubysio-vms",
+    "station_name": "Padubysio VMS",
+    "station_water_body": "Dubysa",
+    "station_lat": 55.202228,
+    "station_lon": 23.503463,
+    "dist_from_outlet_km": 4.3,
+    "river_length_in_basin_km": 119.0,
+    "other_candidates": [],
+    "name_matched_but_excluded": [],
+    "basin_index": 11,
+    "hydro_metric": "discharge",
+    "hydro_annual": {
+      "2017": {
+        "mean": 20.551207501280082,
+        "n_days": 365,
+        "n_months": 12
+      },
+      "2018": {
+        "mean": 11.544964605734764,
+        "n_days": 365,
+        "n_months": 12
+      },
+      "2019": {
+        "mean": 7.469160074244751,
+        "n_days": 365,
+        "n_months": 12
+      },
+      "2020": {
+        "mean": 7.777945402298851,
+        "n_days": 366,
+        "n_months": 12
+      },
+      "2021": {
+        "mean": 10.810669482846903,
+        "n_days": 365,
+        "n_months": 12
+      },
+      "2022": {
+        "mean": 18.913660906298,
+        "n_days": 365,
+        "n_months": 12
+      },
+      "2023": {
+        "mean": 11.641115591397849,
+        "n_days": 365,
+        "n_months": 12
+      },
+      "2024": {
+        "mean": 12.055806945989369,
+        "n_days": 366,
+        "n_months": 12
+      }
+    },
+    "land_cover_annual_pct": {
+      "2017": {
+        "Water": 0.9018692095079424,
+        "Wetland": 0.29129573292394106,
+        "Urban": 2.7859471808899907,
+        "Agriculture": 56.41161664960668,
+        "Forest": 39.609271227071446
+      },
+      "2018": {
+        "Water": 0.9816288765398182,
+        "Wetland": 0.26471256838895496,
+        "Urban": 2.954536125050543,
+        "Agriculture": 56.645478300868824,
+        "Forest": 39.15364412915186
+      },
+      "2019": {
+        "Water": 0.9685255026702956,
+        "Wetland": 0.2079957133248341,
+        "Urban": 3.0837895140352343,
+        "Agriculture": 56.81352805340276,
+        "Forest": 38.92616121656688
+      },
+      "2020": {
+        "Water": 0.9035122179550914,
+        "Wetland": 0.2506783259564967,
+        "Urban": 2.8604726197729,
+        "Agriculture": 56.38472319555071,
+        "Forest": 39.6006136407648
+      },
+      "2021": {
+        "Water": 0.8500559462179751,
+        "Wetland": 0.20856542523220467,
+        "Urban": 2.815368731534912,
+        "Agriculture": 55.3801430678854,
+        "Forest": 40.74586682912951
+      },
+      "2022": {
+        "Water": 0.989630276810299,
+        "Wetland": 0.2770122415320082,
+        "Urban": 3.151081646379921,
+        "Agriculture": 56.479707395964375,
+        "Forest": 39.102568439313394
+      },
+      "2023": {
+        "Water": 0.9338392035956553,
+        "Wetland": 0.18532423143956178,
+        "Urban": 2.934016322958286,
+        "Agriculture": 56.1101474897654,
+        "Forest": 39.83667275224109
+      },
+      "2024": {
+        "Water": 0.8670811761641287,
+        "Wetland": 0.16973345468875187,
+        "Urban": 2.942857030949447,
+        "Agriculture": 55.27246243067891,
+        "Forest": 40.747865907518765
+      },
+      "2025": {
+        "Water": 0.9189605667290586,
+        "Wetland": 0.18526827759151646,
+        "Urban": 2.8749290594224273,
+        "Agriculture": 54.57440256931931,
+        "Forest": 41.44643952693768
+      }
+    },
+    "correlation": {
+      "years_used": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024
+      ],
+      "n": 8,
+      "per_class": {
+        "Water": {
+          "pearson_r": 0.11542923646664875,
+          "pearson_p": 0.7694444444444445,
+          "spearman_r": 0.0,
+          "spearman_p": 1.0,
+          "pearson_q": 0.9860119047619047,
+          "spearman_q": 1.0
+        },
+        "Wetland": {
+          "pearson_r": 0.5848804678543007,
+          "pearson_p": 0.14603174603174604,
+          "spearman_r": 0.38095238095238104,
+          "spearman_p": 0.35987103174603174,
+          "pearson_q": 0.7301587301587302,
+          "spearman_q": 0.9912574404761905
+        },
+        "Urban": {
+          "pearson_r": -0.008253177204678613,
+          "pearson_p": 0.9860119047619048,
+          "spearman_r": -0.11904761904761905,
+          "spearman_p": 0.7930059523809524,
+          "pearson_q": 0.9860119047619047,
+          "spearman_q": 0.9912574404761905
+        },
+        "Agriculture": {
+          "pearson_r": 0.05261852997275731,
+          "pearson_p": 0.9359375,
+          "spearman_r": -0.2142857142857143,
+          "spearman_p": 0.6190972222222222,
+          "pearson_q": 0.9860119047619047,
+          "spearman_q": 0.9912574404761905
+        },
+        "Forest": {
+          "pearson_r": -0.08690830487279419,
+          "pearson_p": 0.8613343253968254,
+          "spearman_r": 0.28571428571428575,
+          "spearman_p": 0.5007936507936508,
+          "pearson_q": 0.9860119047619047,
+          "spearman_q": 0.9912574404761905
+        }
+      }
+    }
+  },
+  {
+    "basin": "Jūra",
+    "river": "Jūra",
+    "geometry_note": "fragmented river line; using longest component",
+    "catchment_caveat": null,
+    "station_code": "taurages-vms",
+    "station_name": "Tauragės VMS",
+    "station_water_body": "Jūra",
+    "station_lat": 55.250397,
+    "station_lon": 22.280468,
+    "dist_from_outlet_km": 4.3,
+    "river_length_in_basin_km": 160.6,
+    "other_candidates": [],
+    "name_matched_but_excluded": [],
+    "basin_index": 12,
+    "hydro_metric": "discharge",
+    "hydro_annual": {
+      "2017": {
+        "mean": 32.37250377624168,
+        "n_days": 365,
+        "n_months": 12
+      },
+      "2018": {
+        "mean": 14.480566308243729,
+        "n_days": 365,
+        "n_months": 12
+      },
+      "2019": {
+        "mean": 18.68103187403994,
+        "n_days": 365,
+        "n_months": 12
+      },
+      "2020": {
+        "mean": 16.174146582622665,
+        "n_days": 366,
+        "n_months": 12
+      },
+      "2021": {
+        "mean": 17.116167050691242,
+        "n_days": 365,
+        "n_months": 12
+      },
+      "2022": {
+        "mean": 20.151553123399896,
+        "n_days": 365,
+        "n_months": 12
+      },
+      "2023": {
+        "mean": 25.735192780337943,
+        "n_days": 365,
+        "n_months": 12
+      },
+      "2024": {
+        "mean": 18.395171579532814,
+        "n_days": 366,
+        "n_months": 12
+      }
+    },
+    "land_cover_annual_pct": {
+      "2017": {
+        "Water": 0.9460784071384303,
+        "Wetland": 0.07648596324149474,
+        "Urban": 2.9949424334076746,
+        "Agriculture": 55.80342770372374,
+        "Forest": 40.17906549248866
+      },
+      "2018": {
+        "Water": 1.002517172950161,
+        "Wetland": 0.04175479918021469,
+        "Urban": 3.4332592118857184,
+        "Agriculture": 55.756554364908325,
+        "Forest": 39.765914451075574
+      },
+      "2019": {
+        "Water": 0.9603753622365532,
+        "Wetland": 0.04861613913998447,
+        "Urban": 3.51265650059777,
+        "Agriculture": 56.4045789606648,
+        "Forest": 39.073773037360894
+      },
+      "2020": {
+        "Water": 0.9642979113911376,
+        "Wetland": 0.05375715041260673,
+        "Urban": 3.2164328792414656,
+        "Agriculture": 56.249801812642175,
+        "Forest": 39.51571024631262
+      },
+      "2021": {
+        "Water": 0.9410847099333576,
+        "Wetland": 0.055494957039971995,
+        "Urban": 3.2365824474639338,
+        "Agriculture": 55.37183743538093,
+        "Forest": 40.3950004501818
+      },
+      "2022": {
+        "Water": 0.9927944444918846,
+        "Wetland": 0.03515562832371123,
+        "Urban": 3.491583098392364,
+        "Agriculture": 56.73125914127483,
+        "Forest": 38.7492076875172
+      },
+      "2023": {
+        "Water": 0.9642954145425351,
+        "Wetland": 0.056149131373836515,
+        "Urban": 3.279248596384074,
+        "Agriculture": 56.16895135804345,
+        "Forest": 39.53135549965611
+      },
+      "2024": {
+        "Water": 0.9432020375483084,
+        "Wetland": 0.054338916136997685,
+        "Urban": 3.2995180133394633,
+        "Agriculture": 55.25049309014627,
+        "Forest": 40.452447942828954
+      },
+      "2025": {
+        "Water": 1.0023398966993808,
+        "Wetland": 0.06877070105965756,
+        "Urban": 3.1432502467011263,
+        "Agriculture": 54.58318033893521,
+        "Forest": 41.20245881660462
+      }
+    },
+    "correlation": {
+      "years_used": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024
+      ],
+      "n": 8,
+      "per_class": {
+        "Water": {
+          "pearson_r": -0.34890830224264013,
+          "pearson_p": 0.41498015873015875,
+          "spearman_r": -0.2380952380952381,
+          "spearman_p": 0.5821428571428572,
+          "pearson_q": 0.691633597883598,
+          "spearman_q": 0.7930059523809524
+        },
+        "Wetland": {
+          "pearson_r": 0.723880737505973,
+          "pearson_p": 0.05634920634920635,
+          "spearman_r": 0.4761904761904762,
+          "spearman_p": 0.24305555555555555,
+          "pearson_q": 0.2540302579365079,
+          "spearman_q": 0.7930059523809524
+        },
+        "Urban": {
+          "pearson_r": -0.6263306575874495,
+          "pearson_p": 0.10161210317460317,
+          "spearman_r": -0.11904761904761905,
+          "spearman_p": 0.7930059523809524,
+          "pearson_q": 0.2540302579365079,
+          "spearman_q": 0.7930059523809524
+        },
+        "Agriculture": {
+          "pearson_r": 0.07672523155148009,
+          "pearson_p": 0.8606150793650794,
+          "spearman_r": 0.30952380952380953,
+          "spearman_p": 0.4618055555555556,
+          "pearson_q": 0.8606150793650794,
+          "spearman_q": 0.7930059523809524
+        },
+        "Forest": {
+          "pearson_r": 0.10854330082127323,
+          "pearson_p": 0.8103918650793651,
+          "spearman_r": -0.14285714285714288,
+          "spearman_p": 0.7520337301587302,
+          "pearson_q": 0.8606150793650794,
+          "spearman_q": 0.7930059523809524
+        }
+      }
+    }
+  },
+  {
+    "basin": "Nevėžis",
+    "river": "Nevėžis",
+    "geometry_note": null,
+    "catchment_caveat": null,
+    "station_code": "babtu-vms",
+    "station_name": "Babtų VMS",
+    "station_water_body": "Nevėžis",
+    "station_lat": 55.105762,
+    "station_lon": 23.782552,
+    "dist_from_outlet_km": 14.5,
+    "river_length_in_basin_km": 194.0,
+    "other_candidates": [],
+    "name_matched_but_excluded": [],
+    "basin_index": 13,
+    "hydro_metric": "discharge",
+    "hydro_annual": {
+      "2017": {
+        "mean": 69.75114106502816,
+        "n_days": 365,
+        "n_months": 12
+      },
+      "2018": {
+        "mean": 35.542344214029704,
+        "n_days": 365,
+        "n_months": 12
+      },
+      "2019": {
+        "mean": 15.62101267281106,
+        "n_days": 365,
+        "n_months": 12
+      },
+      "2020": {
+        "mean": 14.351390093931528,
+        "n_days": 366,
+        "n_months": 12
+      },
+      "2021": {
+        "mean": 30.403684203789044,
+        "n_days": 365,
+        "n_months": 12
+      },
+      "2022": {
+        "mean": 49.75343599590374,
+        "n_days": 365,
+        "n_months": 12
+      },
+      "2023": {
+        "mean": 34.45312237583205,
+        "n_days": 365,
+        "n_months": 12
+      },
+      "2024": {
+        "mean": 32.78343888270918,
+        "n_days": 366,
+        "n_months": 12
+      }
+    },
+    "land_cover_annual_pct": {
+      "2017": {
+        "Water": 0.7835272163573517,
+        "Wetland": 0.13175011494749675,
+        "Urban": 3.586260928643535,
+        "Agriculture": 63.24774521241009,
+        "Forest": 32.25071652764153
+      },
+      "2018": {
+        "Water": 0.780882442727256,
+        "Wetland": 0.07585158657348096,
+        "Urban": 3.745792566593373,
+        "Agriculture": 63.27968280825973,
+        "Forest": 32.11779059584616
+      },
+      "2019": {
+        "Water": 0.7296806675239272,
+        "Wetland": 0.0703324130313664,
+        "Urban": 3.806314563154483,
+        "Agriculture": 63.58519813352592,
+        "Forest": 31.8084742227643
+      },
+      "2020": {
+        "Water": 0.7506532012729243,
+        "Wetland": 0.07677009170117426,
+        "Urban": 3.7508215450230122,
+        "Agriculture": 63.33572627804573,
+        "Forest": 32.086028883957155
+      },
+      "2021": {
+        "Water": 0.7353366397020812,
+        "Wetland": 0.07299998643413526,
+        "Urban": 3.703481074177416,
+        "Agriculture": 63.06118607251132,
+        "Forest": 32.426996227175046
+      },
+      "2022": {
+        "Water": 0.7831005348973239,
+        "Wetland": 0.14157030274889856,
+        "Urban": 3.856868173391815,
+        "Agriculture": 63.10605276802187,
+        "Forest": 32.11240822094009
+      },
+      "2023": {
+        "Water": 0.749104445286335,
+        "Wetland": 0.08544703375853226,
+        "Urban": 3.773837915536646,
+        "Agriculture": 62.93512775795618,
+        "Forest": 32.45648284746231
+      },
+      "2024": {
+        "Water": 0.718976174253842,
+        "Wetland": 0.07653232264329621,
+        "Urban": 3.8135925763028182,
+        "Agriculture": 62.67742355598577,
+        "Forest": 32.71347537081428
+      },
+      "2025": {
+        "Water": 0.783483245367196,
+        "Wetland": 0.0881716065929842,
+        "Urban": 3.857504938471475,
+        "Agriculture": 62.984930604250486,
+        "Forest": 32.28590960531786
+      }
+    },
+    "correlation": {
+      "years_used": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024
+      ],
+      "n": 8,
+      "per_class": {
+        "Water": {
+          "pearson_r": 0.6730335479618086,
+          "pearson_p": 0.06059027777777778,
+          "spearman_r": 0.6904761904761906,
+          "spearman_p": 0.06939484126984127,
+          "pearson_q": 0.15147569444444445,
+          "spearman_q": 0.2404513888888889
+        },
+        "Wetland": {
+          "pearson_r": 0.8318127361935543,
+          "pearson_p": 0.015873015873015872,
+          "spearman_r": 0.6428571428571429,
+          "spearman_p": 0.09618055555555556,
+          "pearson_q": 0.07936507936507936,
+          "spearman_q": 0.2404513888888889
+        },
+        "Urban": {
+          "pearson_r": -0.49764220959497674,
+          "pearson_p": 0.2089781746031746,
+          "spearman_r": -0.11904761904761905,
+          "spearman_p": 0.7930059523809524,
+          "pearson_q": 0.3482969576719577,
+          "spearman_q": 0.7930059523809524
+        },
+        "Agriculture": {
+          "pearson_r": -0.2283283186773215,
+          "pearson_p": 0.5928323412698413,
+          "spearman_r": -0.28571428571428575,
+          "spearman_p": 0.5007936507936508,
+          "pearson_q": 0.5928323412698413,
+          "spearman_q": 0.6259920634920635
+        },
+        "Forest": {
+          "pearson_r": 0.22564601013939706,
+          "pearson_p": 0.5919146825396825,
+          "spearman_r": 0.28571428571428575,
+          "spearman_p": 0.5007936507936508,
+          "pearson_q": 0.5928323412698413,
+          "spearman_q": 0.6259920634920635
+        }
+      }
+    }
+  },
+  {
+    "basin": "Nevėžis",
+    "river": "Šušvė",
+    "geometry_note": null,
+    "catchment_caveat": null,
+    "station_code": "siaulenu-vms",
+    "station_name": "Šiaulėnų VMS",
+    "station_water_body": "Šušvė",
+    "station_lat": 55.675663,
+    "station_lon": 23.446673,
+    "dist_from_outlet_km": 8.8,
+    "river_length_in_basin_km": 121.0,
+    "other_candidates": [],
+    "name_matched_but_excluded": [],
+    "basin_index": 13,
+    "hydro_metric": "discharge",
+    "hydro_annual": {
+      "2017": {
+        "mean": 1.581943113159242,
+        "n_days": 365,
+        "n_months": 12
+      }
+    },
+    "land_cover_annual_pct": {
+      "2017": {
+        "Water": 0.7835272163573517,
+        "Wetland": 0.13175011494749675,
+        "Urban": 3.586260928643535,
+        "Agriculture": 63.24774521241009,
+        "Forest": 32.25071652764153
+      },
+      "2018": {
+        "Water": 0.780882442727256,
+        "Wetland": 0.07585158657348096,
+        "Urban": 3.745792566593373,
+        "Agriculture": 63.27968280825973,
+        "Forest": 32.11779059584616
+      },
+      "2019": {
+        "Water": 0.7296806675239272,
+        "Wetland": 0.0703324130313664,
+        "Urban": 3.806314563154483,
+        "Agriculture": 63.58519813352592,
+        "Forest": 31.8084742227643
+      },
+      "2020": {
+        "Water": 0.7506532012729243,
+        "Wetland": 0.07677009170117426,
+        "Urban": 3.7508215450230122,
+        "Agriculture": 63.33572627804573,
+        "Forest": 32.086028883957155
+      },
+      "2021": {
+        "Water": 0.7353366397020812,
+        "Wetland": 0.07299998643413526,
+        "Urban": 3.703481074177416,
+        "Agriculture": 63.06118607251132,
+        "Forest": 32.426996227175046
+      },
+      "2022": {
+        "Water": 0.7831005348973239,
+        "Wetland": 0.14157030274889856,
+        "Urban": 3.856868173391815,
+        "Agriculture": 63.10605276802187,
+        "Forest": 32.11240822094009
+      },
+      "2023": {
+        "Water": 0.749104445286335,
+        "Wetland": 0.08544703375853226,
+        "Urban": 3.773837915536646,
+        "Agriculture": 62.93512775795618,
+        "Forest": 32.45648284746231
+      },
+      "2024": {
+        "Water": 0.718976174253842,
+        "Wetland": 0.07653232264329621,
+        "Urban": 3.8135925763028182,
+        "Agriculture": 62.67742355598577,
+        "Forest": 32.71347537081428
+      },
+      "2025": {
+        "Water": 0.783483245367196,
+        "Wetland": 0.0881716065929842,
+        "Urban": 3.857504938471475,
+        "Agriculture": 62.984930604250486,
+        "Forest": 32.28590960531786
+      }
+    },
+    "correlation": {
+      "years_used": [
+        2017
+      ],
+      "n": 1,
+      "per_class": {},
+      "note": "Fewer than 3 overlapping years -- correlation not computed."
+    }
+  },
+  {
+    "basin": "Lielupės mažieji intakai",
+    "river": "Švėtė",
+    "geometry_note": "fragmented river line; using longest component",
+    "catchment_caveat": null,
+    "station_code": "zagares-vms",
+    "station_name": "Žagarės VMS",
+    "station_water_body": "Švėtė",
+    "station_lat": 56.360208,
+    "station_lon": 23.251806,
+    "dist_from_outlet_km": 2.7,
+    "river_length_in_basin_km": 19.5,
+    "other_candidates": [],
+    "name_matched_but_excluded": [],
+    "basin_index": 15,
+    "hydro_metric": "discharge",
+    "hydro_annual": {
+      "2017": {
+        "mean": 1.5660664234511008,
+        "n_days": 365,
+        "n_months": 12
+      },
+      "2018": {
+        "mean": 0.7665029313876088,
+        "n_days": 365,
+        "n_months": 12
+      },
+      "2019": {
+        "mean": 0.39729441884280586,
+        "n_days": 365,
+        "n_months": 12
+      },
+      "2020": {
+        "mean": 0.5937854591521444,
+        "n_days": 366,
+        "n_months": 12
+      },
+      "2021": {
+        "mean": 1.002711251920123,
+        "n_days": 365,
+        "n_months": 12
+      },
+      "2022": {
+        "mean": 1.2747233998975933,
+        "n_days": 365,
+        "n_months": 12
+      },
+      "2023": {
+        "mean": 1.4139723374295954,
+        "n_days": 365,
+        "n_months": 12
+      }
+    },
+    "land_cover_annual_pct": {
+      "2017": {
+        "Water": 0.2585581497152522,
+        "Wetland": 0.000780068067821871,
+        "Urban": 2.5386282824231854,
+        "Agriculture": 78.85448266115174,
+        "Forest": 18.347550838642
+      },
+      "2018": {
+        "Water": 0.26193079694965854,
+        "Wetland": 0.0006940311485768117,
+        "Urban": 2.620088037564407,
+        "Agriculture": 79.0366801771397,
+        "Forest": 18.080606957197666
+      },
+      "2019": {
+        "Water": 0.25376876121061054,
+        "Wetland": 5.735794616337287e-05,
+        "Urban": 2.680159014581308,
+        "Agriculture": 79.26158068404628,
+        "Forest": 17.80443418221564
+      },
+      "2020": {
+        "Water": 0.25776087426358135,
+        "Wetland": 0.0014454202433169963,
+        "Urban": 2.5303687381756594,
+        "Agriculture": 79.15897305415463,
+        "Forest": 18.051451913162822
+      },
+      "2021": {
+        "Water": 0.2534647640959447,
+        "Wetland": 0.00020648860618814233,
+        "Urban": 2.558692091991133,
+        "Agriculture": 79.18238656777851,
+        "Forest": 18.00525008752823
+      },
+      "2022": {
+        "Water": 0.25936116096153944,
+        "Wetland": 0.003435740975186035,
+        "Urban": 2.686101297803833,
+        "Agriculture": 79.0785686852228,
+        "Forest": 17.972533115036637
+      },
+      "2023": {
+        "Water": 0.26505680501556234,
+        "Wetland": 0.00048180674777233205,
+        "Urban": 2.5990204639386008,
+        "Agriculture": 78.94610050855849,
+        "Forest": 18.189340415739572
+      },
+      "2024": {
+        "Water": 0.25198492908492964,
+        "Wetland": 0.00015486645464110675,
+        "Urban": 2.572807882541939,
+        "Agriculture": 78.96619873289414,
+        "Forest": 18.20885358902435
+      },
+      "2025": {
+        "Water": 0.27592040001890517,
+        "Wetland": 0.00036709085544558637,
+        "Urban": 2.4986383223580813,
+        "Agriculture": 78.76175780538402,
+        "Forest": 18.46331638138354
+      }
+    },
+    "correlation": {
+      "years_used": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023
+      ],
+      "n": 7,
+      "per_class": {
+        "Water": {
+          "pearson_r": 0.48699535806802785,
+          "pearson_p": 0.2702380952380952,
+          "spearman_r": 0.4642857142857144,
+          "spearman_p": 0.30238095238095236,
+          "pearson_q": 0.45039682539682535,
+          "spearman_q": 0.503968253968254
+        },
+        "Wetland": {
+          "pearson_r": 0.25832599806794965,
+          "pearson_p": 0.643452380952381,
+          "spearman_r": 0.3214285714285715,
+          "spearman_p": 0.4976190476190476,
+          "pearson_q": 0.643452380952381,
+          "spearman_q": 0.6220238095238095
+        },
+        "Urban": {
+          "pearson_r": -0.21637277803149277,
+          "pearson_p": 0.6176587301587302,
+          "spearman_r": -0.14285714285714288,
+          "spearman_p": 0.7825396825396825,
+          "pearson_q": 0.643452380952381,
+          "spearman_q": 0.7825396825396825
+        },
+        "Agriculture": {
+          "pearson_r": -0.8462429484112699,
+          "pearson_p": 0.02023809523809524,
+          "spearman_r": -0.8214285714285715,
+          "spearman_p": 0.034126984126984124,
+          "pearson_q": 0.09474206349206349,
+          "spearman_q": 0.1706349206349206
+        },
+        "Forest": {
+          "pearson_r": 0.7668941965463955,
+          "pearson_p": 0.037896825396825394,
+          "spearman_r": 0.6785714285714287,
+          "spearman_p": 0.10952380952380952,
+          "pearson_q": 0.09474206349206349,
+          "spearman_q": 0.27380952380952384
+        }
+      }
+    }
+  },
+  {
+    "basin": "Lielupės mažieji intakai",
+    "river": "Platonis",
+    "geometry_note": null,
+    "catchment_caveat": null,
+    "station_code": "vaineikiu-vms",
+    "station_name": "Vaineikių VMS",
+    "station_water_body": "Platonis",
+    "station_lat": 56.316568,
+    "station_lon": 23.571321,
+    "dist_from_outlet_km": 3.9,
+    "river_length_in_basin_km": 15.8,
+    "other_candidates": [],
+    "name_matched_but_excluded": [],
+    "basin_index": 15,
+    "hydro_metric": "discharge",
+    "hydro_annual": {
+      "2017": {
+        "mean": 0.6996751024065541,
+        "n_days": 365,
+        "n_months": 12
+      },
+      "2018": {
+        "mean": 0.4402497311827957,
+        "n_days": 365,
+        "n_months": 12
+      },
+      "2020": {
+        "mean": 0.2501051167964405,
+        "n_days": 335,
+        "n_months": 11
+      },
+      "2021": {
+        "mean": 0.2992081797235023,
+        "n_days": 365,
+        "n_months": 12
+      },
+      "2022": {
+        "mean": 0.845065220174091,
+        "n_days": 365,
+        "n_months": 12
+      },
+      "2023": {
+        "mean": 0.5949403993855608,
+        "n_days": 365,
+        "n_months": 12
+      },
+      "2024": {
+        "mean": 0.5400930910888642,
+        "n_days": 366,
+        "n_months": 12
+      }
+    },
+    "land_cover_annual_pct": {
+      "2017": {
+        "Water": 0.2585581497152522,
+        "Wetland": 0.000780068067821871,
+        "Urban": 2.5386282824231854,
+        "Agriculture": 78.85448266115174,
+        "Forest": 18.347550838642
+      },
+      "2018": {
+        "Water": 0.26193079694965854,
+        "Wetland": 0.0006940311485768117,
+        "Urban": 2.620088037564407,
+        "Agriculture": 79.0366801771397,
+        "Forest": 18.080606957197666
+      },
+      "2019": {
+        "Water": 0.25376876121061054,
+        "Wetland": 5.735794616337287e-05,
+        "Urban": 2.680159014581308,
+        "Agriculture": 79.26158068404628,
+        "Forest": 17.80443418221564
+      },
+      "2020": {
+        "Water": 0.25776087426358135,
+        "Wetland": 0.0014454202433169963,
+        "Urban": 2.5303687381756594,
+        "Agriculture": 79.15897305415463,
+        "Forest": 18.051451913162822
+      },
+      "2021": {
+        "Water": 0.2534647640959447,
+        "Wetland": 0.00020648860618814233,
+        "Urban": 2.558692091991133,
+        "Agriculture": 79.18238656777851,
+        "Forest": 18.00525008752823
+      },
+      "2022": {
+        "Water": 0.25936116096153944,
+        "Wetland": 0.003435740975186035,
+        "Urban": 2.686101297803833,
+        "Agriculture": 79.0785686852228,
+        "Forest": 17.972533115036637
+      },
+      "2023": {
+        "Water": 0.26505680501556234,
+        "Wetland": 0.00048180674777233205,
+        "Urban": 2.5990204639386008,
+        "Agriculture": 78.94610050855849,
+        "Forest": 18.189340415739572
+      },
+      "2024": {
+        "Water": 0.25198492908492964,
+        "Wetland": 0.00015486645464110675,
+        "Urban": 2.572807882541939,
+        "Agriculture": 78.96619873289414,
+        "Forest": 18.20885358902435
+      },
+      "2025": {
+        "Water": 0.27592040001890517,
+        "Wetland": 0.00036709085544558637,
+        "Urban": 2.4986383223580813,
+        "Agriculture": 78.76175780538402,
+        "Forest": 18.46331638138354
+      }
+    },
+    "correlation": {
+      "years_used": [
+        2017,
+        2018,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024
+      ],
+      "n": 7,
+      "per_class": {
+        "Water": {
+          "pearson_r": 0.29233457901311416,
+          "pearson_p": 0.5192460317460318,
+          "spearman_r": 0.39285714285714296,
+          "spearman_p": 0.3956349206349206,
+          "pearson_q": 0.5482142857142858,
+          "spearman_q": 0.6593915343915343
+        },
+        "Wetland": {
+          "pearson_r": 0.5295556256235023,
+          "pearson_p": 0.2363095238095238,
+          "spearman_r": 0.28571428571428575,
+          "spearman_p": 0.555952380952381,
+          "pearson_q": 0.39384920634920634,
+          "spearman_q": 0.6949404761904763
+        },
+        "Urban": {
+          "pearson_r": 0.6222606786782154,
+          "pearson_p": 0.13253968253968254,
+          "spearman_r": 0.5357142857142858,
+          "spearman_p": 0.2357142857142857,
+          "pearson_q": 0.3715277777777778,
+          "spearman_q": 0.5892857142857143
+        },
+        "Agriculture": {
+          "pearson_r": -0.6107156714362922,
+          "pearson_p": 0.1486111111111111,
+          "spearman_r": -0.6071428571428572,
+          "spearman_p": 0.16666666666666666,
+          "pearson_q": 0.3715277777777778,
+          "spearman_q": 0.5892857142857143
+        },
+        "Forest": {
+          "pearson_r": 0.27648234164730606,
+          "pearson_p": 0.5482142857142858,
+          "spearman_r": 0.1785714285714286,
+          "spearman_p": 0.7130952380952381,
+          "pearson_q": 0.5482142857142858,
+          "spearman_q": 0.7130952380952381
+        }
+      }
+    }
+  },
+  {
+    "basin": "Mūša",
+    "river": "Mūša",
+    "geometry_note": "fragmented river line; using longest component",
+    "catchment_caveat": null,
+    "station_code": "zilpamusio-vms",
+    "station_name": "Žilpamūšio VMS",
+    "station_water_body": "Mūša",
+    "station_lat": 56.194006,
+    "station_lon": 24.423412,
+    "dist_from_outlet_km": 11.9,
+    "river_length_in_basin_km": 111.4,
+    "other_candidates": [],
+    "name_matched_but_excluded": [],
+    "basin_index": 17,
+    "hydro_metric": "discharge",
+    "hydro_annual": {
+      "2017": {
+        "mean": 35.46881899641577,
+        "n_days": 365,
+        "n_months": 12
+      },
+      "2018": {
+        "mean": 22.4288133640553,
+        "n_days": 365,
+        "n_months": 12
+      },
+      "2019": {
+        "mean": 11.538721311394701,
+        "n_days": 350,
+        "n_months": 12
+      },
+      "2020": {
+        "mean": 11.059094487702383,
+        "n_days": 366,
+        "n_months": 12
+      },
+      "2021": {
+        "mean": 21.107838261648748,
+        "n_days": 365,
+        "n_months": 12
+      },
+      "2022": {
+        "mean": 29.65380120327701,
+        "n_days": 365,
+        "n_months": 12
+      },
+      "2023": {
+        "mean": 25.188604070660517,
+        "n_days": 365,
+        "n_months": 12
+      },
+      "2024": {
+        "mean": 24.181606476331726,
+        "n_days": 366,
+        "n_months": 12
+      }
+    },
+    "land_cover_annual_pct": {
+      "2017": {
+        "Water": 1.1225697752677926,
+        "Wetland": 0.1891597002084056,
+        "Urban": 3.7879558762663814,
+        "Agriculture": 67.31442299441521,
+        "Forest": 27.58589165384221
+      },
+      "2018": {
+        "Water": 1.127722801145563,
+        "Wetland": 0.043584357121662226,
+        "Urban": 3.969568387125387,
+        "Agriculture": 67.27566475687252,
+        "Forest": 27.58345969773488
+      },
+      "2019": {
+        "Water": 1.091895382501439,
+        "Wetland": 0.0496500751516009,
+        "Urban": 4.096379686586806,
+        "Agriculture": 67.7604800254299,
+        "Forest": 27.001594830330244
+      },
+      "2020": {
+        "Water": 1.1086299615896438,
+        "Wetland": 0.07520545541231455,
+        "Urban": 3.9117059722360557,
+        "Agriculture": 67.7337757490439,
+        "Forest": 27.170682861718088
+      },
+      "2021": {
+        "Water": 1.0764759871356135,
+        "Wetland": 0.11971384247685528,
+        "Urban": 3.974315142169376,
+        "Agriculture": 67.194905673644,
+        "Forest": 27.634589354574157
+      },
+      "2022": {
+        "Water": 1.1304287538617224,
+        "Wetland": 0.15650686296312818,
+        "Urban": 4.162004708849031,
+        "Agriculture": 67.35977982615124,
+        "Forest": 27.191279848174887
+      },
+      "2023": {
+        "Water": 1.0966270204911481,
+        "Wetland": 0.0950787128954501,
+        "Urban": 4.001011860028247,
+        "Agriculture": 67.18446356839993,
+        "Forest": 27.62281883818522
+      },
+      "2024": {
+        "Water": 1.0565441510671423,
+        "Wetland": 0.10876909517797526,
+        "Urban": 4.086457230083626,
+        "Agriculture": 66.72311941624437,
+        "Forest": 28.025110107426887
+      },
+      "2025": {
+        "Water": 1.1117232888217339,
+        "Wetland": 0.1447495739966863,
+        "Urban": 3.9890542700925917,
+        "Agriculture": 66.94198790737698,
+        "Forest": 27.81248495971201
+      }
+    },
+    "correlation": {
+      "years_used": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024
+      ],
+      "n": 8,
+      "per_class": {
+        "Water": {
+          "pearson_r": 0.29513932829880224,
+          "pearson_p": 0.47708333333333336,
+          "spearman_r": 0.38095238095238104,
+          "spearman_p": 0.35987103174603174,
+          "pearson_q": 0.5963541666666667,
+          "spearman_q": 0.4867311507936508
+        },
+        "Wetland": {
+          "pearson_r": 0.8095278599247653,
+          "pearson_p": 0.015600198412698413,
+          "spearman_r": 0.6904761904761906,
+          "spearman_p": 0.06939484126984127,
+          "pearson_q": 0.07800099206349206,
+          "spearman_q": 0.3469742063492064
+        },
+        "Urban": {
+          "pearson_r": -0.2116719825131923,
+          "pearson_p": 0.618204365079365,
+          "spearman_r": 0.04761904761904763,
+          "spearman_p": 0.9348710317460317,
+          "pearson_q": 0.618204365079365,
+          "spearman_q": 0.9348710317460316
+        },
+        "Agriculture": {
+          "pearson_r": -0.5508076587402265,
+          "pearson_p": 0.1560763888888889,
+          "spearman_r": -0.3571428571428572,
+          "spearman_p": 0.38938492063492064,
+          "pearson_q": 0.3901909722222222,
+          "spearman_q": 0.4867311507936508
+        },
+        "Forest": {
+          "pearson_r": 0.475480375876255,
+          "pearson_p": 0.24109623015873016,
+          "spearman_r": 0.38095238095238104,
+          "spearman_p": 0.35987103174603174,
+          "pearson_q": 0.40182705026455023,
+          "spearman_q": 0.4867311507936508
+        }
+      }
+    }
+  },
+  {
+    "basin": "Mūša",
+    "river": "Lėvuo",
+    "geometry_note": null,
+    "catchment_caveat": null,
+    "station_code": "bernatoniu-levuo-vms",
+    "station_name": "Bernatonių VMS",
+    "station_water_body": "Lėvuo",
+    "station_lat": 55.793849,
+    "station_lon": 24.281908,
+    "dist_from_outlet_km": 48.0,
+    "river_length_in_basin_km": 146.9,
+    "other_candidates": [],
+    "name_matched_but_excluded": [],
+    "basin_index": 17,
+    "hydro_metric": "discharge",
+    "hydro_annual": {
+      "2017": {
+        "mean": 7.061409114183307,
+        "n_days": 365,
+        "n_months": 12
+      },
+      "2018": {
+        "mean": 2.8329791986687147,
+        "n_days": 365,
+        "n_months": 12
+      },
+      "2019": {
+        "mean": 2.716014592933948,
+        "n_days": 365,
+        "n_months": 12
+      },
+      "2020": {
+        "mean": 2.6797519157088128,
+        "n_days": 366,
+        "n_months": 12
+      },
+      "2021": {
+        "mean": 3.863703020993343,
+        "n_days": 365,
+        "n_months": 12
+      },
+      "2022": {
+        "mean": 4.511295954941116,
+        "n_days": 365,
+        "n_months": 12
+      },
+      "2023": {
+        "mean": 4.48594828469022,
+        "n_days": 365,
+        "n_months": 12
+      },
+      "2024": {
+        "mean": 4.007949450006181,
+        "n_days": 366,
+        "n_months": 12
+      }
+    },
+    "land_cover_annual_pct": {
+      "2017": {
+        "Water": 1.1225697752677926,
+        "Wetland": 0.1891597002084056,
+        "Urban": 3.7879558762663814,
+        "Agriculture": 67.31442299441521,
+        "Forest": 27.58589165384221
+      },
+      "2018": {
+        "Water": 1.127722801145563,
+        "Wetland": 0.043584357121662226,
+        "Urban": 3.969568387125387,
+        "Agriculture": 67.27566475687252,
+        "Forest": 27.58345969773488
+      },
+      "2019": {
+        "Water": 1.091895382501439,
+        "Wetland": 0.0496500751516009,
+        "Urban": 4.096379686586806,
+        "Agriculture": 67.7604800254299,
+        "Forest": 27.001594830330244
+      },
+      "2020": {
+        "Water": 1.1086299615896438,
+        "Wetland": 0.07520545541231455,
+        "Urban": 3.9117059722360557,
+        "Agriculture": 67.7337757490439,
+        "Forest": 27.170682861718088
+      },
+      "2021": {
+        "Water": 1.0764759871356135,
+        "Wetland": 0.11971384247685528,
+        "Urban": 3.974315142169376,
+        "Agriculture": 67.194905673644,
+        "Forest": 27.634589354574157
+      },
+      "2022": {
+        "Water": 1.1304287538617224,
+        "Wetland": 0.15650686296312818,
+        "Urban": 4.162004708849031,
+        "Agriculture": 67.35977982615124,
+        "Forest": 27.191279848174887
+      },
+      "2023": {
+        "Water": 1.0966270204911481,
+        "Wetland": 0.0950787128954501,
+        "Urban": 4.001011860028247,
+        "Agriculture": 67.18446356839993,
+        "Forest": 27.62281883818522
+      },
+      "2024": {
+        "Water": 1.0565441510671423,
+        "Wetland": 0.10876909517797526,
+        "Urban": 4.086457230083626,
+        "Agriculture": 66.72311941624437,
+        "Forest": 28.025110107426887
+      },
+      "2025": {
+        "Water": 1.1117232888217339,
+        "Wetland": 0.1447495739966863,
+        "Urban": 3.9890542700925917,
+        "Agriculture": 66.94198790737698,
+        "Forest": 27.81248495971201
+      }
+    },
+    "correlation": {
+      "years_used": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024
+      ],
+      "n": 8,
+      "per_class": {
+        "Water": {
+          "pearson_r": 0.19773164956311826,
+          "pearson_p": 0.6451636904761905,
+          "spearman_r": 0.261904761904762,
+          "spearman_p": 0.5364087301587301,
+          "pearson_q": 0.6451636904761905,
+          "spearman_q": 0.6705109126984127
+        },
+        "Wetland": {
+          "pearson_r": 0.9001085821379806,
+          "pearson_p": 0.0017113095238095238,
+          "spearman_r": 0.8095238095238096,
+          "spearman_p": 0.02177579365079365,
+          "pearson_q": 0.00855654761904762,
+          "spearman_q": 0.10887896825396826
+        },
+        "Urban": {
+          "pearson_r": -0.44658556722344583,
+          "pearson_p": 0.26966765873015874,
+          "spearman_r": 0.07142857142857144,
+          "spearman_p": 0.8819940476190476,
+          "pearson_q": 0.5302269345238095,
+          "spearman_q": 0.8819940476190476
+        },
+        "Agriculture": {
+          "pearson_r": -0.3330294532252395,
+          "pearson_p": 0.40220734126984126,
+          "spearman_r": -0.38095238095238104,
+          "spearman_p": 0.35987103174603174,
+          "pearson_q": 0.5302269345238095,
+          "spearman_q": 0.5997850529100529
+        },
+        "Forest": {
+          "pearson_r": 0.33679283792679415,
+          "pearson_p": 0.42418154761904764,
+          "spearman_r": 0.4523809523809524,
+          "spearman_p": 0.26746031746031745,
+          "pearson_q": 0.5302269345238095,
+          "spearman_q": 0.5997850529100529
+        }
+      }
+    }
+  },
+  {
+    "basin": "Nemunėlis",
+    "river": "Nemunėlis",
+    "geometry_note": "fragmented river line; using longest component",
+    "catchment_caveat": "Catchment shared with Latvia.",
+    "station_code": "tabokines-vms",
+    "station_name": "Tabokinės VMS",
+    "station_water_body": "Nemunėlis",
+    "station_lat": 56.41415,
+    "station_lon": 24.855184,
+    "dist_from_outlet_km": 0.0,
+    "river_length_in_basin_km": 63.9,
+    "other_candidates": [],
+    "name_matched_but_excluded": [],
+    "basin_index": 18,
+    "hydro_metric": "discharge",
+    "hydro_annual": {
+      "2017": {
+        "mean": 35.494024065540195,
+        "n_days": 365,
+        "n_months": 12
+      },
+      "2018": {
+        "mean": 15.225020609318998,
+        "n_days": 365,
+        "n_months": 12
+      },
+      "2019": {
+        "mean": 13.989743727598565,
+        "n_days": 365,
+        "n_months": 12
+      },
+      "2020": {
+        "mean": 14.611067945865777,
+        "n_days": 366,
+        "n_months": 12
+      },
+      "2021": {
+        "mean": 22.029918330773167,
+        "n_days": 365,
+        "n_months": 12
+      },
+      "2022": {
+        "mean": 22.937680747567843,
+        "n_days": 365,
+        "n_months": 12
+      },
+      "2023": {
+        "mean": 29.87430683563748,
+        "n_days": 365,
+        "n_months": 12
+      },
+      "2024": {
+        "mean": 23.058774008157215,
+        "n_days": 366,
+        "n_months": 12
+      }
+    },
+    "land_cover_annual_pct": {
+      "2017": {
+        "Water": 0.7073661668635384,
+        "Wetland": 0.0596379661067612,
+        "Urban": 2.6335288883574925,
+        "Agriculture": 53.89670830239699,
+        "Forest": 42.70275867627522
+      },
+      "2018": {
+        "Water": 0.6556760152679172,
+        "Wetland": 0.055965638112359356,
+        "Urban": 2.7660316065741077,
+        "Agriculture": 54.56502395820378,
+        "Forest": 41.95730278184183
+      },
+      "2019": {
+        "Water": 0.6398657892222511,
+        "Wetland": 0.04442556089739313,
+        "Urban": 2.810281023832234,
+        "Agriculture": 55.594348671530014,
+        "Forest": 40.91107895451811
+      },
+      "2020": {
+        "Water": 0.6719773084291136,
+        "Wetland": 0.03359005823949237,
+        "Urban": 2.6294829223404044,
+        "Agriculture": 55.50312761713418,
+        "Forest": 41.161822093856806
+      },
+      "2021": {
+        "Water": 0.6515820100764836,
+        "Wetland": 0.03500988272570005,
+        "Urban": 2.6672844148641746,
+        "Agriculture": 54.625841552925024,
+        "Forest": 42.020282139408614
+      },
+      "2022": {
+        "Water": 0.6444455238431767,
+        "Wetland": 0.04740932739284462,
+        "Urban": 2.7933498837185096,
+        "Agriculture": 54.67495360216411,
+        "Forest": 41.839841662881355
+      },
+      "2023": {
+        "Water": 0.634325271114418,
+        "Wetland": 0.05377718683662571,
+        "Urban": 2.717666833380394,
+        "Agriculture": 54.93725816946192,
+        "Forest": 41.656972539206635
+      },
+      "2024": {
+        "Water": 0.6334232021739328,
+        "Wetland": 0.04226913573788973,
+        "Urban": 2.7599466444903604,
+        "Agriculture": 54.12274863075008,
+        "Forest": 42.44161238684773
+      },
+      "2025": {
+        "Water": 0.6949507091382786,
+        "Wetland": 0.03937077221905223,
+        "Urban": 2.6031521171131016,
+        "Agriculture": 54.44832079066075,
+        "Forest": 42.21420561086881
+      }
+    },
+    "correlation": {
+      "years_used": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024
+      ],
+      "n": 8,
+      "per_class": {
+        "Water": {
+          "pearson_r": 0.37917899461888455,
+          "pearson_p": 0.35786210317460315,
+          "spearman_r": -0.07142857142857144,
+          "spearman_p": 0.8819940476190476,
+          "pearson_q": 0.35786210317460315,
+          "spearman_q": 0.8819940476190476
+        },
+        "Wetland": {
+          "pearson_r": 0.544595042746591,
+          "pearson_p": 0.16827876984126985,
+          "spearman_r": 0.523809523809524,
+          "spearman_p": 0.19662698412698412,
+          "pearson_q": 0.28046461640211645,
+          "spearman_q": 0.3277116402116402
+        },
+        "Urban": {
+          "pearson_r": -0.37753410086073036,
+          "pearson_p": 0.3467013888888889,
+          "spearman_r": -0.30952380952380953,
+          "spearman_p": 0.4618055555555556,
+          "pearson_q": 0.35786210317460315,
+          "spearman_q": 0.5772569444444444
+        },
+        "Agriculture": {
+          "pearson_r": -0.682922895692179,
+          "pearson_p": 0.06195436507936508,
+          "spearman_r": -0.6666666666666669,
+          "spearman_p": 0.08308531746031746,
+          "pearson_q": 0.1548859126984127,
+          "spearman_q": 0.20771329365079363
+        },
+        "Forest": {
+          "pearson_r": 0.701209136920914,
+          "pearson_p": 0.049900793650793654,
+          "spearman_r": 0.6904761904761906,
+          "spearman_p": 0.06939484126984127,
+          "pearson_q": 0.1548859126984127,
+          "spearman_q": 0.20771329365079363
+        }
+      }
+    }
+  },
+  {
+    "basin": "Bartuvos",
+    "river": "Bartuva",
+    "geometry_note": "fragmented river line; using longest component",
+    "catchment_caveat": null,
+    "station_code": "skuodo-vms",
+    "station_name": "Skuodo VMS",
+    "station_water_body": "Bartuva",
+    "station_lat": 56.280435,
+    "station_lon": 21.508347,
+    "dist_from_outlet_km": 1.7,
+    "river_length_in_basin_km": 9.9,
+    "other_candidates": [],
+    "name_matched_but_excluded": [],
+    "basin_index": 14,
+    "hydro_metric": "discharge",
+    "hydro_annual": {
+      "2017": {
+        "mean": 10.853378776241678,
+        "n_days": 365,
+        "n_months": 12
+      },
+      "2018": {
+        "mean": 4.009976574500768,
+        "n_days": 365,
+        "n_months": 12
+      },
+      "2019": {
+        "mean": 6.101842933947772,
+        "n_days": 365,
+        "n_months": 12
+      },
+      "2020": {
+        "mean": 5.971221696947224,
+        "n_days": 366,
+        "n_months": 12
+      },
+      "2021": {
+        "mean": 5.705817134478425,
+        "n_days": 324,
+        "n_months": 11
+      },
+      "2022": {
+        "mean": 8.33309485407066,
+        "n_days": 365,
+        "n_months": 12
+      },
+      "2023": {
+        "mean": 10.63337980030722,
+        "n_days": 365,
+        "n_months": 12
+      },
+      "2024": {
+        "mean": 6.0089867136324315,
+        "n_days": 366,
+        "n_months": 12
+      }
+    },
+    "land_cover_annual_pct": {
+      "2017": {
+        "Water": 0.6257699742420945,
+        "Wetland": 0.005586868688923287,
+        "Urban": 3.3098264477210795,
+        "Agriculture": 73.8648316786303,
+        "Forest": 22.19398503071761
+      },
+      "2018": {
+        "Water": 0.6468698957954067,
+        "Wetland": 0.0013831568113353769,
+        "Urban": 3.4554647237381575,
+        "Agriculture": 74.1994064630036,
+        "Forest": 21.696875760651494
+      },
+      "2019": {
+        "Water": 0.6596573161198112,
+        "Wetland": 0.0023323820740165178,
+        "Urban": 3.6709524187276723,
+        "Agriculture": 74.3955977644389,
+        "Forest": 21.2714601186396
+      },
+      "2020": {
+        "Water": 0.6866559946626419,
+        "Wetland": 0.010861849077251342,
+        "Urban": 3.42461490270102,
+        "Agriculture": 74.251491809203,
+        "Forest": 21.62637544435608
+      },
+      "2021": {
+        "Water": 0.6263123886779123,
+        "Wetland": 0.00907188143905262,
+        "Urban": 3.463980630380497,
+        "Agriculture": 73.27971566635274,
+        "Forest": 22.620919433149794
+      },
+      "2022": {
+        "Water": 0.6913478795324658,
+        "Wetland": 0.017248779059005875,
+        "Urban": 3.660497380477284,
+        "Agriculture": 73.80500336635959,
+        "Forest": 21.82590259457165
+      },
+      "2023": {
+        "Water": 0.6583962025565349,
+        "Wetland": 0.009695658040243083,
+        "Urban": 3.4509491235599743,
+        "Agriculture": 73.87851408277379,
+        "Forest": 22.002444933069448
+      },
+      "2024": {
+        "Water": 0.6144606332552934,
+        "Wetland": 0.00467832450892848,
+        "Urban": 3.4542714119793585,
+        "Agriculture": 73.48336516628054,
+        "Forest": 22.443224463975884
+      },
+      "2025": {
+        "Water": 0.6681596624012551,
+        "Wetland": 0.006034360598472967,
+        "Urban": 3.2750441220242634,
+        "Agriculture": 73.26673840097581,
+        "Forest": 22.784023454000206
+      }
+    },
+    "correlation": {
+      "years_used": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024
+      ],
+      "n": 8,
+      "per_class": {
+        "Water": {
+          "pearson_r": 0.03904050213699751,
+          "pearson_p": 0.9137400793650794,
+          "spearman_r": 0.04761904761904763,
+          "spearman_p": 0.9348710317460317,
+          "pearson_q": 0.9137400793650794,
+          "spearman_q": 1.0
+        },
+        "Wetland": {
+          "pearson_r": 0.3732884127304693,
+          "pearson_p": 0.3572172619047619,
+          "spearman_r": 0.3333333333333334,
+          "spearman_p": 0.4278769841269841,
+          "pearson_q": 0.9137400793650794,
+          "spearman_q": 1.0
+        },
+        "Urban": {
+          "pearson_r": -0.24983163654356066,
+          "pearson_p": 0.5665674603174603,
+          "spearman_r": -0.28571428571428575,
+          "spearman_p": 0.5007936507936508,
+          "pearson_q": 0.9137400793650794,
+          "spearman_q": 1.0
+        },
+        "Agriculture": {
+          "pearson_r": -0.1231124263977162,
+          "pearson_p": 0.7568204365079365,
+          "spearman_r": 0.0,
+          "spearman_p": 1.0,
+          "pearson_q": 0.9137400793650794,
+          "spearman_q": 1.0
+        },
+        "Forest": {
+          "pearson_r": 0.16649476295226573,
+          "pearson_p": 0.686656746031746,
+          "spearman_r": 0.07142857142857144,
+          "spearman_p": 0.8819940476190476,
+          "pearson_q": 0.9137400793650794,
+          "spearman_q": 1.0
+        }
+      }
+    }
+  },
+  {
+    "basin": "Ventos",
+    "river": "Venta",
+    "geometry_note": "fragmented river line; using longest component",
+    "catchment_caveat": null,
+    "station_code": "leckavos-vms",
+    "station_name": "Leckavos VMS",
+    "station_water_body": "Venta",
+    "station_lat": 56.390768,
+    "station_lon": 22.231794,
+    "dist_from_outlet_km": 2.9,
+    "river_length_in_basin_km": 143.7,
+    "other_candidates": [],
+    "name_matched_but_excluded": [],
+    "basin_index": 10,
+    "hydro_metric": "discharge",
+    "hydro_annual": {
+      "2017": {
+        "mean": 36.39806976446493,
+        "n_days": 365,
+        "n_months": 12
+      },
+      "2018": {
+        "mean": 18.18903545826933,
+        "n_days": 365,
+        "n_months": 12
+      },
+      "2019": {
+        "mean": 17.33510330261137,
+        "n_days": 365,
+        "n_months": 12
+      },
+      "2020": {
+        "mean": 19.668334661970093,
+        "n_days": 366,
+        "n_months": 12
+      },
+      "2021": {
+        "mean": 20.346602470558114,
+        "n_days": 365,
+        "n_months": 12
+      },
+      "2022": {
+        "mean": 27.767552867383515,
+        "n_days": 365,
+        "n_months": 12
+      },
+      "2023": {
+        "mean": 32.260129544290834,
+        "n_days": 365,
+        "n_months": 12
+      }
+    },
+    "land_cover_annual_pct": {
+      "2017": {
+        "Water": 1.3970406995259987,
+        "Wetland": 0.09364924305641244,
+        "Urban": 3.209926566157031,
+        "Agriculture": 55.980265477705274,
+        "Forest": 39.31911801355529
+      },
+      "2018": {
+        "Water": 1.4797516797802592,
+        "Wetland": 0.07571728092383159,
+        "Urban": 3.4257363258303064,
+        "Agriculture": 56.026447303158335,
+        "Forest": 38.99234741030727
+      },
+      "2019": {
+        "Water": 1.465978871614896,
+        "Wetland": 0.08538750897988068,
+        "Urban": 3.4922847401284716,
+        "Agriculture": 56.49880390184045,
+        "Forest": 38.4575449774363
+      },
+      "2020": {
+        "Water": 1.4267517290385323,
+        "Wetland": 0.11139782785647993,
+        "Urban": 3.3707250768989914,
+        "Agriculture": 55.53008388049846,
+        "Forest": 39.56104148570754
+      },
+      "2021": {
+        "Water": 1.377308128053952,
+        "Wetland": 0.09539913100603438,
+        "Urban": 3.3547614948569,
+        "Agriculture": 55.27933683733601,
+        "Forest": 39.8931944087471
+      },
+      "2022": {
+        "Water": 1.4375085653308572,
+        "Wetland": 0.12174889303005194,
+        "Urban": 3.576179869753324,
+        "Agriculture": 55.87022347161577,
+        "Forest": 38.99433920027
+      },
+      "2023": {
+        "Water": 1.443208869220261,
+        "Wetland": 0.07752179190867028,
+        "Urban": 3.404324096025345,
+        "Agriculture": 55.57746936354897,
+        "Forest": 39.49747587929675
+      },
+      "2024": {
+        "Water": 1.363726500511847,
+        "Wetland": 0.09913495645032205,
+        "Urban": 3.3696560260668926,
+        "Agriculture": 54.95300907083779,
+        "Forest": 40.214473446133155
+      },
+      "2025": {
+        "Water": 1.43681407245453,
+        "Wetland": 0.100640991564155,
+        "Urban": 3.252208697060159,
+        "Agriculture": 54.40260590894438,
+        "Forest": 40.807730329976785
+      }
+    },
+    "correlation": {
+      "years_used": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023
+      ],
+      "n": 7,
+      "per_class": {
+        "Water": {
+          "pearson_r": -0.36762261327887813,
+          "pearson_p": 0.39920634920634923,
+          "spearman_r": -0.5357142857142858,
+          "spearman_p": 0.2357142857142857,
+          "pearson_q": 0.9037698412698413,
+          "spearman_q": 0.5555555555555556
+        },
+        "Wetland": {
+          "pearson_r": 0.05876563696656173,
+          "pearson_p": 0.9037698412698413,
+          "spearman_r": 0.21428571428571433,
+          "spearman_p": 0.6615079365079365,
+          "pearson_q": 0.9037698412698413,
+          "spearman_q": 0.6615079365079365
+        },
+        "Urban": {
+          "pearson_r": -0.41181536673543023,
+          "pearson_p": 0.3746031746031746,
+          "spearman_r": -0.4642857142857144,
+          "spearman_p": 0.30238095238095236,
+          "pearson_q": 0.9037698412698413,
+          "spearman_q": 0.5555555555555556
+        },
+        "Agriculture": {
+          "pearson_r": -0.12788159040871971,
+          "pearson_p": 0.7700396825396826,
+          "spearman_r": -0.3571428571428572,
+          "spearman_p": 0.4444444444444444,
+          "pearson_q": 0.9037698412698413,
+          "spearman_q": 0.5555555555555556
+        },
+        "Forest": {
+          "pearson_r": 0.23500053059171522,
+          "pearson_p": 0.6089285714285714,
+          "spearman_r": 0.42857142857142866,
+          "spearman_p": 0.3535714285714286,
+          "pearson_q": 0.9037698412698413,
+          "spearman_q": 0.5555555555555556
+        }
+      }
+    }
+  },
+  {
+    "basin": "Lietuvos pajūrio upių",
+    "river": "Danė",
+    "geometry_note": null,
+    "catchment_caveat": null,
+    "station_code": "klaipedos-vms",
+    "station_name": "Klaipėdos VMS",
+    "station_water_body": "Akmena-Danė",
+    "station_lat": 55.755884,
+    "station_lon": 21.135223,
+    "dist_from_outlet_km": 9.6,
+    "river_length_in_basin_km": 30.9,
+    "other_candidates": [],
+    "name_matched_but_excluded": [],
+    "basin_index": 8,
+    "hydro_metric": "level",
+    "hydro_annual": {
+      "2017": {
+        "mean": 109.31228878648233,
+        "n_days": 365,
+        "n_months": 12
+      },
+      "2018": {
+        "mean": 76.13131720430107,
+        "n_days": 365,
+        "n_months": 12
+      },
+      "2019": {
+        "mean": 87.18274449564773,
+        "n_days": 365,
+        "n_months": 12
+      },
+      "2020": {
+        "mean": 98.00161599307872,
+        "n_days": 366,
+        "n_months": 12
+      },
+      "2021": {
+        "mean": 93.60168970814134,
+        "n_days": 365,
+        "n_months": 12
+      },
+      "2022": {
+        "mean": 99.57250384024576,
+        "n_days": 365,
+        "n_months": 12
+      },
+      "2023": {
+        "mean": 108.17336789554531,
+        "n_days": 365,
+        "n_months": 12
+      },
+      "2024": {
+        "mean": 98.8190087751823,
+        "n_days": 366,
+        "n_months": 12
+      }
+    },
+    "land_cover_annual_pct": {
+      "2017": {
+        "Water": 1.392987277837269,
+        "Wetland": 0.8097724191113856,
+        "Urban": 12.855862391591167,
+        "Agriculture": 45.87090714392746,
+        "Forest": 39.07047076753272
+      },
+      "2018": {
+        "Water": 1.560228348384786,
+        "Wetland": 0.53641586597324,
+        "Urban": 13.465766016000469,
+        "Agriculture": 46.08897656212881,
+        "Forest": 38.34861320751269
+      },
+      "2019": {
+        "Water": 1.6399839922227055,
+        "Wetland": 0.7384135488657504,
+        "Urban": 14.090252067671234,
+        "Agriculture": 45.84461126318906,
+        "Forest": 37.68673912805126
+      },
+      "2020": {
+        "Water": 1.497485536351908,
+        "Wetland": 0.774166078862059,
+        "Urban": 14.091558638534888,
+        "Agriculture": 45.371513831377435,
+        "Forest": 38.26527591487371
+      },
+      "2021": {
+        "Water": 1.3380838909863058,
+        "Wetland": 0.377023357466824,
+        "Urban": 14.257822065149462,
+        "Agriculture": 44.46373946063293,
+        "Forest": 39.56333122576448
+      },
+      "2022": {
+        "Water": 1.6151134615173763,
+        "Wetland": 0.602274346988674,
+        "Urban": 15.126956658394764,
+        "Agriculture": 44.43448323751814,
+        "Forest": 38.22117229558105
+      },
+      "2023": {
+        "Water": 1.4504124378236731,
+        "Wetland": 0.7409810062971234,
+        "Urban": 14.921624021899223,
+        "Agriculture": 44.61399510995297,
+        "Forest": 38.272987424027015
+      },
+      "2024": {
+        "Water": 1.4324402358040618,
+        "Wetland": 0.5554479436584715,
+        "Urban": 14.843238906939263,
+        "Agriculture": 44.528693392588906,
+        "Forest": 38.640179521009294
+      },
+      "2025": {
+        "Water": 1.5039909800926112,
+        "Wetland": 0.6669541731690648,
+        "Urban": 15.148117624270421,
+        "Agriculture": 43.78617739394848,
+        "Forest": 38.894759828519426
+      }
+    },
+    "correlation": {
+      "years_used": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024
+      ],
+      "n": 8,
+      "per_class": {
+        "Water": {
+          "pearson_r": -0.4692232523895158,
+          "pearson_p": 0.24506448412698412,
+          "spearman_r": -0.38095238095238104,
+          "spearman_p": 0.35987103174603174,
+          "pearson_q": 0.46428571428571425,
+          "spearman_q": 0.6705109126984127
+        },
+        "Wetland": {
+          "pearson_r": 0.45903522155403814,
+          "pearson_p": 0.25657242063492064,
+          "spearman_r": 0.6190476190476191,
+          "spearman_p": 0.11498015873015872,
+          "pearson_q": 0.46428571428571425,
+          "spearman_q": 0.5749007936507936
+        },
+        "Urban": {
+          "pearson_r": 0.1907154239468702,
+          "pearson_p": 0.6497519841269841,
+          "spearman_r": 0.28571428571428575,
+          "spearman_p": 0.5007936507936508,
+          "pearson_q": 0.6497519841269841,
+          "spearman_q": 0.6705109126984127
+        },
+        "Agriculture": {
+          "pearson_r": -0.4391823832956432,
+          "pearson_p": 0.2785714285714286,
+          "spearman_r": -0.261904761904762,
+          "spearman_p": 0.5364087301587301,
+          "pearson_q": 0.46428571428571425,
+          "spearman_q": 0.6705109126984127
+        },
+        "Forest": {
+          "pearson_r": 0.2580592671068535,
+          "pearson_p": 0.5327380952380952,
+          "spearman_r": 0.1666666666666667,
+          "spearman_p": 0.7033234126984127,
+          "pearson_q": 0.6497519841269841,
+          "spearman_q": 0.7033234126984127
+        }
+      }
+    }
+  },
+  {
+    "basin": "Šventosios (pajūrio)",
+    "river": "Šventoji",
+    "geometry_note": "fragmented river line; using longest component",
+    "catchment_caveat": null,
+    "station_code": "sventosios-vms",
+    "station_name": "Šventosios VMS",
+    "station_water_body": "Šventoji",
+    "station_lat": 56.035485,
+    "station_lon": 21.119474,
+    "dist_from_outlet_km": 8.3,
+    "river_length_in_basin_km": 18.1,
+    "other_candidates": [],
+    "name_matched_but_excluded": [
+      "ukmerges-vms"
+    ],
+    "basin_index": 16,
+    "error": "no observations returned"
+  }
+]
