@@ -64,20 +64,14 @@ uploads what's missing/changed rather than starting over.
 ## 3. Wire it into the dashboard
 
 Open `dashboard/app.js`, find `GRPK_RASTER_BASE_URL` near the top, and
-replace the placeholder with your bucket's public base URL from step 1.2,
-keeping the `/rasters/grpk/` suffix so the path structure matches what got
-uploaded:
+replace the placeholder with your bucket's public base URL from step 1.2.
+The `rclone sync` command above syncs `rasters/grpk`'s *contents* to the
+bucket root (not into a `rasters/grpk/` subfolder there), so this is just
+the bucket's public URL with a trailing slash, nothing appended:
 
 ```js
-const GRPK_RASTER_BASE_URL = "https://pub-xxxxxxxx.r2.dev/rasters/grpk/";
+const GRPK_RASTER_BASE_URL = "https://pub-xxxxxxxx.r2.dev/";
 ```
-
-Wait — actually the path should match whatever prefix you synced *to*. If
-you ran the `rclone sync` command above exactly as written (syncing
-`rasters/grpk` to the bucket's root), the files sit at the bucket root, so
-this constant should just be your bucket's public base URL with a trailing
-slash and no `/rasters/grpk/` suffix, e.g. `https://pub-xxxxxxxx.r2.dev/`.
-Verify with the check below before assuming either way.
 
 ## 4. Verify it worked
 

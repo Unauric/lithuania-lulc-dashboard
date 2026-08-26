@@ -18,14 +18,12 @@ function parseCsv(text) {
 
 // rasters/grpk/ (8.46 GB, ~8,800 files) is deliberately NOT part of this
 // repo -- see the README's "Data not included" section -- so it's hosted
-// on external object storage instead and every rasters/grpk/... reference
-// needs to resolve there rather than same-origin. Swap this for your own
-// bucket's public base URL once GRPK tiles are actually uploaded there
-// (see grpk-hosting/README.md at the repo root for the upload steps and
-// what this URL should look like); until then,
-// GRPK stays unavailable on any deploy that isn't serve_dashboard.py
-// pointed at a full local rasters/grpk/ (same as before this existed).
-const GRPK_RASTER_BASE_URL = "https://YOUR-BUCKET-PUBLIC-URL/rasters/grpk/";
+// on a Cloudflare R2 bucket instead (see grpk-hosting/README.md at the
+// repo root) and every rasters/grpk/... reference needs to resolve there
+// rather than same-origin. The bucket's contents ARE rasters/grpk/'s
+// contents directly (rclone synced rasters/grpk/* to the bucket root), so
+// this is just the bucket's public base URL, no /rasters/grpk/ suffix.
+const GRPK_RASTER_BASE_URL = "https://pub-cd7bea89b7534c9884ac9c5f5610098e.r2.dev/";
 
 /**
  * Resolve repo-root files (outputs/, rasters/, lt_subbasins.json) when the page is served from
